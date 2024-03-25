@@ -1,25 +1,7 @@
-name: "Windows Release packaging"
+name: "Assembling package"
 
 on:
   workflow_dispatch:
-    inputs:
-      cu:
-        description: 'cuda version'
-        required: true
-        type: string
-        default: "121"
-
-      python_minor:
-        description: 'python minor version'
-        required: true
-        type: string
-        default: "11"
-
-      python_patch:
-        description: 'python patch version'
-        required: true
-        type: string
-        default: "8"
 
 jobs:
   package_comfyui:
@@ -29,90 +11,18 @@ jobs:
         pull-requests: "read"
     runs-on: windows-latest
     steps:
+        - uses: actions/checkout@v4
         - uses: actions/cache/restore@v4
           id: cache
           with:
             path: |
-              cu${{ inputs.cu }}_python_deps.tar
-            key: ${{ runner.os }}-build-cu${{ inputs.cu }}-${{ inputs.python_minor }}
-        - shell: bash
-          run: |
-            mv cu${{ inputs.cu }}_python_deps.tar ../
-            cd ..
-            tar xf cu${{ inputs.cu }}_python_deps.tar
-            pwd
-            ls
+              cp311_cu121_deps.tar
+            key: Windows-build-cp311-cu121
 
         - shell: bash
-          run: |
-            git clone --depth=1 https://github.com/comfyanonymous/ComfyUI.git
-            cp -r ComfyUI ComfyUI_copy
-            curl https://www.python.org/ftp/python/3.${{ inputs.python_minor }}.${{ inputs.python_patch }}/python-3.${{ inputs.python_minor }}.${{ inputs.python_patch }}-embed-amd64.zip -o python_embeded.zip
-            unzip python_embeded.zip -d python_embeded
-            cd python_embeded
-            echo 'import site' >> ./python3${{ inputs.python_minor }}._pth
-            curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-            ./python.exe get-pip.py
-            rm ../cu${{ inputs.cu }}_python_deps/protobuf-5*
-            ./python.exe -s -m pip install ../cu${{ inputs.cu }}_python_deps/*
-            sed -i '1i../ComfyUI' ./python3${{ inputs.python_minor }}._pth
-            cd ..
-
-            git clone --depth=1 https://github.com/madebyollin/taesd
-            cp taesd/*.pth ./ComfyUI_copy/models/vae_approx/
-            rm -rf taesd
-
-            git clone --depth=1 https://github.com/MrForExample/ComfyUI-3D-Pack.git
-            cp -rf _Pre_Builds/_Python311_cpp/include python_embeded/include
-            cp -rf _Pre_Builds/_Python311_cpp/libs python_embeded/libs
-            mv ComfyUI-3D-Pack ComfyUI_copy/custom_nodes/ComfyUI-3D-Pack
-
-            cd ComfyUI_copy/custom_nodes
-            git clone --depth=1  https://github.com/ltdrdata/ComfyUI-Manager.git
-            git clone --depth=1  https://github.com/bash-j/mikey_nodes.git
-            git clone --depth=1  https://github.com/chrisgoringe/cg-use-everywhere.git
-            git clone --depth=1  https://github.com/crystian/ComfyUI-Crystools.git
-            git clone --depth=1  https://github.com/cubiq/ComfyUI_essentials.git
-            git clone --depth=1  https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
-            git clone --depth=1  https://github.com/Fannovel16/comfyui_controlnet_aux.git
-            git clone --depth=1  https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
-            git clone --depth=1  https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
-            git clone --depth=1  https://github.com/jags111/efficiency-nodes-comfyui.git
-            git clone --depth=1  https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
-            git clone --depth=1  https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
-            git clone --depth=1  https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
-            git clone --depth=1  https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
-            git clone --depth=1  https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
-            git clone --depth=1  https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
-            git clone --depth=1  https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
-            git clone --depth=1  https://github.com/rgthree/rgthree-comfy.git
-            git clone --depth=1  https://github.com/shiimizu/ComfyUI_smZNodes.git
-            git clone --depth=1  https://github.com/SLAPaper/ComfyUI-Image-Selector.git
-            git clone --depth=1  https://github.com/twri/sdxl_prompt_styler.git
-            git clone --depth=1  https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID.git
-            cd ../..
-
-            mkdir ComfyUI_windows_portable
-            mv python_embeded ComfyUI_windows_portable
-            mv ComfyUI_copy ComfyUI_windows_portable/ComfyUI
-
-            cd ComfyUI_windows_portable
-
-            mkdir update
-            cp -r ComfyUI/.ci/update_windows/* ./update/
-            cp -r ComfyUI/.ci/windows_base_files/* ./
-
-            cd ..
-
-            "C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma -mx=8 -mfb=64 -md=32m -ms=on -mf=BCJ2 ComfyUI_windows_portable.7z ComfyUI_windows_portable
-            mv ComfyUI_windows_portable.7z ComfyUI/ComfyUI_Windows_portable_cu${{ inputs.cu }}.7z
-
-            cd ComfyUI_windows_portable
-            python_embeded/python.exe -s ComfyUI/main.py --quick-test-for-ci --cpu
-
-            ls
+          run: bash step2.sh
 
         - name: Upload binaries to release
           uses: softprops/action-gh-release@v2
           with:
-            files: ComfyUI_Windows_portable_cu${{ inputs.cu }}.7z
+            files: ComfyUI_Windows_portable_cu121.7z
