@@ -42,9 +42,6 @@ jobs:
             tar xf cu${{ inputs.cu }}_python_deps.tar
             pwd
             ls
-
-        - shell: bash
-          run: |
             git clone --depth=1 https://github.com/comfyanonymous/ComfyUI.git
             cp -r ComfyUI ComfyUI_copy
             curl https://www.python.org/ftp/python/3.${{ inputs.python_minor }}.${{ inputs.python_patch }}/python-3.${{ inputs.python_minor }}.${{ inputs.python_patch }}-embed-amd64.zip -o python_embeded.zip
@@ -53,4 +50,4 @@ jobs:
             echo 'import site' >> ./python3${{ inputs.python_minor }}._pth
             curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
             ./python.exe get-pip.py
-            ls
+            ./python.exe -s -m pip install ../cu${{ inputs.cu }}_python_deps/*
