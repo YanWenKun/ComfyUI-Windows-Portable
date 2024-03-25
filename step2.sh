@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 
 gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 

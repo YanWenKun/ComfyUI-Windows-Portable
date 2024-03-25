@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 
 git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/MrForExample/ComfyUI-3D-Pack.git
