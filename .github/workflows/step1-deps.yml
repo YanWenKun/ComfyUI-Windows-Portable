@@ -38,7 +38,6 @@ jobs:
         - shell: bash
           run: |
             python -m pip wheel --no-cache-dir torch torchvision torchaudio ${{ inputs.xformers }} --extra-index-url https://download.pytorch.org/whl/cu${{ inputs.cu }} -w ./temp_wheel_dir
-            python -m pip wheel --no-cache-dir https://github.com/Gourieff/Assets/raw/main/Insightface/insightface-0.7.3-cp311-cp311-win_amd64.whl -w ./temp_wheel_dir
             git clone --depth=1 https://github.com/MrForExample/ComfyUI-3D-Pack.git
             python -m pip wheel --no-cache-dir ./ComfyUI-3D-Pack/_Pre_Builds/_Wheels_win_py311_cu121/*.whl -w ./temp_wheel_dir
             python -m pip wheel --no-cache-dir -r requirements.txt -w ./temp_wheel_dir
