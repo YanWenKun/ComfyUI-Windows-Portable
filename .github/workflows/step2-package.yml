@@ -53,6 +53,7 @@ jobs:
             echo 'import site' >> ./python3${{ inputs.python_minor }}._pth
             curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
             ./python.exe get-pip.py
+            rm ../cu${{ inputs.cu }}_python_deps/protobuf-5*
             ./python.exe -s -m pip install ../cu${{ inputs.cu }}_python_deps/*
             sed -i '1i../ComfyUI' ./python3${{ inputs.python_minor }}._pth
             cd ..
