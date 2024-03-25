@@ -2,29 +2,6 @@ name: "Windows Release dependencies"
 
 on:
   workflow_dispatch:
-    inputs:
-      xformers:
-        description: 'xformers version'
-        required: false
-        type: string
-        default: "xformers"
-      cu:
-        description: 'cuda version'
-        required: true
-        type: string
-        default: "121"
-
-      python_minor:
-        description: 'python minor version'
-        required: true
-        type: string
-        default: "11"
-
-      python_patch:
-        description: 'python patch version'
-        required: true
-        type: string
-        default: "8"
 
 jobs:
   build_dependencies:
@@ -33,18 +10,10 @@ jobs:
         - uses: actions/checkout@v4
         - uses: actions/setup-python@v5
           with:
-            python-version: 3.${{ inputs.python_minor }}.${{ inputs.python_patch }}
+            python-version: 3.11.8
 
         - shell: bash
-          run: |
-            python -m pip wheel --no-cache-dir torch torchvision torchaudio ${{ inputs.xformers }} --extra-index-url https://download.pytorch.org/whl/cu${{ inputs.cu }} -w ./temp_wheel_dir
-            git clone --depth=1 https://github.com/MrForExample/ComfyUI-3D-Pack.git
-            python -m pip wheel --no-cache-dir ./ComfyUI-3D-Pack/_Pre_Builds/_Wheels_win_py311_cu121/*.whl -w ./temp_wheel_dir
-            python -m pip wheel --no-cache-dir -r requirements.txt -w ./temp_wheel_dir
-            python -m pip wheel --no-cache-dir onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ -w ./temp_wheel_dir
-            ls -lah temp_wheel_dir
-            mv temp_wheel_dir cu${{ inputs.cu }}_python_deps
-            tar cf cu${{ inputs.cu }}_python_deps.tar cu${{ inputs.cu }}_python_deps
+          run: bash step1.sh
 
         - uses: actions/cache/save@v4
           with:
