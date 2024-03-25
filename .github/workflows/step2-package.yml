@@ -43,14 +43,9 @@ jobs:
             pwd
             ls
 
-        - uses: actions/checkout@v4
-          with:
-            repository: comfyanonymous/ComfyUI
-            fetch-depth: 1
-            persist-credentials: false
         - shell: bash
           run: |
-            cd ..
+            git clone --depth=1 https://github.com/comfyanonymous/ComfyUI.git
             cp -r ComfyUI ComfyUI_copy
             curl https://www.python.org/ftp/python/3.${{ inputs.python_minor }}.${{ inputs.python_patch }}/python-3.${{ inputs.python_minor }}.${{ inputs.python_patch }}-embed-amd64.zip -o python_embeded.zip
             unzip python_embeded.zip -d python_embeded
