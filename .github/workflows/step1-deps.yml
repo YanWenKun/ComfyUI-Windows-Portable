@@ -41,6 +41,7 @@ jobs:
             git clone --depth=1 https://github.com/MrForExample/ComfyUI-3D-Pack.git
             python -m pip wheel --no-cache-dir ./ComfyUI-3D-Pack/_Pre_Builds/_Wheels_win_py311_cu121/*.whl -w ./temp_wheel_dir
             python -m pip wheel --no-cache-dir -r requirements.txt -w ./temp_wheel_dir
+            python -m pip wheel --no-cache-dir onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ -w ./temp_wheel_dir
             ls -lah temp_wheel_dir
             mv temp_wheel_dir cu${{ inputs.cu }}_python_deps
             tar cf cu${{ inputs.cu }}_python_deps.tar cu${{ inputs.cu }}_python_deps
