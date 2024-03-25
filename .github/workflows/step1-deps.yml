@@ -1,4 +1,4 @@
-name: "Windows Release dependencies"
+name: "Gathering dependencies"
 
 on:
   workflow_dispatch:
