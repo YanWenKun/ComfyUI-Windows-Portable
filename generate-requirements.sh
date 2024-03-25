@@ -21,6 +21,7 @@ curl -w "\n" https://raw.githubusercontent.com/Fannovel16/ComfyUI-Frame-Interpol
 curl -w "\n" https://raw.githubusercontent.com/FizzleDorf/ComfyUI_FizzNodes/main/requirements.txt
 curl -w "\n" https://raw.githubusercontent.com/jags111/efficiency-nodes-comfyui/main/requirements.txt
 curl -w "\n" https://raw.githubusercontent.com/kijai/ComfyUI-KJNodes/main/requirements.txt
+curl -w "\n" https://raw.githubusercontent.com/Kosinkadink/ComfyUI-VideoHelperSuite/main/requirements.txt
 curl -w "\n" https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Pack/Main/requirements.txt
 curl -w "\n" https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Subpack/main/requirements.txt
 curl -w "\n" https://raw.githubusercontent.com/ltdrdata/ComfyUI-Inspire-Pack/main/requirements.txt
