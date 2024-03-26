@@ -12,12 +12,13 @@ jobs:
     runs-on: windows-latest
     steps:
         - uses: actions/checkout@v4
+
         - uses: actions/cache/restore@v4
           id: cache
           with:
             path: |
-              cp311_cu121_deps.tar
-            key: Windows-build-cp311-cu121
+              python_embeded
+            key: Windows-cp311-cu121
 
         - shell: bash
           run: bash step2.sh
