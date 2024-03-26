@@ -14,11 +14,11 @@ unzip python_embeded.zip -d "$workdir"/python_embeded
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git \
     "$workdir"/ComfyUI-3D-Pack
 
-cp -rf \
+mv \
     "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/include \
     "$workdir"/python_embeded/include
 
-cp -rf \
+mv \
     "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/libs \
     "$workdir"/python_embeded/libs
 

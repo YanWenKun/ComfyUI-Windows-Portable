@@ -58,7 +58,7 @@ cp -r ComfyUI/.ci/windows_base_files/* ./
 
 cd "$workdir"
 # LZMA2 is way more faster
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2147483648b ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2000000000b ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
 ls -lah
 
