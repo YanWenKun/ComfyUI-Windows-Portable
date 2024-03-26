@@ -43,6 +43,7 @@ curl -w "\n" https://raw.githubusercontent.com/ZHO-ZHO-ZHO/ComfyUI-InstantID/mai
 
 sed -i '/^#/d' requirements.txt
 sed -i 's/[[:space:]]*$//' requirements.txt
+sed -i 's/>=.*$//' requirements.txt
 
 sort -u requirements.txt > tmpfile && mv tmpfile requirements.txt
 
