@@ -1,5 +1,5 @@
 
-accelerate 
+accelerate
 addict
 aiohttp
 albumentations
@@ -19,7 +19,13 @@ fairscale
 filelock
 ftfy
 fvcore
+git+https://github.com/openai/CLIP.git
+git+https://github.com/WASasquatch/cstr
+git+https://github.com/WASasquatch/ffmpy.git
+git+https://github.com/WASasquatch/img2texture.git
 GitPython
+gradio
+gradio_client
 huggingface_hub
 huggingface-hub>0.20
 imageio
@@ -27,6 +33,7 @@ imageio-ffmpeg
 importlib_metadata
 insightface
 jaxtyping
+joblib
 kornia
 kornia>=0.7.1
 lark
@@ -40,19 +47,17 @@ numba
 numexpr
 numpy
 omegaconf
-OmegaConf
 onnxruntime
 onnxruntime-gpu
 open_clip_torch
 opencv-contrib-python
 opencv-python
-opencv-python 
 opencv-python>=4.7.0.72
 opencv-python-headless
 packaging
 pandas
 piexif
-pillow
+pilgram
 Pillow
 Pillow>=9.5.0
 plyfile
@@ -68,6 +73,7 @@ python-dateutil
 python-ffmpeg
 pytorch_msssim
 pyyaml
+regex
 rembg
 roma
 safetensors
@@ -77,18 +83,17 @@ scikit-learn
 scipy
 scipy>=1.11.4
 segment-anything
-segment_anything
 simpleeval
 svglib
 timm
 torch
 torchdiffeq
+torchmetrics
 torchsde
 torchtyping
 torchvision
 tqdm
 transformers
-transformers 
 transformers>=4.25.1
 transformers>=4.36.2
 trimesh

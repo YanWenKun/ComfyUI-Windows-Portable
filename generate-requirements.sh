@@ -3,12 +3,22 @@ set -eu
 
 cat > requirements.txt << EOF
 compel
-lark
-torchdiffeq
-fairscale
 cupy-cuda12x
-python-ffmpeg
+fairscale
+git+https://github.com/openai/CLIP.git
+git+https://github.com/WASasquatch/cstr
+git+https://github.com/WASasquatch/ffmpy.git
+git+https://github.com/WASasquatch/img2texture.git
+gradio
+gradio-client
+joblib
+lark
+pilgram
 pygit2
+python-ffmpeg
+regex
+torchdiffeq
+torchmetrics
 EOF
 
 {
@@ -31,8 +41,10 @@ curl -w "\n" https://raw.githubusercontent.com/storyicon/comfyui_segment_anythin
 curl -w "\n" https://raw.githubusercontent.com/ZHO-ZHO-ZHO/ComfyUI-InstantID/main/requirements.txt
 }  >> requirements.txt
 
-sort -u requirements.txt > tmpfile && mv tmpfile requirements.txt
-
 sed -i '/^#/d' requirements.txt
+sed -i 's/[[:space:]]*$//' requirements.txt
+
+sort -bdfu requirements.txt > tmpfile && mv tmpfile requirements.txt
+
 
 echo "<requirements.txt> generated. Check before use."
