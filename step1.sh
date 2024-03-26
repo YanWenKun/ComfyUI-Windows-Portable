@@ -56,4 +56,4 @@ sed -i '1i../ComfyUI' ./python311._pth
 
 cd "$workdir"
 
-ls -lahF "$workdir"
+du -hd1 "$workdir"
