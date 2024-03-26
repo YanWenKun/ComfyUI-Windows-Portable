@@ -41,6 +41,7 @@ $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
+$gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 $gcs https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID.git
 
 cd "$workdir"

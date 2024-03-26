@@ -23,8 +23,10 @@ jobs:
         - shell: bash
           run: bash step2.sh
 
-        - name: Upload binaries to release
-          uses: softprops/action-gh-release@v2
-          if: startsWith(github.ref, 'refs/tags/')
+        - name: Upload archive to release
+          uses: svenstaro/upload-release-action@v2
           with:
-            files: ComfyUI_Windows_portable_cu121.7z
+            repo_token: ${{ secrets.REPO_TOKEN }}
+            file: ComfyUI_Windows_portable_cu121.7z
+            tag: "latest"
+            overwrite: true
