@@ -8,9 +8,6 @@ jobs:
     runs-on: windows-latest
     steps:
         - uses: actions/checkout@v4
-        - uses: actions/setup-python@v5
-          with:
-            python-version: 3.11.8
 
         - shell: bash
           run: bash step1.sh
