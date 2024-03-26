@@ -24,9 +24,11 @@ jobs:
           run: bash step2.sh
 
         - name: Upload archive to release
-          uses: svenstaro/upload-release-action@v2
+          uses: xresloader/upload-to-github-release@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            repo_token: ${{ secrets.REPO_TOKEN }}
-            file: ComfyUI_Windows_portable_cu121.7z
-            tag: "latest"
-            overwrite: true
+            file: "ComfyUI_Windows_portable_cu121.7z*"
+            delete_file: true
+            update_latest_release: true
+            verbose: true

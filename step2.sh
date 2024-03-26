@@ -26,6 +26,9 @@ $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
+$gcs https://github.com/florestefano1975/comfyui-portrait-master.git
+$gcs https://github.com/Gourieff/comfyui-reactor-node.git
+$gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
@@ -33,6 +36,7 @@ $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 $gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
+$gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
@@ -54,7 +58,7 @@ cp -r ComfyUI/.ci/windows_base_files/* ./
 
 cd "$workdir"
 # LZMA2 is way more faster
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2147483648b ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
 ls -lah
 
