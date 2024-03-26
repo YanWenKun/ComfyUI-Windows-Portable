@@ -18,6 +18,9 @@ python -m pip wheel --no-cache-dir \
         --extra-index-url https://pypi.org/simple \
         -w ./temp_wheel_dir
 
+# Test-install to check conflicts
+python -m pip install --no-cache-dir ./temp_wheel_dir/*
+
 mv temp_wheel_dir cp311_cu121_deps
 
 tar cf cp311_cu121_deps.tar cp311_cu121_deps
