@@ -5,6 +5,8 @@ gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 
 workdir=$(pwd)
 
+du -hd1
+
 mkdir -p "$workdir"/ComfyUI_Windows_portable
 
 $gcs https://github.com/comfyanonymous/ComfyUI.git \
