@@ -5,8 +5,6 @@ cat > requirements.txt << EOF
 compel
 cupy-cuda12x
 fairscale
-gradio
-gradio-client
 joblib
 lark
 pilgram

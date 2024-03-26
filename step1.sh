@@ -18,7 +18,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # PIP install
 ./python.exe -s -m pip install \
-    --upgrade pip wheel setuptools Cython numpy
+    --upgrade pip wheel setuptools Cython numpy cmake
 
 ./python.exe -s -m pip install \
     xformers torchvision torchaudio \
