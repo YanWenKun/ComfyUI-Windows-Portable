@@ -1,4 +1,4 @@
-
+pillow>=10.2.0
 GitPython
 PyMCubes
 accelerate
@@ -54,7 +54,6 @@ packaging
 pandas
 piexif
 pilgram
-pillow
 plyfile
 psutil
 py-cpuinfo
@@ -86,7 +85,6 @@ torchtyping
 torchvision
 tqdm
 transformers
-trimesh
 trimesh[easy]
 ultralytics!=8.0.177
 xatlas
