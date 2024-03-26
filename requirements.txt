@@ -25,7 +25,7 @@ git+https://github.com/WASasquatch/ffmpy.git
 git+https://github.com/WASasquatch/img2texture.git
 GitPython
 gradio
-gradio_client
+gradio-client
 huggingface_hub
 huggingface-hub>0.20
 imageio
@@ -47,6 +47,7 @@ numba
 numexpr
 numpy
 omegaconf
+OmegaConf
 onnxruntime
 onnxruntime-gpu
 open_clip_torch
@@ -58,6 +59,7 @@ packaging
 pandas
 piexif
 pilgram
+pillow
 Pillow
 Pillow>=9.5.0
 plyfile
@@ -83,6 +85,7 @@ scikit-learn
 scipy
 scipy>=1.11.4
 segment-anything
+segment_anything
 simpleeval
 svglib
 timm
