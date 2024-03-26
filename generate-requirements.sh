@@ -5,10 +5,6 @@ cat > requirements.txt << EOF
 compel
 cupy-cuda12x
 fairscale
-git+https://github.com/openai/CLIP.git
-git+https://github.com/WASasquatch/cstr
-git+https://github.com/WASasquatch/ffmpy.git
-git+https://github.com/WASasquatch/img2texture.git
 gradio
 gradio-client
 joblib

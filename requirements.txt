@@ -20,10 +20,6 @@ fairscale
 filelock
 ftfy
 fvcore
-git+https://github.com/WASasquatch/cstr
-git+https://github.com/WASasquatch/ffmpy.git
-git+https://github.com/WASasquatch/img2texture.git
-git+https://github.com/openai/CLIP.git
 gradio
 gradio-client
 huggingface-hub
@@ -46,6 +42,7 @@ numexpr
 numpy
 omegaconf
 onnxruntime
+onnxruntime-gpu
 open-clip-torch
 opencv-contrib-python
 opencv-python
