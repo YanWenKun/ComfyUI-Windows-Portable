@@ -24,7 +24,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --extra-index-url https://pypi.org/simple
 
 ./python.exe -s -m pip install \
-    -r requirements.txt
+    -r "$workdir"/requirements.txt
 
 ./python.exe -s -m pip install \
     --force-reinstall onnxruntime-gpu \
