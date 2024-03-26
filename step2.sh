@@ -5,6 +5,8 @@ gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 
 workdir=$(pwd)
 
+export PYTHONPYCACHEPREFIX="$workdir"/pycache
+
 du -hd1
 
 mkdir -p "$workdir"/ComfyUI_Windows_portable
@@ -70,7 +72,6 @@ curl -L https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/ins
 
 # Run test, also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
-export PYTHONPYCACHEPREFIX="$workdir"/pycache
 ./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
 
 # Clean up

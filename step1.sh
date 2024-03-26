@@ -5,12 +5,14 @@ gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 
 workdir=$(pwd)
 
-# Setup Python embeded 1/2
+export PYTHONPYCACHEPREFIX="$workdir"/pycache
+
+# Setup Python embeded, part 1/2
 curl https://www.python.org/ftp/python/3.11.8/python-3.11.8-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
-# ComfyUI-3D-Pack 1/2
+# ComfyUI-3D-Pack, part 1/2
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git \
     "$workdir"/ComfyUI-3D-Pack
 
@@ -22,7 +24,7 @@ mv \
     "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/libs \
     "$workdir"/python_embeded/libs
 
-# Setup Python embeded 2/2
+# Setup Python embeded, part 2/2
 cd "$workdir"/python_embeded
 echo 'import site' >> ./python311._pth
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -50,7 +52,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 && ./python.exe -s -m pip install \
     mediapipe
 
-# ComfyUI-3D-Pack 2/2
+# ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
     "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Wheels_win_py311_cu121/*.whl
 
@@ -61,4 +63,4 @@ sed -i '1i../ComfyUI' ./python311._pth
 
 cd "$workdir"
 
-du -hd1 "$workdir"
+du -hd1
