@@ -72,7 +72,7 @@ cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
 cd "$workdir"
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma -mx=8 -mfb=64 -md=32m -ms=on -mf=BCJ2 ComfyUI_Windows_portable.7z ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma -mx=8 -mfb=64 -md=32m -ms=on -mf=BCJ2 ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
 cd ComfyUI_Windows_portable
 rm -rf ComfyUI/custom_nodes
