@@ -52,10 +52,20 @@ cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
 cd "$workdir"
+# LZMA2 is way more faster
 "C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
+ls -lah
+
+# For test run, disable custom nodes
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
+for D in *; do
+    if [ -d "${D}" ]; then
+        mv "${D}" "${D}".disabled
+    fi
+done
+
 cd "$workdir"/ComfyUI_Windows_portable
-rm -rf ComfyUI/custom_nodes
 python_embeded/python.exe -s ComfyUI/main.py --quick-test-for-ci --cpu
 
 cd "$workdir"
