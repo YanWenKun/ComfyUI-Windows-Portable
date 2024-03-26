@@ -29,6 +29,9 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             file: "ComfyUI_Windows_portable_cu121.7z*"
-            delete_file: true
+            # always draft before release
+            draft: true
+            # delete old files before uploading, in case multiple .7z.00X files overlap
+            delete_file: "ComfyUI_Windows_portable*"
             overwrite: true
             update_latest_release: true

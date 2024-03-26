@@ -39,6 +39,7 @@ $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
+$gcs https://github.com/Nuked88/ComfyUI-N-Sidebar.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
@@ -58,6 +59,15 @@ cp -r ComfyUI/.ci/windows_base_files/* ./
 
 du -hd1 "$workdir"
 
+# Download models for ReActor
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/models
+curl https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth \
+    -o facerestore_models/codeformer.pth
+curl https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth \
+    -o facerestore_models/GFPGANv1.4.pth
+curl https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128.onnx \
+    -o insightface/inswapper_128.onnx
+
 # Run test, also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
 export PYTHONPYCACHEPREFIX=/tmp/pycache
@@ -65,7 +75,8 @@ export PYTHONPYCACHEPREFIX=/tmp/pycache
 
 # Clean up
 rm "$workdir"/ComfyUI_Windows_portable/*.log
-rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
+# Don't clean pymatting cache, they won't be generated again.
+#rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm ./was-node-suite-comfyui/was_suite_config.json
