@@ -31,4 +31,3 @@ jobs:
             file: "ComfyUI_Windows_portable_cu121.7z*"
             delete_file: true
             update_latest_release: true
-            verbose: true

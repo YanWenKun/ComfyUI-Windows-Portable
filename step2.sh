@@ -56,22 +56,29 @@ mkdir update
 cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
+du -hd1 "$workdir"
+
+# Run test, also let custom nodes download some models
+cd "$workdir"/ComfyUI_Windows_portable
+export PYTHONPYCACHEPREFIX=/tmp/pycache
+./python_embeded/python.exe -s ComfyUI/main.py --quick-test-for-ci --cpu
+
+# Clean up
+rm "$workdir"/ComfyUI_Windows_portable/*.log
+rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
+
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
+rm ./was-node-suite-comfyui/was_suite_config.json
+rm ./ComfyUI-Manager/config.ini
+rm ./ComfyUI-Impact-Pack/impact-pack.ini
+rm ./ComfyUI-Custom-Scripts/pysssss.json
+
+du -hd1 "$workdir"
+
+# Packaging
 cd "$workdir"
-# LZMA2 is way more faster
+# LZMA2 is ~1.8x faster
 "C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2000000000b ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
-ls -lah
-
-# For test run, disable custom nodes
-cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
-for D in *; do
-    if [ -d "${D}" ]; then
-        mv "${D}" "${D}".disabled
-    fi
-done
-
-cd "$workdir"/ComfyUI_Windows_portable
-python_embeded/python.exe -s ComfyUI/main.py --quick-test-for-ci --cpu
-
 cd "$workdir"
-du -hd1
+ls -lahF
