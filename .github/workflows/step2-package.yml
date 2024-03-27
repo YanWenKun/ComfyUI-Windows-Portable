@@ -32,4 +32,3 @@ jobs:
             # always draft before release
             draft: true
             overwrite: true
-            update_latest_release: true
