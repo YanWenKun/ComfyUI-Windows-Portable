@@ -41,7 +41,6 @@ $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
-$gcs https://github.com/Nuked88/ComfyUI-N-Sidebar.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
