@@ -76,7 +76,7 @@ cd "$workdir"/ComfyUI_Windows_portable
 
 # Clean up
 rm "$workdir"/ComfyUI_Windows_portable/*.log
-# Don't clean pymatting cache, they won't be generated again.
+# DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
 #rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes

@@ -7,7 +7,7 @@ workdir=$(pwd)
 
 export PYTHONPYCACHEPREFIX="$workdir"/pycache
 
-# Setup Python embeded, part 1/2
+# Setup Python embeded, part 1/3
 curl https://www.python.org/ftp/python/3.11.8/python-3.11.8-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
@@ -24,7 +24,7 @@ mv \
     "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/libs \
     "$workdir"/python_embeded/libs
 
-# Setup Python embeded, part 2/2
+# Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
 echo 'import site' >> ./python311._pth
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -58,7 +58,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 rm -rf "$workdir"/ComfyUI-3D-Pack
 
-# Finishing
+# Setup Python embeded, part 3/3
 sed -i '1i../ComfyUI' ./python311._pth
 
 cd "$workdir"
