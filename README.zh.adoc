@@ -162,34 +162,9 @@ https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[GitHub w
 
 ComfyUI 考虑到了 Python 和 CUDA 的版本演进，且做了多版本发布。但我在安装了大量 Python 包和自定义节点后，发现很难摆脱 Python 3.11 + CUDA 12.1，这还是 comfyanonymous 激进演进后达到的里程碑。因此我只做了这一个版本组合。
 
-## 开发备忘：升级版本
+## 开发备忘
 
-为了便于快速开发调试，我把 comfy 原来写的参数化流程全给改成硬编码版本号了，指望自动化更新肯定是不行了，但好在仓库不大，搜索替换就行。注意 AI 领域变化又快又大，免不了一些手工跟进。
-
-.更新 PIP 依赖
-* 执行 `bash generate-requirements.sh`
-* 然后手工检查 `requirements.txt` 和 `requirements2.txt` 。
-有些节点的依赖项比较灾难，得手工挑选，确保安装时不冲突，最后还能跑起来。
-
-.升级 Python 小版本
-* 搜索替换 `3.11.8`
-
-.升级 Python 中版本
-* 搜索替换 `3.11.8`
-* 搜索替换 `3.11`
-* 搜索替换 `cp311`
-* 搜索替换 `py311`
-* 搜索替换 `python311`
-* 最后搜索 `311` 看看有啥落下的
-
-.升级 CUDA 版本
-* 搜索替换 `cu121`
-* 搜索替换 `12.1`
-
-.清点文件
-* CI 在打包前会启动一次 ComfyUI，自定义节点会下载模型文件（这是很常见的初次启动行为）。
-* 但是部分节点／Py 包初次启动会生成一些本地化文件（比如包含绝对路径的配置文件），这些会在 `step2.sh` 的 `# Clean up` 环节进行清除。
-* 更改依赖项或添加自定义节点可能导致这些文件变动，可利用 Sandboxie 监测运行时的文件变化，以增改脚本。
+* link:docs/bumping-versions.zh.adoc[开发备忘：升级版本]
 
 ## 感谢
 

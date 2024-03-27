@@ -1,0 +1,31 @@
+# Development Memo - Version Upgrades
+
+__Translated by ChatGPT__
+
+To facilitate rapid development and debugging, I hardcoded the parameterized processes originally written by comfy into version numbers. Automatic updates are no longer feasible, but fortunately, the repository is not large, so a simple search and replace will do. Note that the field of AI changes rapidly and extensively, inevitably requiring some manual follow-up.
+
+.Updating PIP Dependencies
+* Run `bash generate-requirements.sh`.
+* Then manually check `requirements.txt` and `requirements2.txt`.
+Some nodes' dependencies are quite tricky, requiring manual selection to ensure that they don't conflict during installation and can still run in the end.
+
+.Upgrading Python Patch Versions
+* Search and replace `3.11.8`.
+
+.Upgrading Python Minor Versions
+* Search and replace `3.11.8`.
+* Search and replace `3.11`.
+* Search and replace `cp311`.
+* Search and replace `py311`.
+* Search and replace `python311`.
+* Finally, search `311` to see if anything was missed.
+
+.Upgrading CUDA Versions
+* Search and replace `cu121`.
+* Search and replace `12.1`.
+
+.Checking Files
+* CI starts ComfyUI before packaging, to let custom nodes download model files (a common first-run behavior).
+* However, some nodes/Py packages generate some localized files at startup (such as configuration files containing absolute paths), which are cleared during the "Clean up" section of `step2.sh`.
+* Changing dependencies or adding custom nodes may cause changes to these files; use Sandboxie to monitor file changes during runtime and make additions or modifications.
+
