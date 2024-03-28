@@ -1,12 +1,12 @@
 # Portable package for ComfyUI on Windows
 
+*link:README.zh.adoc[＞＞ 中文说明点我 ＜＜]*
+
 Just like 
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
 image::docs/screenshot.webp["Screenshot"]
-
-*link:README.zh.adoc[＞＞ 中文说明点我 ＜＜]*
 
 __The rest of README was translated by ChatGPT and edited by me (how lazy, how good😙).__
 
