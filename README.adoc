@@ -103,7 +103,7 @@ If you need to use the corresponding nodes, please pay attention to the respecti
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
-|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere Nodes]
+|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
 |link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
