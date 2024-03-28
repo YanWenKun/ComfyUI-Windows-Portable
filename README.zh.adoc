@@ -4,6 +4,8 @@
 https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
 整合包，但是更大。
 
+image::docs/screenshot.webp["Screenshot"]
+
 ## 特点
 
 * 预装了 ~30 个自定义节点，包括：
@@ -36,24 +38,24 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 3. 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 ** 可以随意建立子目录，便于分类
 
-4. 如果在其他位置已经保存了模型文件，且不想移动，可以配置程序加载：
+4. （可选）如果在其他位置已经保存了模型文件，且不想移动，可以配置程序加载：
 ** 将 `ComfyUI` 目录下的 `extra_model_paths.yaml.example` 重命名为 `extra_model_paths.yaml`
 ** 编辑 `extra_model_paths.yaml`，根据不同的目录结构，编辑掉对应的注释
 ** 除 `base_path` 外的条目都可以随意增删，用于映射新加的子目录，程序会全部加载
 
-5. 如果需要挂代理，编辑 `run_nvidia_gpu.bat`，在开头加上：
+5. （可选）如果需要挂代理，编辑 `run_nvidia_gpu.bat`，在开头加上：
 [source,cmd]
 set HTTP_PROXY=http://localhost:1081
 set HTTPS_PROXY=http://localhost:1081
 
-6. 运行 `run_nvidia_gpu.bat` 即可启动程序
+6. *运行 `run_nvidia_gpu.bat` 即可启动程序。*
 
 7. 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
 ** 如果不想自动打开浏览器，编辑 `run_nvidia_gpu.bat` 加上启动参数 `--disable-auto-launch`
 
-8. 如果需要安装更多自定义节点，或更新 ComfyUI 及节点，使用 ComfyUI-Manager 即可（ComfyUI 页面右下角 *Manager* 按钮）。
+8. 提示：如果需要安装更多自定义节点，或更新 ComfyUI 及节点，使用 ComfyUI-Manager 即可（ComfyUI 页面右下角 *Manager* 按钮）。
 
-9. 除了绘图模型外，一些自定义节点还需要下载更多模型，比如 3D 模型会用到的
+9. 提示：除了绘图模型外，一些自定义节点还需要下载更多模型，比如 3D 模型会用到的
 https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 ，但如果都打包进来就太大了，这里权衡之下没有放。
 此外 3D 相关的部分组件依然需要安装 VC++，因为有些 GPU 相关代码需要运行时编译。
@@ -132,7 +134,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/caches[我代码�
 
 ## 安全
 
-image::docs/sandboxie.png["file diff"]
+image::docs/sandboxie.avif["file diff"]
 
 在 Sandboxie 中监测到的文件变化如图，注册表尚不清楚。
 

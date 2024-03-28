@@ -1,12 +1,14 @@
-# Portable Windows package for ComfyUI
+# Portable package for ComfyUI on Windows
 
-Similar to ComfyUI official
-https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
-but preloaded with many customs nodes and python packages with dependencies solved.
+Just like 
+https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
+but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
+
+image::docs/screenshot.webp["Screenshot"]
 
 *link:README.zh.adoc[＞＞ 中文说明点我 ＜＜]*
 
-The rest of README was translated by ChatGPT and edited by me (how lazy, how good😙).
+__The rest of README was translated by ChatGPT and edited by me (how lazy, how good😙).__
 
 == Features
 
@@ -26,7 +28,7 @@ that download model files on the first run (often causing freezing for users wit
 * Includes 240+ Python packages, versions compatible, including:
 ** Packages like `insightface` and `dlib` which often throw "compiler not found" during installation
 ** Packages like link:https://github.com/openai/CLIP[CLIP] that require compilation from a git repository
-** ONNX Runtime, which often throws "CUDAExecutionProvider Not Available". But the one in the package not only works, but also supports CUDA 12.1
+** ONNX Runtime, which often throws "CUDAExecutionProvider Not Available". The one in the package not only works, but also supports CUDA 12.x
 ** xFormers. I know it's not included in the ComfyUI official package for a good reason. See details in <<xformers, About xFormers>>.
 
 * Only a few functional models that might slow down the program startup are pre-installed; users please prepare SD models of your favorite.
@@ -43,24 +45,24 @@ that download model files on the first run (often causing freezing for users wit
 3. Place SD models in `ComfyUI\models\checkpoints`.
 ** Subdirectories can be created for better organization.
 
-4. If model files are already saved in another location and you don't want to move them, you can configure the program to load them:
+4. (Optional) If model files are already saved in another location and you don't want to move them, you can configure the program to load them:
 ** Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory to `extra_model_paths.yaml`.
 ** Edit `extra_model_paths.yaml` according to the directory structure, removing corresponding comments.
 ** Items other than `base_path` can be added or removed freely to map newly added subdirectories; the program will try load all of them.
 
-5. If a network proxy is needed, edit `run_nvidia_gpu.bat` and add the following at the beginning:
+5. (Optional) If a network proxy is needed, edit `run_nvidia_gpu.bat` and add the following at the beginning:
 [source,cmd]
 set HTTP_PROXY=http://localhost:1081
 set HTTPS_PROXY=http://localhost:1081
 
-6. Run `run_nvidia_gpu.bat` to start ComfyUI.
+6. **Run `run_nvidia_gpu.bat` to start ComfyUI.**
 
 7. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
 ** If you don't want the browser to open automatically, edit `run_nvidia_gpu.bat` and add the startup parameter `--disable-auto-launch`.
 
-8. If you need to install more custom nodes or update ComfyUI and custom nodes, you can use ComfyUI-Manager (found in the bottom right corner of the ComfyUI page).
+8. Tip: If you need to install more custom nodes or update ComfyUI and custom nodes, you can use ComfyUI-Manager (found in the bottom right corner of the ComfyUI page).
 
-9. Besides SD models, some custom nodes may require downloading more models, such as the 
+9. Tip: Besides SD models, some custom nodes may require downloading more models, such as the 
 link:https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 used in 3D workflows.
 However, including all of them would make the package too large, so they were not included.
@@ -136,7 +138,7 @@ This repository utilizes a pipeline to build the integration package, and the co
 
 == Security
 
-image::docs/sandboxie.png["file diff"]
+image::docs/sandboxie.avif["file diff"]
 
 Files detected by Sandboxie as shown in the image; registry changes are not clear.
 
