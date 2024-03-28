@@ -20,6 +20,7 @@ cp taesd/*.pth \
 rm -rf taesd
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
+$gcs https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
