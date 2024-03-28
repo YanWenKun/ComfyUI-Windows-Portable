@@ -138,7 +138,7 @@ This repository utilizes a pipeline to build the integration package, and the co
 
 == Security
 
-image::docs/sandboxie.avif["file diff"]
+image::docs/sandboxie.avif["file diff",width=50%]
 
 Files detected by Sandboxie as shown in the image; registry changes are not clear.
 

@@ -134,7 +134,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/caches[我代码�
 
 ## 安全
 
-image::docs/sandboxie.avif["file diff"]
+image::docs/sandboxie.avif["file diff",width=50%]
 
 在 Sandboxie 中监测到的文件变化如图，注册表尚不清楚。
 
