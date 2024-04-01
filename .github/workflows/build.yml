@@ -28,6 +28,8 @@ jobs:
         - name: Upload archive to release
           uses: xresloader/upload-to-github-release@v1
           env:
+            # This is a always-on token when you run GitHub Actions
+            # You don't need to cofigure it
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             file: "ComfyUI_Windows_portable_cu121.7z*"
