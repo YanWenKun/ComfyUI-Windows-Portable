@@ -1,0 +1,15 @@
+name: "Test CI functionality"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_upload:
+    runs-on: windows-latest
+    steps:
+
+        - name: Show info
+          shell: bash
+          run: |
+            ls "C:\Program Files"
+            "C:\Program Files\7-Zip\7z.exe" i
