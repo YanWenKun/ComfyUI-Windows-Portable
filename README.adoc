@@ -129,15 +129,13 @@ Additionally, including xFormers satisfies the dependencies of some nodes like l
 This repository utilizes a pipeline to build the integration package, and the codebase doesn't contain specific configurations or require additional access permissions. Hence, you can directly fork this repository to start executing the GitHub Workflow.
 
 1. After forking, go to *Actions* on the page.
-2. Locate *Gathering dependencies*.
-** For example, it looks like this on my repository page: link:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/step1-deps.yml[here]
-3. Find *Run Workflow* and click to execute.
-** This process downloads and packages dependencies, generating a GitHub Actions cache file.
-4. After the previous process completes, you can find the generated cache file in *Caches*.
-** For example, it looks like this on my repository page: link:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/caches[here]
-** To repackage dependencies, you need to delete this cache first, as GitHub does not automatically overwrite caches with the same name.
-5. Next, find *Assembling package* and click *Run Workflow* to execute it.
-6. Once execution is complete, go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
+2. Locate *Build & Upload Package*.
+** For example, it looks like 
+link:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml[this]
+on my repository page.
+3. Click *Run Workflow*.
+4. Wait about 20~40 minutes until the workflow run complete.
+5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
 
 == Security
 
@@ -157,7 +155,7 @@ Linux/WSL2 users may want to check out my link:https://github.com/YanWenKun/Comf
 
 Originally, the code was copied from ComfyUI's GitHub workflow, but I found it difficult to debug, so I rewrote the script.
 
-However, the packaging concept is similar: providing a self-contained, portable, and fully equipped environment with a pre-installed Python Embedded. The pipeline is also built in two stages: first, dependencies are made into a cache in phase 1 for reuse, then the latest codebase is added and packaged for release in phase 2.
+However, the packaging concept is similar: providing a self-contained, portable, and fully equipped environment with a pre-installed Python Embedded. 
 
 The difference is that I didn't download wheels first and then install them in bulk like comfyanonymous did. Because dependency relationships are too tricky, I went straight to `pip install` for dependency solving.
 

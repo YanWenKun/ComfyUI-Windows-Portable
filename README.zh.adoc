@@ -119,22 +119,17 @@ PyTorch 2.2+ 的交叉注意力机制在 Windows 下性能表现已经足够出�
 https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/blob/main/requirements.txt[某些节点]
 的依赖。
 
-## 我想自己生成整合包
+## 我也想生成整合包！
 
-本仓库使用流水线构建整合包，且代码库中不含特定配置，也不需要额外配置访问权限，所以直接 fork 本仓库即可开始执行 GitHub Workflow 。
+本仓库使用流水线构建整合包，直接 fork 本仓库即可开始执行 GitHub Workflow。代码库中不含特化配置，也不需要额外配置访问权限。
 
 1. Fork 后，在页面中找到 *Actions*。
-2. 找到 *Gathering dependencies*。
-** 比如
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/step1-deps.yml[我代码库里的页面长这样]
+2. 找到 *Build & Upload Package*。
+** 比如我代码库里的页面长
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml[这样]
 3. 找到 *Run Workflow*，点击运行。
-** 该流程是下载打包依赖项，然后生成一个 GitHub Actions 缓存文件。
-4. 等上一流程完毕后，你可以在 *Caches* 中看到生成好的缓存文件。
-** 比如
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/caches[我代码库里的页面长这样]
-** 如果要重新打包依赖项，需要先删除该缓存。GitHub 不会自动覆盖同名缓存。
-5. 然后找到 *Assembling package*，再点击 *Run Workflow* 运行。
-6. 等执行完，找到仓库的 *releases* 页面，里面会有刚生成的草稿，即可下载或编辑发布。
+4. 等待执行完毕（20~40分钟）
+5. 找到仓库的 *releases* 页面，里面会有刚生成的草稿，即可下载或编辑发布。
 
 ## 安全
 
@@ -160,8 +155,6 @@ https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[GitHub w
 ，后来发现实在是难调试，就重写了一遍脚本。
 
 但打包理念都差不多，都是自带一个免安装的 Python Embedded，半绿色，可移植，依赖项完备，解压即可运行。
-
-流水线也是分两段构建，先在阶段 1 把依赖项做成一个缓存，便于复用，然后在阶段 2 加上最新的代码库，打包发布。
 
 不同之处在于，我没有像 comfyanonymous 一样先下载 wheel，再批量安装。因为依赖关系太棘手，我是直接走的 `pip install`，以便 pip 解析。
 
