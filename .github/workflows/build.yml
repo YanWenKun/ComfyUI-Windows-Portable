@@ -9,11 +9,17 @@ jobs:
     steps:
         - uses: actions/checkout@v4
 
-        - shell: bash
-          run: bash step1.sh
+        - name: Stage 1 Gathering Dependencies
+          shell: bash
+          run: bash stage1.sh
 
-        - shell: bash
-          run: bash step2.sh
+        - name: Stage 2 Assembling Repositories
+          shell: bash
+          run: bash stage2.sh
+
+        - name: Stage 3 Compressing Package
+          shell: bash
+          run: bash stage3.sh
 
         - name: Upload archive to release
           uses: xresloader/upload-to-github-release@v1

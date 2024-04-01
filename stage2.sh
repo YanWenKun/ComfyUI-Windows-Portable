@@ -7,7 +7,7 @@ workdir=$(pwd)
 
 export PYTHONPYCACHEPREFIX="$workdir"/pycache
 
-du -hd1
+ls -lahF
 
 mkdir -p "$workdir"/ComfyUI_Windows_portable
 
@@ -85,12 +85,6 @@ rm ./ComfyUI-Manager/config.ini
 rm ./ComfyUI-Impact-Pack/impact-pack.ini
 rm ./ComfyUI-Custom-Scripts/pysssss.json
 
-du -hd1 "$workdir"
-
-# Packaging
 cd "$workdir"
-# LZMA2 is ~1.8x faster
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2100000000b ComfyUI_Windows_portable_cu121.7z ComfyUI_Windows_portable
 
-cd "$workdir"
 ls -lahF

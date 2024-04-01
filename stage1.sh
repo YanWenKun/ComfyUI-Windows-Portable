@@ -7,6 +7,8 @@ workdir=$(pwd)
 
 export PYTHONPYCACHEPREFIX="$workdir"/pycache
 
+ls -lahF
+
 # Setup Python embeded, part 1/3
 curl https://www.python.org/ftp/python/3.11.8/python-3.11.8-embed-amd64.zip \
     -o python_embeded.zip
@@ -60,6 +62,8 @@ rm -rf "$workdir"/ComfyUI-3D-Pack
 
 # Setup Python embeded, part 3/3
 sed -i '1i../ComfyUI' ./python311._pth
+
+./python.exe -s -m pip list
 
 cd "$workdir"
 
