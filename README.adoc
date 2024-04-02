@@ -63,7 +63,7 @@ set HTTPS_PROXY=http://localhost:1081
 
 8. Tip: Take advantage of the ComfyUI-Manager (the *Manager* button located at the bottom right corner of the ComfyUI page) to install additional custom nodes, update ComfyUI and nodes, or disable unnecessary nodes.
 
-9. Click on the gear (⚙) icon at the top right corner of the ComfyUI page to modify settings. Find *AGLTranslation* to change the language (default is English, options are {Chinese, Japanese, Korean}).
+9. Tip: Click on the gear (⚙) icon at the top right corner of the ComfyUI page to modify settings. Find *AGLTranslation* to change the language (default is English, options are {Chinese, Japanese, Korean}).
 
 10. Tip: Besides SD models, some custom nodes may require downloading more models, such as the 
 link:https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
