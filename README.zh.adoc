@@ -1,7 +1,6 @@
 # ComfyUI Windows 多节点整合包
 
-image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/step1-deps.yml/badge.svg["GitHub Workflow Status"]
-image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/step2-package.yml/badge.svg["GitHub Workflow Status"]
+image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status"]
 
 类似 ComfyUI 官方的
 https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
