@@ -55,9 +55,11 @@ set HTTPS_PROXY=http://localhost:1081
 7. 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
 ** 如果不想自动打开浏览器，编辑 `run_nvidia_gpu.bat` 加上启动参数 `--disable-auto-launch`
 
-8. 提示：如果需要安装更多自定义节点，或更新 ComfyUI 及节点，使用 ComfyUI-Manager 即可（ComfyUI 页面右下角 *Manager* 按钮）。
+8. 提示：善加利用 ComfyUI-Manager （ComfyUI 页面右下角 *Manager* 按钮），可用它来安装更多自定义节点，或更新 ComfyUI 及节点，也可以禁用不需要的节点。
 
-9. 提示：除了绘图模型外，一些自定义节点还需要下载更多模型，比如 3D 模型会用到的
+9. 提示：点击 ComfyUI 页面右上角的 齿轮（⚙）图标可修改设置，找到 *AGLTranslation* 可以修改语言（默认 English）。
+
+10. 提示：除了绘图模型外，一些自定义节点还需要下载更多模型，比如 3D 模型会用到的
 https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 ，但如果都打包进来就太大了，这里权衡之下没有放。
 此外 3D 相关的部分组件依然需要安装 VC++，因为有些 GPU 相关代码需要运行时编译。
