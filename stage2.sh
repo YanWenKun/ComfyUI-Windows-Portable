@@ -11,9 +11,11 @@ ls -lahF
 
 mkdir -p "$workdir"/ComfyUI_Windows_portable
 
+# ComfyUI main app
 $gcs https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
 
+# TAESD model for image on-the-fly preview
 $gcs https://github.com/madebyollin/taesd.git
 cp taesd/*.pth \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
@@ -22,6 +24,7 @@ rm -rf taesd
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 $gcs https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
 $gcs https://github.com/bash-j/mikey_nodes.git
+$gcs https://github.com/chrisgoringe/cg-image-picker.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
@@ -33,6 +36,7 @@ $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/comfyui-reactor-node.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
+$gcs https://github.com/kijai/ComfyUI-KJNodes.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
@@ -40,6 +44,7 @@ $gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
+$gcs https://github.com/melMass/comfy_mtb.git
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
@@ -47,6 +52,7 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
+$gcs https://github.com/storyicon/comfyui_segment_anything.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
 $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 $gcs https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID.git

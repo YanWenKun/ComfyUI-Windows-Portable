@@ -46,6 +46,7 @@ packaging
 pandas
 piexif
 pilgram
+pixeloe
 plyfile
 psutil
 py-cpuinfo
@@ -58,8 +59,12 @@ python-dateutil
 python-ffmpeg
 pytorch-msssim
 pyyaml
+qrcode[pil]
 regex
 rembg
+requirements-parser
+rich
+rich-argparse
 roma
 safetensors
 scikit-image
