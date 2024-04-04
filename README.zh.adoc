@@ -6,7 +6,7 @@ image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/bu
 https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
 整合包，但是更大。
 
-image::docs/screenshot.webp["Screenshot"]
+image::docs/screenshot.zh.webp["Screenshot"]
 
 ## 特点
 
@@ -87,13 +87,13 @@ https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
 |link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
+|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
-|link:https://github.com/chrisgoringe/cg-image-picker[Image Chooser]
 |link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
-|link:https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID[InstantID by -Zho-]
+|link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
 |link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
 |link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
 |link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
