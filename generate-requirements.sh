@@ -20,6 +20,7 @@ https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt
 https://raw.githubusercontent.com/crystian/ComfyUI-Crystools/main/requirements.txt
 https://raw.githubusercontent.com/cubiq/ComfyUI_essentials/main/requirements.txt
 https://raw.githubusercontent.com/cubiq/ComfyUI_FaceAnalysis/main/requirements.txt
+https://raw.githubusercontent.com/cubiq/ComfyUI_InstantID/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/ComfyUI-Frame-Interpolation/main/requirements-no-cupy.txt
 https://raw.githubusercontent.com/FizzleDorf/ComfyUI_FizzNodes/main/requirements.txt

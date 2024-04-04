@@ -24,10 +24,12 @@ rm -rf taesd
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 $gcs https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
 $gcs https://github.com/bash-j/mikey_nodes.git
-$gcs https://github.com/chrisgoringe/cg-image-picker.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
+$gcs https://github.com/crystian/ComfyUI-Crystools-save.git
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
+$gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
+$gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
@@ -55,7 +57,6 @@ $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/storyicon/comfyui_segment_anything.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
 $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
-$gcs https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID.git
 
 cd "$workdir"
 mv python_embeded ComfyUI_Windows_portable
