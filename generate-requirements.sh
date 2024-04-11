@@ -44,8 +44,9 @@ done
 sed -i '/^#/d' requirements.txt
 sed -i 's/[[:space:]]*$//' requirements.txt
 sed -i 's/>=.*$//' requirements.txt
+sed -i 's/_/-/g' requirements.txt
 
-sort -u requirements.txt > tmpfile && mv tmpfile requirements.txt
+sort -uo requirements.txt requirements.txt
 
 
 echo "<requirements.txt> generated. Check before use."
