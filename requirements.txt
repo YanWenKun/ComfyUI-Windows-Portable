@@ -45,7 +45,6 @@ pandas
 piexif
 pilgram
 pillow>=10.2.0
-pixeloe
 plyfile
 psutil
 py-cpuinfo
