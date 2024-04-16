@@ -10,7 +10,7 @@ image::docs/screenshot.zh.webp["Screenshot"]
 
 ## 特点
 
-* 预装了 ~30 个自定义节点，包括：
+* 预装了 30+ 自定义节点，包括：
 ** 依赖项看得人头皮发麻的
 https://github.com/MrForExample/ComfyUI-3D-Pack/[ComfyUI-3D-Pack]
 ** 依赖项版本固定（容易导致版本混乱）且不再活跃开发的
@@ -74,42 +74,71 @@ https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 
 ### 预置自定义节点列表
 
+.工作空间
 [cols=2]
 |===
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation[ComfyUI 翻译]
-|link:https://github.com/MrForExample/ComfyUI-3D-Pack[3D Pack by MrForExample]
-|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
-|link:https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved[AnimateAnyone Evolved]
-|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
-|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
-|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
+|
+|===
+
+.综合
+[cols=2]
+|===
+|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
+|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
+|link:https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git[Derfuu Modded Nodes]
 |link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
 |link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
-|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
-|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
-|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
-|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
+|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
+|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
+|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
+|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
+|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
+|link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
+|
+|===
+
+.控制
+[cols=2]
+|===
+|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
+|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
 |link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
 |link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
-|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
 |link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
-|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
-|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
 |link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
 |link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
-|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |link:https://github.com/storyicon/comfyui_segment_anything[Segment Anything]
-|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
-|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
+|
+|===
+
+.视频
+[cols=2]
+|===
+|link:https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved[AnimateAnyone Evolved]
+|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
+|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
+|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
+|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
-|link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
+|
+|===
+
+.更多
+[cols=2]
+|===
+|link:https://github.com/MrForExample/ComfyUI-3D-Pack[3D Pack by MrForExample]
+|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
+|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
+|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
+|
 |===
 
 依赖项难伺候的热门节点基本都兼容了，而且依然可以正常通过 ComfyUI-Manager 安装其他节点。
