@@ -31,6 +31,7 @@ $gcs https://github.com/cubiq/ComfyUI_essentials.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+$gcs https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
@@ -54,7 +55,9 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
+$gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/storyicon/comfyui_segment_anything.git
+$gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
 $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 
