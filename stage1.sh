@@ -10,7 +10,7 @@ export PYTHONPYCACHEPREFIX="$workdir"/pycache
 ls -lahF
 
 # Setup Python embeded, part 1/3
-curl https://www.python.org/ftp/python/3.11.8/python-3.11.8-embed-amd64.zip \
+curl https://www.python.org/ftp/python/3.11.9/python-3.11.9-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 

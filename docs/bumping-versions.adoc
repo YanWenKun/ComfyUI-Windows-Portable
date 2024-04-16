@@ -10,10 +10,10 @@ To facilitate rapid development and debugging, I hardcoded the parameterized pro
 Some nodes' dependencies are quite tricky, requiring manual selection to ensure that they don't conflict during installation and can still run in the end.
 
 .Upgrading Python Patch Versions
-* Search and replace `3.11.8`.
+* Search and replace `3.11.9`.
 
 .Upgrading Python Minor Versions
-* Search and replace `3.11.8`.
+* Search and replace `3.11.9`.
 * Search and replace `3.11`.
 * Search and replace `cp311`.
 * Search and replace `py311`.
