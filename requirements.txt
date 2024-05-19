@@ -83,7 +83,7 @@ torchvision
 tqdm
 transformers
 trimesh[easy]
-ultralytics!=8.0.177
+ultralytics!=8.2.5
 xatlas
 yacs
 yapf
