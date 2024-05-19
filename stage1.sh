@@ -60,6 +60,12 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 rm -rf "$workdir"/ComfyUI-3D-Pack
 
+# Add Ninja binary (replacing PIP one)
+curl -L https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
+    -o ninja-win.zip
+unzip -o ninja-win.zip -d "$workdir"/python_embeded/Scripts
+rm ninja-win.zip
+
 # Setup Python embeded, part 3/3
 sed -i '1i../ComfyUI' ./python311._pth
 
