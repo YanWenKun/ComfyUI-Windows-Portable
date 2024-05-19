@@ -44,19 +44,6 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements.txt
 
-
-####################################################################
-# Temp fix
-
-$gcs https://github.com/KohakuBlueleaf/PixelOE.git \
-    "$workdir"/PixelOE
-
-git -C "$workdir"/PixelOE apply "$workdir"/tmpfix-pixeloe.patch
-./python.exe -s -m pip install "$workdir"/PixelOE
-
-####################################################################
-
-
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements2.txt
 
