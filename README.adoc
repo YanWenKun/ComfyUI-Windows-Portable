@@ -39,7 +39,7 @@ that download model files on the first run (often causing freezing for users wit
 1. Only NVIDIA graphics cards are supported, preferably with the latest drivers installed.
 ** AMD graphics cards may __possibly__ work with ZLUDA after installing the HIP SDK, and this requires modifying startup parameters, among other things.
 
-2. Download the integration package from the release page:
+2. Download the package files from the release page:
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
 ** Note that there are multiple files (compressed in volumes) that need to be downloaded and extracted.
 
