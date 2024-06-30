@@ -32,7 +32,7 @@ nerfacc
 ninja
 numba
 numexpr
-numpy
+numpy<2
 omegaconf
 onnxruntime
 onnxruntime-gpu
@@ -44,7 +44,7 @@ packaging
 pandas
 piexif
 pilgram
-pillow>=10.2.0
+pillow
 plyfile
 psutil
 py-cpuinfo
@@ -57,6 +57,7 @@ pymeshlab
 pynvml
 python-dateutil
 python-ffmpeg
+pytorch-lightning
 pytorch-msssim
 pyyaml
 qrcode[pil]
@@ -72,9 +73,12 @@ scikit-learn
 scipy
 segment-anything
 simpleeval
+soundfile
+spandrel
 svglib
 timm
 torch
+torchaudio
 torchdiffeq
 torchmetrics
 torchsde
@@ -83,6 +87,8 @@ torchvision
 tqdm
 transformers
 trimesh[easy]
+typer
+typing-extensions
 ultralytics!=8.2.5
 xatlas
 yacs
