@@ -35,7 +35,6 @@ numexpr
 numpy<2
 omegaconf
 onnxruntime
-onnxruntime-gpu
 open-clip-torch
 opencv-contrib-python
 opencv-python
@@ -63,10 +62,10 @@ pyyaml
 qrcode[pil]
 regex
 rembg
+requests
 requirements-parser
 rich
 rich-argparse
-roma
 safetensors
 scikit-image
 scikit-learn

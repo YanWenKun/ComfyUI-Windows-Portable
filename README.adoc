@@ -16,10 +16,12 @@ __The rest of README was translated by ChatGPT and edited by me (how lazy, how g
 * Pre-installed with 30+ custom nodes including:
 
 ** link:https://github.com/MrForExample/ComfyUI-3D-Pack[ComfyUI-3D-Pack] 
-with dependencies that make my head spin
+[.line-through]#with dependencies that make my head spin#
+(Now Comfy3D can be installed through Manager elegantly)
 
 ** link:https://github.com/WASasquatch/was-node-suite-comfyui/blob/main/requirements.txt[WAS Node Suite]
-with fixed dependencies (prone to version chaos) and no longer actively developed
+[.line-through]#with fixed dependencies (prone to version chaos) and no longer actively developed#
+(Now its versions are better numbered)
 
 ** link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
 and 
@@ -53,26 +55,29 @@ that download model files on the first run (often causing freezing for users wit
 
 == Tips for Usage
 
-1. If model files are already saved in another location and you don't want to move them, you can configure the program to load them:
+1. Model Path: If model files are already saved in another location and you don't want to move them, you can configure the program to load them:
 ** Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory to `extra_model_paths.yaml`.
 ** Edit `extra_model_paths.yaml` according to the directory structure, removing corresponding comments.
 ** Items other than `base_path` can be added or removed freely to map newly added subdirectories; the program will try load all of them.
 
-2. If a network proxy is needed, edit `run_nvidia_gpu.bat` and add the following at the beginning:
+2. Proxy: If a network proxy is needed, edit `run_nvidia_gpu.bat` and add the following at the beginning:
 [source,cmd]
 set HTTP_PROXY=http://localhost:1081
 set HTTPS_PROXY=http://localhost:1081
 
-3. Take advantage of the ComfyUI-Manager (the *Manager* button located at the bottom right corner of the ComfyUI page) to install additional custom nodes, update ComfyUI and nodes, or disable unnecessary nodes.
+3. Manager: Take advantage of the ComfyUI-Manager (the *Manager* button located at the bottom right corner of the ComfyUI page) to install additional custom nodes, update ComfyUI and nodes, or disable unnecessary nodes.
 ** If you find that some unused nodes affect the startup time, you can disable them.
 
-4. Click the gear (⚙) icon at the top right corner of the ComfyUI page to modify settings. Find *AGLTranslation* to change the language (default is English, options are {Chinese, Japanese, Korean}).
+4. Language: Click the gear (⚙) icon at the top right corner of the ComfyUI page to modify settings. Find *AGLTranslation* to change the language (default is English, options are {Chinese, Japanese, Korean}).
 
-5. Besides SD models, some custom nodes may require downloading more models, such as the 
+5. 3D-Pack: Besides SD models, some custom nodes may require downloading more models, such as the 
 link:https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
 used in 3D workflows.
 However, including all of them would make the package too large, so they were not included.
-Moreover, you still need MS VC++ for some GPU-related codes to be compiled in runtime.
+Moreover, you still need to install 
+https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio Build Tools 2022]
+with "Desktop development with C++" workload
+to fully utilize ComfyUI-3D-Pack (some JIT codes need to be compiled in runtime).
 If you need to use the corresponding nodes, please pay attention to the respective project pages.
 
 6. How to upgrade: ComfyUI-Manager can do most updates, but if you want a "fresh" upgrade, you can first delete the `python_embeded` directory, and then extract the same-named directory from the new version's package to the original location. Additional "try fix" in ComfyUI-Manager may be needed.
@@ -163,7 +168,7 @@ Personally, I prefer to enable xFormers when generating videos.
 
 Additionally, including xFormers satisfies the dependencies of some nodes like link:https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/blob/main/requirements.txt[AnimateAnyone Evolved].
 
-== Creating Your Own Integration Package
+== Creating Your Own AIO Package
 
 This repository utilizes a pipeline to build the integration package, and the codebase doesn't contain specific configurations or require additional access permissions. Hence, you can directly fork this repository to start executing the GitHub Workflow.
 

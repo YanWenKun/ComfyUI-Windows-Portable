@@ -15,15 +15,15 @@ curl https://www.python.org/ftp/python/3.11.9/python-3.11.9-embed-amd64.zip \
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
 # ComfyUI-3D-Pack, part 1/2
-$gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git \
-    "$workdir"/ComfyUI-3D-Pack
+$gcs https://github.com/MrForExample/Comfy3D_Pre_Builds.git \
+    "$workdir"/Comfy3D_Pre_Builds
 
 mv \
-    "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/include \
+    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py311/include \
     "$workdir"/python_embeded/include
 
 mv \
-    "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Python311_cpp/libs \
+    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py311/libs \
     "$workdir"/python_embeded/libs
 
 # Setup Python embeded, part 2/3
@@ -37,7 +37,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --upgrade pip wheel setuptools Cython cmake
 
 ./python.exe -s -m pip install \
-    xformers==0.0.25.post1 torchvision torchaudio \
+    xformers torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/cu121 \
     --extra-index-url https://pypi.org/simple
 
@@ -47,8 +47,10 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements2.txt
 
-./python.exe -s -m pip install \
-    --force-reinstall onnxruntime-gpu \
+./python.exe -s -m pip uninstall --yes \
+    onnxruntime-gpu \
+&& ./python.exe -s -m pip --no-cache-dir install \
+    onnxruntime-gpu \
     --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ \
     --extra-index-url https://pypi.org/simple \
 && ./python.exe -s -m pip install \
@@ -56,9 +58,13 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
-    "$workdir"/ComfyUI-3D-Pack/_Pre_Builds/_Wheels_win_py311_cu121/*.whl
+    "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py311_cu121/*.whl
 
-rm -rf "$workdir"/ComfyUI-3D-Pack
+# From: https://github.com/rusty1s/pytorch_scatter?tab=readme-ov-file#binaries
+./python.exe -s -m pip install \
+    torch-scatter -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+
+rm -rf "$workdir"/Comfy3D_Pre_Builds
 
 # Add Ninja binary (replacing PIP one)
 curl -L https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
