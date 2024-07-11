@@ -7,3 +7,5 @@ git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git
 git+https://github.com/WASasquatch/img2texture.git
+# From: https://github.com/rusty1s/pytorch_scatter?tab=readme-ov-file#binaries
+torch-scatter -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
