@@ -54,6 +54,7 @@ pyhocon
 PyMCubes
 pymeshlab
 pynvml
+pyrsmi
 python-dateutil
 python-ffmpeg
 pytorch-lightning
@@ -71,11 +72,13 @@ scikit-image
 scikit-learn
 scipy
 segment-anything
+sentencepiece
 simpleeval
 soundfile
 spandrel
 svglib
 timm
+tokenizers
 torch
 torchaudio
 torchdiffeq
@@ -85,6 +88,7 @@ torchtyping
 torchvision
 tqdm
 transformers
+transparent-background
 trimesh[easy]
 typer
 typing-extensions
