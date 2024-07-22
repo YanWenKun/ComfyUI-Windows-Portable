@@ -60,6 +60,10 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe -s -m pip install \
     "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py311_cu121/*.whl
 
+# From: https://github.com/rusty1s/pytorch_scatter?tab=readme-ov-file#binaries
+./python.exe -s -m pip install \
+    torch-scatter -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+
 rm -rf "$workdir"/Comfy3D_Pre_Builds
 
 # Add Ninja binary (replacing PIP one)
