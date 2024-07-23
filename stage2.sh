@@ -86,6 +86,7 @@ sed -i '1irem .\\python_embeded\\python.exe -s ComfyUI\\main.py --windows-standa
 sed -i '1irem set PYTHONPYCACHEPREFIX=.\\pycache' ./run_nvidia_gpu.bat
 sed -i '1irem set HTTPS_PROXY=http://localhost:1081' ./run_nvidia_gpu.bat
 sed -i '1irem set HTTP_PROXY=http://localhost:1081' ./run_nvidia_gpu.bat
+sed -i '1irem set PATH=%PATH%;C:\\EDIT_THIS_TO_PATH_TO_YOUR_\\python_embeded\\Scripts\\' ./run_nvidia_gpu.bat
 
 du -hd1 "$workdir"
 
