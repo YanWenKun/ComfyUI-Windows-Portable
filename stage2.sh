@@ -12,7 +12,7 @@ ls -lahF
 mkdir -p "$workdir"/ComfyUI_Windows_portable
 
 # ComfyUI main app
-$gcs https://github.com/comfyanonymous/ComfyUI.git \
+git clone https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
 
 # TAESD model for image on-the-fly preview
