@@ -15,7 +15,12 @@ mkdir -p "$workdir"/ComfyUI_Windows_portable
 git clone https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
 
+# Using stable version (has a release tag)
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI
+git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
+
 # TAESD model for image on-the-fly preview
+cd "$workdir"
 $gcs https://github.com/madebyollin/taesd.git
 cp taesd/*.pth \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
