@@ -71,7 +71,7 @@ $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 
 # More
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
-#$gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
+$gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
