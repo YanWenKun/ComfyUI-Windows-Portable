@@ -71,12 +71,13 @@ $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 
 # More
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
-$gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 
+# Temporarily using fork repo to fix "This repository is over its data quota."
+$gcs https://github.com/YanWenKun/ComfyUI-3D-Pack.git
 
 cd "$workdir"
 mv  python_embeded  ComfyUI_Windows_portable/python_embeded
