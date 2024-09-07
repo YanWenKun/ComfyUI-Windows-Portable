@@ -86,12 +86,10 @@ mkdir update
 cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
-# Setup Python embeded, part 3/3
-sed -i '1irem .\\python_embeded\\python.exe -s ComfyUI\\main.py --windows-standalone-build --disable-auto-launch' ./run_nvidia_gpu.bat
-sed -i '1irem set PYTHONPYCACHEPREFIX=.\\pycache' ./run_nvidia_gpu.bat
-sed -i '1irem set HTTPS_PROXY=http://localhost:1081' ./run_nvidia_gpu.bat
-sed -i '1irem set HTTP_PROXY=http://localhost:1081' ./run_nvidia_gpu.bat
-sed -i '1irem set PATH=%PATH%;C:\\EDIT_THIS_TO_PATH_TO_YOUR_\\python_embeded\\Scripts\\' ./run_nvidia_gpu.bat
+# Replace start script file
+rm "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat
+cp "$workdir"/attachments/run_nvidia_gpu.bat \
+    "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat
 
 du -hd1 "$workdir"
 
