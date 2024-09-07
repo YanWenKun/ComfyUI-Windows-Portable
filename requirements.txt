@@ -16,6 +16,7 @@ filelock
 ftfy
 fvcore
 GitPython
+gpytoolbox
 huggingface-hub
 imageio
 imageio-ffmpeg
@@ -24,10 +25,10 @@ jaxtyping
 joblib
 kornia
 lark
-librosa
-matplotlib
+matplotlib==3.8
 matrix-client==0.4.0
 mediapipe
+mss
 nerfacc
 ninja
 numba
@@ -54,7 +55,6 @@ pyhocon
 PyMCubes
 pymeshlab
 pynvml
-pyrsmi
 python-dateutil
 python-ffmpeg
 pytorch-lightning
@@ -74,6 +74,7 @@ scipy
 segment-anything
 sentencepiece
 simpleeval
+slangtorch
 soundfile
 spandrel
 svglib
@@ -92,7 +93,7 @@ transparent-background
 trimesh[easy]
 typer
 typing-extensions
-ultralytics!=8.2.5
+ultralytics!=8.2.87
 xatlas
 yacs
 yapf
