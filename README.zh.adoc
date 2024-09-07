@@ -49,6 +49,19 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
 6. 点击 ComfyUI 页面右上角的 齿轮（⚙）图标可修改设置，找到 *AGLTranslation* 可以修改语言（默认 English）。
 
+== 运行 3D-Pack 前置条件
+
+1. 安装
+https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022 生成工具]
+（选择安装“桌面C++开发”），其他版本 VS + CPP 亦可。
+一些 PyTorch 的 CPP 扩展需要 JIT 编译。
+
+2. 安装
+https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local[CUDA Toolkit],
+最新版即可，只要大版本还在 12.x 就兼容。
+
+此外请注意，Comfy3D 还会在执行各节点时下载所需模型，而访问 HuggingFace 可能需要挂代理。
+
 ## 使用技巧
 
 1. 如果在其他位置已经保存了模型文件，且不想移动，可以配置程序加载：
@@ -64,15 +77,7 @@ set HTTPS_PROXY=http://localhost:1081
 3. 善加利用 ComfyUI-Manager （ComfyUI 页面右下角 *Manager* 按钮），可用它来安装更多自定义节点，或更新 ComfyUI 及节点，也可以禁用不需要的节点。
 ** 如果觉得一些用不到的节点影响了启动时间，可以将其禁用。
 
-4. 除了绘图模型外，一些自定义节点还需要下载更多模型，比如 3D 模型会用到的
-https://huggingface.co/stabilityai/TripoSR/blob/main/model.ckpt[TripoSR]
-，但如果都打包进来就太大了，这里权衡之下没有放。
-此外 3D 相关的部分组件依然需要安装
-https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022]（选择安装“桌面C++开发”）
-，因为有些 GPU 相关代码需要运行时编译（一些 Torch 的 JIT CPP 扩展）。
-如果需要用到对应节点，还请留意相应的项目页面。
-
-5. 如何大更新：ComfyUI-Manager 可以完成大部分的更新，但如果想要“翻新式”更新，可以先删除 `python_embeded` 目录，再将新版压缩包中的同名目录解压到原来位置即可。可能需要额外在 ComfyUI-Manager 中“try fix”。
+4. 如何大更新：ComfyUI-Manager 可以完成大部分的更新，但如果想要“翻新式”更新，可以先删除 `python_embeded` 目录，再将新版压缩包中的同名目录解压到原来位置即可。可能需要额外在 ComfyUI-Manager 中“try fix”。
 
 ## 细节
 
