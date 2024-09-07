@@ -37,7 +37,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --upgrade pip wheel setuptools Cython cmake
 
 ./python.exe -s -m pip install \
-    xformers torchvision torchaudio \
+    xformers==0.0.26.post1 torchvision==0.18.0 torchaudio \
     --index-url https://download.pytorch.org/whl/cu121 \
     --extra-index-url https://pypi.org/simple
 
