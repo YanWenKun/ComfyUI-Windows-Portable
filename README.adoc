@@ -66,6 +66,10 @@ Its compiler will be needed (for some JIT code).
 https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local[CUDA Toolkit],
 latest version is fine as long as it's 12.x.
 
+3. Edit `run_nvidia_gpu.bat`, reduce `TORCH_CUDA_ARCH_LIST` according to your
+https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU arch],
+to save your time on JIT compiling.
+
 == Tips for Usage
 
 1. Model Path: If model files are already saved in another location and you don't want to move them, you can configure the program to load them:

@@ -60,6 +60,10 @@ https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022 �
 https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local[CUDA Toolkit],
 最新版即可，只要大版本还在 12.x 就兼容。
 
+3. 编辑 `run_nvidia_gpu.bat`，根据你的
+https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU 架构]
+来精简 `TORCH_CUDA_ARCH_LIST`，以节约运行时的 JIT 编译耗时。
+
 此外请注意，Comfy3D 还会在执行各节点时下载所需模型，而访问 HuggingFace 可能需要挂代理。
 
 ## 使用技巧
