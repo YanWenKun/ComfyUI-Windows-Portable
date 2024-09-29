@@ -10,6 +10,7 @@ compel
 cupy-cuda12x
 deepdiff
 diffusers
+dill
 einops
 fairscale
 filelock
@@ -25,7 +26,7 @@ jaxtyping
 joblib
 kornia
 lark
-matplotlib==3.8
+matplotlib
 matrix-client==0.4.0
 mediapipe
 mss
@@ -42,6 +43,7 @@ opencv-python
 opencv-python-headless
 packaging
 pandas
+peft
 piexif
 pilgram
 pillow

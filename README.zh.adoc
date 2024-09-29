@@ -25,7 +25,7 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 * 包含 240+ 版本兼容的 Python 包，包括：
 ** 安装时经常“找不到编译器”的 `insightface`、`dlib`
 ** 需要从 git 仓库编译安装的 https://github.com/openai/CLIP[CLIP]
-** 运行时经常“找不到 CUDA provider”的 ONNX Runtime，并支持 CUDA 12.1
+** 运行时经常“找不到 CUDA provider”的 ONNX Runtime，并支持 CUDA 12.x
 ** 官方包里没带的 xFormers，细节参见 <<xformers, 关于 xFormers>>.
 
 * 仅预置了少量会卡程序启动的功能性模型，绘图模型还请用户自行下载。

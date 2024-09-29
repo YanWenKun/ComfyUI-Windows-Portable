@@ -37,7 +37,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --upgrade pip wheel setuptools Cython cmake
 
 ./python.exe -s -m pip install \
-    xformers==0.0.26.post1 torchvision==0.18.0 torchaudio \
+    xformers==0.0.27.post2 torchvision==0.19.0 torchaudio \
     --index-url https://download.pytorch.org/whl/cu121 \
     --extra-index-url https://pypi.org/simple
 
@@ -58,11 +58,11 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
-    "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py311_cu121/*.whl
+    "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py311_torch2.4.0_cu121/*.whl
 
 # From: https://github.com/rusty1s/pytorch_scatter?tab=readme-ov-file#binaries
 ./python.exe -s -m pip install \
-    torch-scatter -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+    torch-scatter -f https://data.pyg.org/whl/torch-2.4.0%2Bcu121.html
 
 rm -rf "$workdir"/Comfy3D_Pre_Builds
 
