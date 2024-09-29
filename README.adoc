@@ -15,18 +15,13 @@ __The rest of README was translated by ChatGPT and edited by me (how lazy, how g
 
 * Pre-installed with 30+ custom nodes including:
 
-** link:https://github.com/MrForExample/ComfyUI-3D-Pack[ComfyUI-3D-Pack] 
-[.line-through]#with dependencies that make my head spin#
-(Now Comfy3D can be installed through Manager elegantly)
+** link:https://github.com/MrForExample/ComfyUI-3D-Pack[ComfyUI-3D-Pack]
+which you may want to spend less time on installing.
 
-** link:https://github.com/WASasquatch/was-node-suite-comfyui/blob/main/requirements.txt[WAS Node Suite]
-[.line-through]#with fixed dependencies (prone to version chaos) and no longer actively developed#
-(Now its versions are better numbered)
-
-** link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
-and 
-link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
+** Nodes like link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
 that download model files on the first run (often causing freezing for users with bad Internet Connection)
+
+** <<custom-nodes, Full list>>
 
 * Includes 240+ Python packages, versions compatible, including:
 ** Packages like `insightface` and `dlib` which often throw "compiler not found" during installation
@@ -91,6 +86,7 @@ set HTTPS_PROXY=http://localhost:1081
 
 == Details
 
+[[custom-nodes]]
 === Pre-installed Custom Node List
 
 .Workspace
