@@ -26,7 +26,7 @@ set PYTHONPYCACHEPREFIX=.\pycache
 IF NOT EXIST "%USERPROFILE%\.u2net\u2net.onnx" (
     IF EXIST ".\extras\u2net.onnx" (
         mkdir "%USERPROFILE%\.u2net" 2>nul
-        copy ".\extras\u2net.onnx" "%USERPROFILE%\.u2net\u2net.onnx"            
+        copy ".\extras\u2net.onnx" "%USERPROFILE%\.u2net\u2net.onnx"
     )
 )
 
