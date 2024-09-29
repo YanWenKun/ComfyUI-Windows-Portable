@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eux
 
+git config --global core.autocrlf true
+
 gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 
 workdir=$(pwd)
