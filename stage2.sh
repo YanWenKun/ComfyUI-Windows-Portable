@@ -121,6 +121,7 @@ rm "$workdir"/ComfyUI_Windows_portable/*.log
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm ./was-node-suite-comfyui/was_suite_config.json
 rm ./ComfyUI-Manager/config.ini
+rm ./ComfyUI-Impact-Pack/impact-pack.ini
 rm ./ComfyUI-Custom-Scripts/pysssss.json
 
 cd "$workdir"
