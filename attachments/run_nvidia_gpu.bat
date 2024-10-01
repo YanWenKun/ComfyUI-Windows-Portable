@@ -5,8 +5,8 @@ rem set HTTPS_PROXY=http://localhost:1081
 
 @REM To set mirror site for PIP & HuggingFace Hub, uncomment and edit the two lines below.
 @REM 如需配置 PIP 与 HuggingFace Hub 镜像，取消注释并编辑下两行。
-rem set PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
-rem set HF_ENDPOINT="https://hf-mirror.com"
+rem set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+rem set HF_ENDPOINT=https://hf-mirror.com
 
 @REM In order to save your time on compiling PyTorch JIT CPP extensions, edit this line according to your GPU arch.
 @REM 依照下表，修改为你的 GPU 对应架构，以节约 JIT 编译 PyTorch C++ 扩展的时间：
