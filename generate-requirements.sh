@@ -24,6 +24,8 @@ https://raw.githubusercontent.com/cubiq/ComfyUI_InstantID/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/ComfyUI-Frame-Interpolation/main/requirements-no-cupy.txt
 https://raw.githubusercontent.com/FizzleDorf/ComfyUI_FizzNodes/main/requirements.txt
+https://raw.githubusercontent.com/Gourieff/comfyui-reactor-node/refs/heads/main/requirements.txt
+https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/jags111/efficiency-nodes-comfyui/main/requirements.txt
 https://raw.githubusercontent.com/kijai/ComfyUI-KJNodes/main/requirements.txt
 https://raw.githubusercontent.com/Kosinkadink/ComfyUI-VideoHelperSuite/main/requirements.txt
@@ -33,7 +35,9 @@ https://raw.githubusercontent.com/ltdrdata/ComfyUI-Inspire-Pack/main/requirement
 https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt
 https://raw.githubusercontent.com/melMass/comfy_mtb/main/requirements.txt
 https://raw.githubusercontent.com/MrForExample/ComfyUI-3D-Pack/main/requirements.txt
+https://raw.githubusercontent.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/storyicon/comfyui_segment_anything/main/requirements.txt
+https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/ZHO-ZHO-ZHO/ComfyUI-InstantID/main/requirements.txt
 )
 

@@ -43,11 +43,11 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --index-url https://download.pytorch.org/whl/cu121 \
     --extra-index-url https://pypi.org/simple
 
+# 1. requirements.txt
+# 2. onnxruntime-gpu
+# 3. requirements2.txt
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements.txt
-
-./python.exe -s -m pip install \
-    -r "$workdir"/requirements2.txt
 
 ./python.exe -s -m pip uninstall --yes \
     onnxruntime-gpu \
@@ -55,7 +55,12 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     onnxruntime-gpu \
     --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ \
     --extra-index-url https://pypi.org/simple \
-&& ./python.exe -s -m pip install \
+
+./python.exe -s -m pip install \
+    -r "$workdir"/requirements2.txt
+
+# Fix broken dep for mediapipe
+./python.exe -s -m pip install \
     mediapipe
 
 # ComfyUI-3D-Pack, part 2/2

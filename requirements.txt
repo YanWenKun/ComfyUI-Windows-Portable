@@ -95,7 +95,7 @@ transparent-background
 trimesh[easy]
 typer
 typing-extensions
-ultralytics!=8.2.87
+ultralytics
 xatlas
 yacs
 yapf
