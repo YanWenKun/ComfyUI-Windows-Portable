@@ -19,7 +19,7 @@ set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
 @REM This command will let the .pyc files to be stored in one place.
 @REM 该行命令会使 .pyc 文件集中保存在一处。
-set PYTHONPYCACHEPREFIX=.\pycache
+set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
 @REM This command will copy u2net.onnx to user's home path, to skip download at first start.
 @REM 该行命令会复制 u2net.onnx 到用户主目录下，以免启动时还需下载。
