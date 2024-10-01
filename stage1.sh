@@ -12,7 +12,7 @@ export PYTHONPYCACHEPREFIX="$workdir"/pycache
 ls -lahF
 
 # Setup Python embeded, part 1/3
-curl https://www.python.org/ftp/python/3.11.9/python-3.11.9-embed-amd64.zip \
+curl https://www.python.org/ftp/python/3.12.6/python-3.12.6-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
@@ -21,16 +21,16 @@ $gcs https://github.com/MrForExample/Comfy3D_Pre_Builds.git \
     "$workdir"/Comfy3D_Pre_Builds
 
 mv \
-    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py311/include \
+    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py312/include \
     "$workdir"/python_embeded/include
 
 mv \
-    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py311/libs \
+    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py312/libs \
     "$workdir"/python_embeded/libs
 
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
-echo 'import site' >> ./python311._pth
+echo 'import site' >> ./python312._pth
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe get-pip.py
 
@@ -65,7 +65,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
-    "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py311_torch2.4.0_cu121/*.whl
+    "$workdir"/Comfy3D_Pre_Builds/_Build_Wheels/_Wheels_win_py312_torch2.4.0_cu121/*.whl
 
 # From: https://github.com/rusty1s/pytorch_scatter?tab=readme-ov-file#binaries
 ./python.exe -s -m pip install \
@@ -80,7 +80,7 @@ unzip -o ninja-win.zip -d "$workdir"/python_embeded/Scripts
 rm ninja-win.zip
 
 # Setup Python embeded, part 3/3
-sed -i '1i../ComfyUI' ./python311._pth
+sed -i '1i../ComfyUI' ./python312._pth
 
 ./python.exe -s -m pip list
 

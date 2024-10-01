@@ -210,8 +210,6 @@ https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[GitHub w
 
 不同之处在于，我没有像 comfyanonymous 一样先下载 wheel，再批量安装。因为依赖关系太棘手，我是直接走的 `pip install`，以便 pip 解析。
 
-ComfyUI 考虑到了 Python 和 CUDA 的版本演进，且做了多版本发布。但我在安装了大量 Python 包和自定义节点后，发现很难摆脱 Python 3.11 + CUDA 12.1，这还是 comfyanonymous 激进演进后达到的里程碑。因此我只做了这一个版本组合。
-
 ## 开发备忘
 
 * link:docs/bumping-versions.zh.adoc[开发备忘：升级版本]

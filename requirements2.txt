@@ -1,5 +1,5 @@
-https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6/dlib-19.24.6-cp311-cp311-win_amd64.whl
-https://raw.githubusercontent.com/Gourieff/Assets/main/Insightface/insightface-0.7.3-cp311-cp311-win_amd64.whl
+https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6/dlib-19.24.6-cp312-cp312-win_amd64.whl
+https://raw.githubusercontent.com/Gourieff/Assets/main/Insightface/Insightface/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
 gradio
 gradio-client
 pixeloe
