@@ -1,0 +1,24 @@
+# How To: Manually Setup ComfyUI.
+
+If you want to setup ComfyUI (with 3D-Pack) from the ground up, the key steps are:
+
+1. Setup OS environment: Git, CUDA Toolkit, C++ build tools.
+2. Setup Python venv, or embeded. Then setup PIP, or conda.
+3. Install PyTorch + xFormers. Each version of xFormers is paired with specific PyTorch version, so you could choose the PyTorch version by choosing xFormers' version.
+4. Git clone ComfyUI and custom nodes.
+5. Install `requirements.txt` from ComfyUI. When done, a basic environment for running SD image generation is ready.
+6. Install `requirements.txt` from custom nodes. Which is overwhelmingly full of details. And you should look into them one by one.
+
+* `numpy` needs 1.x version.
+* `onnxruntime-gpu` needs a specific repo to download wheels from.
+* `cupy-cuda12x` needs manual installation.
+* `ninja` needs binary from its official, or just OS install and configure the `PATH`.
+* `dlib` and `insightface` needs to compile on site, or download binary wheel files from 3rd party.
+* `CLIP` needs to install from source.
+* `gradio` is incompatible with ComfyUI-Manager as they depends on different versions of `urllib3`.
+
+7. Comfy3D's dependency is complicated and needs special attention. You can use its installer, but manual installation gives you more control. You should examine the https://github.com/MrForExample/ComfyUI-3D-Pack/tree/main/_Pre_Builds/_Build_Scripts[scripts] from top to bottom, pick https://github.com/MrForExample/Comfy3D_Pre_Builds/tree/main/_Build_Wheels[the proper wheels] to install, and copy the https://github.com/MrForExample/Comfy3D_Pre_Builds/tree/main/_Python_Source_cpp[includes and libs] for later C++ compiling.
+
+8. Finally, put models in and let Python run the `main.py`.
+
+For details, check the source code of this repository.

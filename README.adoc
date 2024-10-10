@@ -186,7 +186,7 @@ on my repository page.
 
 == Security
 
-image::docs/sandboxie.avif["file diff",width=50%]
+image::docs/sandboxie.avif["file diff",width=40%]
 
 Files detected by Sandboxie as shown in the image; registry changes are not clear.
 
@@ -198,7 +198,7 @@ In my personal experience, I use a sandbox not so much for security consideratio
 .Advertisement
 Linux/WSL2 users may want to check out my link:https://github.com/YanWenKun/ComfyUI-Docker[ComfyUI-Docker], which is the exact opposite of the Windows integration package in terms of being large and comprehensive but difficult to update. I designed the Docker image with a meticulous eye, selecting a series of non-conflicting and latest version dependencies, and adhering to the KISS principle by only including ComfyUI-Manager, leaving the choice of custom nodes to the users. Not to mention the benefits of easy upgrades, easy cleanup, and secure isolation provided by container runtime itself.
 
-== Development idea
+== Development Idea
 
 Originally, the code was copied from ComfyUI's GitHub workflow, but I found it difficult to debug, so I rewrote the script.
 
@@ -209,6 +209,10 @@ The difference is that I didn't download wheels first and then install them in b
 == Development Memo
 
 * link:docs/bumping-versions.adoc[Development Memo - Version Upgrades]
+
+== See Also
+
+* link:docs/manual-setup.adoc[How To: Manually Setup ComfyUI]
 
 == Thanks
 
