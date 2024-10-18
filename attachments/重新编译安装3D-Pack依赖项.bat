@@ -40,6 +40,8 @@ set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
 if not exist ".\tmp_build" mkdir tmp_build
 
+.\python_embeded\python.exe -s -m pip install numpy==1.26.4
+
 git clone --depth=1 https://ghp.ci/https://github.com/MrForExample/Comfy3D_Pre_Builds.git ^
  .\tmp_build\Comfy3D_Pre_Builds
 
@@ -53,19 +55,15 @@ git clone --depth=1 https://ghp.ci/https://github.com/MrForExample/Comfy3D_Pre_B
  git+https://ghp.ci/https://github.com/ashawkey/diff-gaussian-rasterization.git
 
 .\python_embeded\python.exe -s -m pip wheel -w tmp_build ^
- git+https://ghp.ci/https://github.com/NVlabs/nvdiffrast.git
-
-.\python_embeded\python.exe -s -m pip wheel -w tmp_build ^
- git+https://ghp.ci/https://github.com/facebookresearch/pytorch3d.git
-
-.\python_embeded\python.exe -s -m pip wheel -w tmp_build ^
  git+https://ghp.ci/https://github.com/ashawkey/kiuikit.git
 
 .\python_embeded\python.exe -s -m pip wheel -w tmp_build ^
- git+https://ghp.ci/https://github.com/rusty1s/pytorch_scatter.git
+ git+https://ghp.ci/https://github.com/NVlabs/nvdiffrast.git
 
 echo "编译完成，开始安装……"
 
 del .\tmp_build\numpy-2*.whl
 
 for %i in (.\tmp_build\*.whl) do .\python_embeded\python.exe -s -m pip install --force-reinstall "%i"
+
+.\python_embeded\python.exe -s -m pip install numpy==1.26.4
