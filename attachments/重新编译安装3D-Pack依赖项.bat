@@ -34,7 +34,7 @@ set HF_ENDPOINT=https://hf-mirror.com
 @REM https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/
 set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
 
-set CMAKE_ARGS=-DBUILD_opencv_world=ON -DWITH_CUDA=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DCUDA_ARCH_PTX=8.9 -DWITH_NVCUVID=ON
+set CMAKE_ARGS=-DBUILD_opencv_world=ON -DWITH_CUDA=ON -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DWITH_NVCUVID=ON
 
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
