@@ -7,6 +7,8 @@ workdir=$(pwd)
 
 export PYTHONPYCACHEPREFIX="$workdir"/pycache
 
+export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_embeded/Scripts"
+
 ls -lahF
 
 mkdir -p "$workdir"/ComfyUI_Windows_portable
