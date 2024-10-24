@@ -22,7 +22,7 @@ git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
 # TAESD model for image on-the-fly preview
 cd "$workdir"
 $gcs https://github.com/madebyollin/taesd.git
-cp taesd/*.pth \
+cp taesd/*_decoder.pth \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
 rm -rf taesd
 
