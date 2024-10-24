@@ -21,15 +21,6 @@ set PATH=%PATH%;%~dp0\python_embeded\Scripts
 @REM 该行命令会使 .pyc 文件集中保存在一处。
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
-@REM This command will copy u2net.onnx to user's home path, to skip download at first start.
-@REM 该行命令会复制 u2net.onnx 到用户主目录下，以免启动时还需下载。
-IF NOT EXIST "%USERPROFILE%\.u2net\u2net.onnx" (
-    IF EXIST ".\extras\u2net.onnx" (
-        mkdir "%USERPROFILE%\.u2net" 2>nul
-        copy ".\extras\u2net.onnx" "%USERPROFILE%\.u2net\u2net.onnx"
-    )
-)
-
 @REM If you don't want the browser to open automatically, add " --disable-auto-launch" (without quotation marks) to the end of the line below.
 @REM 如果不想要 ComfyUI 启动后自动打开浏览器，添加" --disable-auto-launch"（不含引号）到下行末尾。
 .\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build

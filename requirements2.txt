@@ -1,9 +1,1 @@
-https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6-alpha/dlib-19.24.6-cp312-cp312-win_amd64.whl
-https://raw.githubusercontent.com/Gourieff/Assets/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
-gradio
-gradio-client
 pixeloe
-git+https://github.com/openai/CLIP.git
-git+https://github.com/WASasquatch/cstr
-git+https://github.com/WASasquatch/ffmpy.git
-git+https://github.com/WASasquatch/img2texture.git
