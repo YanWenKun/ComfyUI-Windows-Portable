@@ -79,6 +79,7 @@ This step is already done if you're using this ComfyUI-Windows-Portable package.
 curl -L https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
     -o ninja-win.zip
 unzip -o ninja-win.zip -d "$workdir"/python_embeded/Scripts
+unzip -o ninja-win.zip -d "$workdir"
 rm ninja-win.zip
 ----
 
@@ -117,8 +118,6 @@ cd "$workdir"
 
 git clone --depth=1 --no-tags \
     https://github.com/MrForExample/Comfy3D_Pre_Builds.git
-
-cd Comfy3D_Pre_Builds/_Libs
 ----
 
 #### 3.2 (Optional) Add `include` and `libs` for C++
@@ -143,10 +142,10 @@ These 4 wheels build fast, and are more likely to success.
 [source,bash]
 ----
 pip_exe wheel -w $wheeldir \
- ./pointnet2_ops
+ ./Comfy3D_Pre_Builds/_Libs/pointnet2_ops
 
 pip_exe wheel -w $wheeldir \
- ./simple-knn
+ ./Comfy3D_Pre_Builds/_Libs/simple-knn
 
 pip_exe wheel -w $wheeldir \
  git+https://github.com/ashawkey/diff-gaussian-rasterization.git
@@ -168,6 +167,8 @@ sed -i '1i../nvdiffrast' ./python_embeded/python312._pth
 cd nvdiffrast
 
 pip_exe wheel -w $wheeldir .
+
+cd $workdir
 ----
 
 
