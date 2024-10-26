@@ -52,6 +52,7 @@ $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 # Control
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+$gcs https://github.com/cubiq/PuLID_ComfyUI.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/comfyui-reactor-node.git

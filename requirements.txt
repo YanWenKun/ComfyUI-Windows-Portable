@@ -36,6 +36,7 @@ numba
 numexpr
 numpy<2
 omegaconf
+onnx
 onnxruntime
 open-clip-torch
 opencv-contrib-python
@@ -100,3 +101,4 @@ webcolors
 xatlas
 yacs
 yapf
+git+https://github.com/rodjjo/filterpy.git

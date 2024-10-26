@@ -13,6 +13,7 @@ python-ffmpeg
 regex
 torchdiffeq
 torchmetrics
+git+https://github.com/rodjjo/filterpy.git
 EOF
 
 array=(
@@ -21,6 +22,7 @@ https://raw.githubusercontent.com/crystian/ComfyUI-Crystools/main/requirements.t
 https://raw.githubusercontent.com/cubiq/ComfyUI_essentials/main/requirements.txt
 https://raw.githubusercontent.com/cubiq/ComfyUI_FaceAnalysis/main/requirements.txt
 https://raw.githubusercontent.com/cubiq/ComfyUI_InstantID/main/requirements.txt
+https://raw.githubusercontent.com/cubiq/PuLID_ComfyUI/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
 https://raw.githubusercontent.com/Fannovel16/ComfyUI-Frame-Interpolation/main/requirements-no-cupy.txt
 https://raw.githubusercontent.com/FizzleDorf/ComfyUI_FizzNodes/main/requirements.txt
@@ -38,7 +40,6 @@ https://raw.githubusercontent.com/MrForExample/ComfyUI-3D-Pack/main/requirements
 https://raw.githubusercontent.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/storyicon/comfyui_segment_anything/main/requirements.txt
 https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/main/requirements.txt
-https://raw.githubusercontent.com/ZHO-ZHO-ZHO/ComfyUI-InstantID/main/requirements.txt
 )
 
 for line in "${array[@]}";
