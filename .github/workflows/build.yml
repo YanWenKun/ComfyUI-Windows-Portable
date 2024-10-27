@@ -32,7 +32,7 @@ jobs:
             # You don't need to cofigure it
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            file: "ComfyUI_Windows_portable_cu121.7z*"
+            file: "ComfyUI_Windows_portable_cu124.7z*"
             # always draft before release
             draft: true
             overwrite: true
