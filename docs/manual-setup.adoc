@@ -1,4 +1,4 @@
-# How To: Manually Setup ComfyUI.
+# How To Manually Setup ComfyUI
 
 If you want to setup ComfyUI (with 3D-Pack) from the ground up, the key steps are:
 

@@ -11,24 +11,24 @@ image::docs/screenshot.zh.webp["Screenshot"]
 ## 特点
 
 * 预装了 30+ 自定义节点，包括：
-** [.line-through]#依赖项看得人头皮发麻的#
+
+** 安装不易的
 https://github.com/MrForExample/ComfyUI-3D-Pack/[ComfyUI-3D-Pack]
-（现在不麻了，官方带安装脚本了，可以用 ComfyUI-Manager 安装了）
-** [.line-through]#依赖项版本固定（容易导致版本混乱）且不再活跃开发的#
-https://github.com/WASasquatch/was-node-suite-comfyui/blob/main/requirements.txt[WAS Node Suite]
-（现在改好了，版本不卡了）
+
 ** 初次启动时会下载模型文件（国内用户经常卡住不动）的
 https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
 、
 https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
+** <<custom-nodes, 【详细组件列表】>>
+
 * 包含 240+ 版本兼容的 Python 包，包括：
-** 安装时经常“找不到编译器”的 `insightface`、`dlib`
-** 需要从 git 仓库编译安装的 https://github.com/openai/CLIP[CLIP]
-** 运行时经常“找不到 CUDA provider”的 ONNX Runtime，并支持 CUDA 12.x
-** 官方包里没带的 xFormers，细节参见 <<xformers, 关于 xFormers>>.
+** 需要编译安装的 `insightface`、`dlib`、`CLIP` 等
+** Comfy 官方包里没带的 xFormers，细节参见 <<xformers, 关于 xFormers>>.
 
 * 仅预置了少量会卡程序启动的功能性模型，绘图模型还请用户自行下载。
+
+* 使用 GitHub 流水线打包，方便 DIY。用户无需配置 CI/CD，只需在 GitHub 上 Fork 仓库，即可运行打包脚本。 <<build-your-own, 【操作方法】>>
 
 ## 如何使用
 
@@ -57,8 +57,8 @@ https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022 �
 一些 PyTorch 的 CPP 扩展需要 JIT 编译。
 
 2. 安装
-https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local[CUDA Toolkit],
-最新版即可，只要大版本还在 12.x 就兼容。
+https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_network[CUDA Toolkit 12.4.1]，
+只需安装 link:docs/cuda-toolkit-install-selection.webp[Libraries 与 Compilers]。
 
 3. 编辑 `run_nvidia_gpu.bat`，根据你的
 https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU 架构]
@@ -85,6 +85,7 @@ set HTTPS_PROXY=http://localhost:1081
 
 ## 细节
 
+[[custom-nodes]]
 ### 预置自定义节点列表
 
 .工作空间
@@ -162,16 +163,17 @@ set HTTPS_PROXY=http://localhost:1081
 [[xformers]]
 ### 关于 xFormers
 
-PyTorch 2.2+ 的交叉注意力机制在 Windows 下性能表现已经足够出色，且一致性更好（很细微），因此可以理解 ComfyUI 官方包为什么选择不带 xFormers。
+xFormers 作为优化 PyTorch 性能（交叉注意力机制）的组件出现，
+但 PyTorch 自 2.2 版本以来在 Windows 下性能表现已经足够出色，且更具一致性（细微体现），
+因此完全可以理解 ComfyUI 官方包为什么选择不带 xFormers。
 
-在不同应用场景下，其速度与显存占用与 Torch 互有高低，需要具体测试。可在 ComfyUI 启动参数中添加 `--use-pytorch-cross-attention` ，即不启用 xFormers。
+但是 3D 与视频相关组件对 xFormers 依然有强需求，故出于兼容性保留。
 
-个人在生成视频的时候还是习惯开启 xFormers。
+如需禁用 xFormers，在 ComfyUI 启动参数中添加 `--use-pytorch-cross-attention` 即可。
 
-此外，带上 xFormers 还可以满足
-https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/blob/main/requirements.txt[某些节点]
-的依赖。
+两者性能高低无定论，需要具体测试。
 
+[[build-your-own]]
 ## 我也想生成整合包！
 
 本仓库使用流水线构建整合包，直接 fork 本仓库即可开始执行 GitHub Workflow。代码库中不含特化配置，也不需要额外配置访问权限。
