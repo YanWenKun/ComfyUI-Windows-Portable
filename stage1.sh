@@ -16,6 +16,17 @@ curl https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
+# ComfyUI-3D-Pack, part 1/2
+# Do this firstly (in a clean python_embeded folder)
+$gcs https://github.com/MrForExample/Comfy3D_Pre_Builds.git \
+    "$workdir"/Comfy3D_Pre_Builds
+
+mv \
+    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py312/* \
+    "$workdir"/python_embeded/
+
+rm -rf "$workdir"/Comfy3D_Pre_Builds
+
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
 echo 'import site' >> ./python312._pth
@@ -47,20 +58,6 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements2.txt
-
-# ComfyUI-3D-Pack, part 1/2
-$gcs https://github.com/MrForExample/Comfy3D_Pre_Builds.git \
-    "$workdir"/Comfy3D_Pre_Builds
-
-mv \
-    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py312/include \
-    "$workdir"/python_embeded/include
-
-mv \
-    "$workdir"/Comfy3D_Pre_Builds/_Python_Source_cpp/py312/libs \
-    "$workdir"/python_embeded/libs
-
-rm -rf "$workdir"/Comfy3D_Pre_Builds
 
 # ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
