@@ -42,12 +42,17 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 3. 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 ** 可以随意建立子目录，便于分类
 
-4. *运行 `run_nvidia_gpu.bat` 即可启动程序。*
+4. 编辑启动脚本
+** 大陆地区用户推荐先将 `中文脚本` 目录下的文件复制到主目录，并编辑 `run_cn.bat`
+** 如用户可直接访问 GitHub，编辑 `run_nvidia_gpu.bat` 即可
+** 如果不想自动打开浏览器，在启动脚本中添加启动参数 `--disable-auto-launch`
+** 如果正在用 40 系及未来的 GPU，可尝试添加启动参数 `--fast`，有
+https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[魔法]
 
-5. 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
-** 如果不想自动打开浏览器，编辑 `run_nvidia_gpu.bat` 加上启动参数 `--disable-auto-launch`
 
-6. 点击 ComfyUI 页面右上角的 齿轮（⚙）图标可修改设置，找到 *AGLTranslation* 可以修改语言（默认 English）。
+5. 执行启动脚本。启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
+
+6. 点击 ComfyUI 页面右上角的 齿轮（⚙）图标可修改设置，找到 *AGL* 可以修改语言（默认 English）。
 
 == 运行 3D-Pack 前置条件
 
@@ -64,7 +69,9 @@ https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Windows&targ
 https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU 架构]
 来精简 `TORCH_CUDA_ARCH_LIST`，以节约运行时的 JIT 编译耗时。
 
-此外请注意，Comfy3D 还会在执行各节点时下载所需模型，而访问 HuggingFace 可能需要挂代理。
+在成功启动 ComfyUI 并加载 ComfyUI-3D-Pack 后，推荐先执行 *TripoSR* 工作流，该工作流所需模型文件较小，执行较快，且成功率高。
+
+此外请注意，Comfy3D 还会在执行各节点时下载所需模型，而访问 HuggingFace 可能需要挂代理。中文脚本默认走国内代理。
 
 ## 使用技巧
 
@@ -186,7 +193,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.ym
 4. 等待执行完毕（20~40分钟）
 5. 找到仓库的 *releases* 页面，里面会有刚生成的草稿，即可下载或编辑发布。
 
-## 安全
+## 临时文件
 
 image::docs/sandboxie.avif["file diff",width=50%]
 

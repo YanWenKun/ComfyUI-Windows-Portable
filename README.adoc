@@ -44,10 +44,15 @@ that download model files on the first run (may cause freezing for users with ba
 3. Place SD models in `ComfyUI\models\checkpoints`.
 ** Subdirectories can be created for better organization.
 
-4. Run `run_nvidia_gpu.bat` to start ComfyUI.
+4. Edit and run `run_nvidia_gpu.bat` to start ComfyUI.
+
+** If you don't want the browser to open automatically, add `--disable-auto-launch` to the startup arguments.
+
+** If you're using 40/Ada series or newer GPU, you can try adding `--fast` to the startup arguments.
+https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[It has magic].
+
 
 5. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
-** If you don't want the browser to open automatically, edit `run_nvidia_gpu.bat` and add the startup parameter `--disable-auto-launch`.
 
 == Important Prerequisites For 3D-Pack Users
 
@@ -65,6 +70,8 @@ Only link:docs/cuda-toolkit-install-selection.webp[Libraries and Compilers] are 
 3. Edit `run_nvidia_gpu.bat`, reduce `TORCH_CUDA_ARCH_LIST` according to your
 https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU arch],
 to save your time on JIT compiling.
+
+After successfully launching ComfyUI and loading the ComfyUI-3D-Pack, it is recommended to first run the *TripoSR* workflow, as the model files required for this workflow are smaller, execute faster, and have a high success rate.
 
 == Tips for Usage
 
@@ -187,7 +194,7 @@ on my repository page.
 4. Wait about 20~40 minutes until the workflow run complete.
 5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
 
-== Security
+== Temp Files
 
 image::docs/sandboxie.avif["file diff",width=40%]
 
