@@ -89,9 +89,13 @@ cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
 # Replace start script file
-rm "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat
-cp "$workdir"/attachments/run_nvidia_gpu.bat \
-    "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat
+# Check if ComfyUI break-changes
+if [ ! -f "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat ] ; then
+    return 1
+fi ;
+# Copy files under 'attachments' folder
+cp -rf "$workdir"/attachments/* \
+    "$workdir"/ComfyUI_Windows_portable/
 
 du -hd1 "$workdir"
 
