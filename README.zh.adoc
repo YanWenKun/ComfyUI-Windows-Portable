@@ -191,6 +191,11 @@ xFormers 作为优化 PyTorch 性能（交叉注意力机制）的组件出现�
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml[这样]
 3. 找到 *Run Workflow*，点击运行。
 4. 等待执行完毕（20~40分钟）
+** 如果想要减少压缩耗时，编辑
+`stage3.sh`
+并修改参数为
+`-mx=3 -mfb=32 -md=4m`，
+总耗时将降至15分钟内，代价是压缩包体积更大。
 5. 找到仓库的 *releases* 页面，里面会有刚生成的草稿，即可下载或编辑发布。
 
 ## 临时文件

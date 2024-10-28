@@ -25,8 +25,8 @@ that download model files on the first run (may cause freezing for users with ba
 ** See <<custom-nodes, Full List>>
 
 * Includes 240+ Python packages, versions compatible, including:
-** Packages like `insightface`, `dlib` and`CLIP` that require compilation.
-** xFormers. I know it's not included in the ComfyUI official package for a good reason. See details in <<xformers, About xFormers>>.
+** Packages like `insightface`, `dlib` and `CLIP` that require compilation.
+** xFormers. It's not included in the ComfyUI official package (for a understandable reason). See details in <<xformers, About xFormers>>.
 
 * Only a few functional models that might slow down the program startup are pre-installed; users please prepare SD models of your favorite.
 
@@ -192,6 +192,11 @@ link:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/bui
 on my repository page.
 3. Click *Run Workflow*.
 4. Wait about 20~40 minutes until the workflow run complete.
+** If you want to speed up the compression process, edit
+`stage3.sh`
+and set the parameters to
+`-mx=3 -mfb=32 -md=4m`.
+This adjustment will reduce the workflow duration to under 15 minutes, at the cost of a larger file size.
 5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
 
 == Temp Files
