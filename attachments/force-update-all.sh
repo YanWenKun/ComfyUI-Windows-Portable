@@ -2,10 +2,10 @@
 # You need to install Git for Windows and select Git Bash (Default)
 # https://git-scm.com/download/win
 
-set -e
+set -eu
 
 # If you don't want a FORCE update, remove "git reset" line
-function change_url_or_pull () {
+function git_pull () {
     git_remote_url=$(git -C "$1" remote get-url origin) ;
 
     if [[ $git_remote_url =~ ^(https:\/\/github\.com\/)(.*)(\.git)$ ]]; then
@@ -16,12 +16,12 @@ function change_url_or_pull () {
     fi ;
 }
 
-change_url_or_pull ComfyUI
+git_pull ComfyUI
 
 cd ./ComfyUI/custom_nodes
 for D in *; do
     if [ -d "${D}" ]; then
-        change_url_or_pull "${D}" &
+        git_pull "${D}" &
     fi
 done
 

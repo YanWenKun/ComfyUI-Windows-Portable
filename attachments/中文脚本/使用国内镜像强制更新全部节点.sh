@@ -1,7 +1,7 @@
 #!/bin/bash
 # 注意：Windows 下运行需要安装 Git 并在安装时选择 Git Bash（默认）
 
-set -e
+set -eu
 
 # 如果希望“尝试更新但不强制”，删除 git reset 行以避免还原本地变更
 function change_url_or_pull () {
