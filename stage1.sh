@@ -29,7 +29,7 @@ rm -rf "$workdir"/Comfy3D_Pre_Builds
 
 # Add missing header for StableFast3D
 curl -L https://raw.githubusercontent.com/martinus/unordered_dense/refs/heads/main/include/ankerl/unordered_dense.h \
-    -o "$workdir"/python_embeded/include/ankerl/unordered_dense.h
+    --create-dirs -o "$workdir"/python_embeded/include/ankerl/unordered_dense.h
 
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
