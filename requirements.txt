@@ -30,6 +30,7 @@ matplotlib
 matrix-client==0.4.0
 mediapipe
 mss
+nanobind
 nerfacc
 ninja
 numba
@@ -71,6 +72,7 @@ requirements-parser
 rich
 rich-argparse
 safetensors
+scikit_build_core
 scikit-image
 scikit-learn
 scipy

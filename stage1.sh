@@ -31,6 +31,15 @@ rm -rf "$workdir"/Comfy3D_Pre_Builds
 curl -L https://raw.githubusercontent.com/martinus/unordered_dense/refs/heads/main/include/ankerl/unordered_dense.h \
     --create-dirs -o "$workdir"/python_embeded/include/ankerl/unordered_dense.h
 
+$gcs https://github.com/shader-slang/slang.git \
+    "$workdir"/slang
+
+mv \
+    "$workdir"/slang/include/*.h \
+    "$workdir"/python_embeded/include/
+
+rm -rf "$workdir"/slang
+
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
 echo 'import site' >> ./python312._pth
@@ -65,13 +74,16 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # ComfyUI-3D-Pack, part 2/2
 ./python.exe -s -m pip install \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/pointnet2_ops-3.0.0-cp312-cp312-win_amd64.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/simple_knn-0.0.0-cp312-cp312-win_amd64.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/diff_gaussian_rasterization-0.0.0-cp312-cp312-win_amd64.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/kiui-0.2.14-py3-none-any.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/nvdiffrast-0.3.3-py3-none-any.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/torch_scatter-2.1.2-cp312-cp312-win_amd64.whl \
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/pytorch3d-0.7.8-cp312-cp312-win_amd64.whl
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pointnet2_ops-3.0.0-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/simple_knn-0.0.0-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/diff_gaussian_rasterization-0.0.0-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/kiui-0.2.14-py3-none-any.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/nvdiffrast-0.3.3-py3-none-any.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/torch_scatter-2.1.2-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pytorch3d-0.7.8-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/texture_baker-0.0.1-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/uv_unwrapper-0.0.1-cp312-cp312-win_amd64.whl \
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pynim-0.0.3-cp312-abi3-win_amd64.whl
 
 # Fix broken dep for mediapipe
 ./python.exe -s -m pip install \

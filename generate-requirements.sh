@@ -13,6 +13,8 @@ python-ffmpeg
 regex
 torchdiffeq
 torchmetrics
+scikit_build_core
+nanobind
 git+https://github.com/rodjjo/filterpy.git
 EOF
 
