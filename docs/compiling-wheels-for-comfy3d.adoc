@@ -15,13 +15,13 @@ The steps are basically ported from:
 [source,cmd]
 ----
 python_embeded\python.exe -s -m pip install ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/pointnet2_ops-3.0.0-cp312-cp312-win_amd64.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/simple_knn-0.0.0-cp312-cp312-win_amd64.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/diff_gaussian_rasterization-0.0.0-cp312-cp312-win_amd64.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/kiui-0.2.14-py3-none-any.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/nvdiffrast-0.3.3-py3-none-any.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/torch_scatter-2.1.2-cp312-cp312-win_amd64.whl ^
-  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v5.3-wheels/pytorch3d-0.7.8-cp312-cp312-win_amd64.whl
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pointnet2_ops-3.0.0-cp312-cp312-win_amd64.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/simple_knn-0.0.0-cp312-cp312-win_amd64.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/diff_gaussian_rasterization-0.0.0-cp312-cp312-win_amd64.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/kiui-0.2.14-py3-none-any.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/nvdiffrast-0.3.3-py3-none-any.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/torch_scatter-2.1.2-cp312-cp312-win_amd64.whl ^
+  https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pytorch3d-0.7.8-cp312-cp312-win_amd64.whl
 ----
 
 
@@ -174,28 +174,9 @@ cd $workdir
 ----
 
 
-#### 3.5 Compile pytorch_scatter
+#### 3.5 Compile pytorch3d
 
-`pytorch_scatter` takes more time to build.
-
-[source,bash]
-----
-pip_exe wheel -w $wheeldir \
- git+https://github.com/rusty1s/pytorch_scatter.git
-----
-
-If failed to build latest `pytorch_scatter`, try its stable version:
-
-[source,bash]
-----
-pip_exe wheel -w $wheeldir \
- torch-scatter
-----
-
-
-#### 3.6 Compile pytorch3d
-
-`pytorch3d` takes even more time to build.
+`pytorch3d` takes more time to build.
 If the CUDA version is in-compatible, it will throw errors not at the beginning, but more likely at the ending phase.
 
 [source,bash]
@@ -210,6 +191,25 @@ If failed to build latest `pytorch3d`, try its stable version:
 ----
 pip_exe wheel -w $wheeldir \
  git+https://github.com/facebookresearch/pytorch3d.git@stable
+----
+
+
+#### 3.6 Compile pytorch_scatter
+
+`pytorch_scatter` takes even more time to build.
+
+[source,bash]
+----
+pip_exe wheel -w $wheeldir \
+ git+https://github.com/rusty1s/pytorch_scatter.git
+----
+
+If failed to build latest `pytorch_scatter`, try its stable version:
+
+[source,bash]
+----
+pip_exe wheel -w $wheeldir \
+ torch-scatter
 ----
 
 ### 4. Copy wheels
