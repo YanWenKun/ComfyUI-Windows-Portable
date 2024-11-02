@@ -15,15 +15,10 @@ dill
 einops
 fastapi
 filelock
-fvcore
-gguf
 GitPython
 google-generativeai
-gpytoolbox
 imageio-ffmpeg
 importlib-metadata
-inference-cli
-inference-gpu
 iopath
 jaxtyping
 lark-parser
