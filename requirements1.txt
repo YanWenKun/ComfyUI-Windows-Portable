@@ -21,6 +21,7 @@ fastapi
 filelock
 ftfy
 fvcore
+gguf
 GitPython
 google-generativeai
 gpytoolbox

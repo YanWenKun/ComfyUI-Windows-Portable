@@ -80,6 +80,7 @@ $gcs https://github.com/melMass/comfy_mtb.git
 $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 
 # More
+$gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
