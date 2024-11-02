@@ -4,6 +4,7 @@ facexlib
 gradio
 gradio-client
 pixeloe
+image-reward
 git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git

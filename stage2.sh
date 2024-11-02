@@ -54,6 +54,7 @@ $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 
 # Control
+$gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 $gcs https://github.com/cubiq/PuLID_ComfyUI.git

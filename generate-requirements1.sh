@@ -17,9 +17,12 @@ scikit_build_core
 nanobind
 git+https://github.com/rodjjo/filterpy.git
 huggingface_hub[hf_transfer]
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/docopt-0.6.2-py2.py3-none-any.whl
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl
 EOF
 
 array=(
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/requirements.txt
 https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt
 https://raw.githubusercontent.com/crystian/ComfyUI-Crystools/main/requirements.txt
 https://raw.githubusercontent.com/cubiq/ComfyUI_essentials/main/requirements.txt
