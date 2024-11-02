@@ -6,6 +6,11 @@ rem set HTTPS_PROXY=http://localhost:1081
 set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 set HF_ENDPOINT=https://hf-mirror.com
 
+@REM 该命令启用 HF Hub 实验性高速传输，
+@REM 如果下载遇到卡死问题，将该行删除。
+@REM https://huggingface.co/docs/huggingface_hub/hf_transfer
+set HF_HUB_ENABLE_HF_TRANSFER=1
+
 @REM 依照下表，修改为你的 GPU 对应架构，以节约 JIT 编译 PyTorch C++ 扩展的时间：
 @REM 'Pascal', '6.0;6.1+PTX'
 @REM 'Volta+Tegra', '7.2'

@@ -18,7 +18,7 @@ ftfy
 fvcore
 GitPython
 gpytoolbox
-huggingface_hub
+huggingface_hub[hf_transfer]
 imageio
 imageio-ffmpeg
 importlib-metadata

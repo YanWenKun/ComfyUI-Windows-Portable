@@ -16,6 +16,7 @@ torchmetrics
 scikit_build_core
 nanobind
 git+https://github.com/rodjjo/filterpy.git
+huggingface_hub[hf_transfer]
 EOF
 
 array=(

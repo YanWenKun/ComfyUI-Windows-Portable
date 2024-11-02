@@ -10,6 +10,11 @@ rem set HF_ENDPOINT=https://hf-mirror.com
 @REM Ref: https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049
 set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
 
+@REM This command enables experimental HF Hub high-speed file transfers.
+@REM Remove this line if you encounter errors or freezing during the download.
+@REM https://huggingface.co/docs/huggingface_hub/hf_transfer
+set HF_HUB_ENABLE_HF_TRANSFER=1
+
 @REM This command will set PATH environment variable.
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
