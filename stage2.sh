@@ -88,16 +88,16 @@ mkdir update
 cp -r ComfyUI/.ci/update_windows/* ./update/
 cp -r ComfyUI/.ci/windows_base_files/* ./
 
-# Replace start script file
-# Check if ComfyUI break-changes
+# Copy & Replace start script files
+# If ComfyUI have breaking-changes, stop the build
 if [ ! -f "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat ] ; then
     return 1
 fi ;
-# Copy files under 'attachments' folder
+
 cp -rf "$workdir"/attachments/* \
     "$workdir"/ComfyUI_Windows_portable/
 
-du -hd1 "$workdir"
+du -hd2 "$workdir"/ComfyUI_Windows_portable
 
 # Download models for ReActor
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/models

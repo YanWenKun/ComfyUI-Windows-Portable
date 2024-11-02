@@ -3,7 +3,7 @@ set -eux
 
 ls -lahF
 
-du -hd1
+du -hd2 ComfyUI_Windows_portable
 
 # Notes on 7zip compression:
 

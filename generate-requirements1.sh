@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cat > requirements.txt << EOF
+cat > requirements1.txt << EOF
 compel
 cupy-cuda12x
 fairscale
@@ -45,15 +45,15 @@ https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" "${line}" >> requirements.txt
+    do curl -w "\n" "${line}" >> requirements1.txt
 done
 
-sed -i '/^#/d' requirements.txt
-sed -i 's/[[:space:]]*$//' requirements.txt
-sed -i 's/>=.*$//' requirements.txt
-sed -i 's/_/-/g' requirements.txt
+sed -i '/^#/d' requirements1.txt
+sed -i 's/[[:space:]]*$//' requirements1.txt
+sed -i 's/>=.*$//' requirements1.txt
+sed -i 's/_/-/g' requirements1.txt
 
-sort -uo requirements.txt requirements.txt
+sort -uo requirements1.txt requirements1.txt
 
 
-echo "<requirements.txt> generated. Check before use."
+echo "<requirements1.txt> generated. Check before use."
