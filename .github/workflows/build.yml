@@ -22,8 +22,8 @@ jobs:
           run: bash stage2.sh
 
         - name: Stage 3 Compressing Package
-          shell: bash
-          run: bash stage3.sh
+          shell: cmd
+          run: stage3.bat
 
         - name: Upload archive to release
           uses: xresloader/upload-to-github-release@v1
