@@ -15,6 +15,9 @@ set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
 @REM https://huggingface.co/docs/huggingface_hub/hf_transfer
 set HF_HUB_ENABLE_HF_TRANSFER=1
 
+@REM This command redirects HuggingFace-Hub to download model files in this folder.
+set HF_HUB_CACHE=%~dp0\HuggingFaceHub
+
 @REM This command will set PATH environment variable.
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 

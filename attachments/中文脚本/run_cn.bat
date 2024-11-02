@@ -11,6 +11,9 @@ set HF_ENDPOINT=https://hf-mirror.com
 @REM https://huggingface.co/docs/huggingface_hub/hf_transfer
 set HF_HUB_ENABLE_HF_TRANSFER=1
 
+@REM 让 HuggingFace-Hub 下载模型到本目录，而不是"用户\.cache"目录。
+set HF_HUB_CACHE=%~dp0\HuggingFaceHub
+
 @REM 依照下表，修改为你的 GPU 对应架构，以节约 JIT 编译 PyTorch C++ 扩展的时间：
 @REM 'Pascal', '6.0;6.1+PTX'
 @REM 'Volta+Tegra', '7.2'

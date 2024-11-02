@@ -13,6 +13,10 @@ ls -lahF
 
 mkdir -p "$workdir"/ComfyUI_Windows_portable
 
+# Redirect HuggingFace-Hub model folder
+export HF_HUB_CACHE="$workdir/ComfyUI_Windows_portable/HuggingFaceHub"
+mkdir -p "$HF_HUB_CACHE"
+
 # ComfyUI main app
 git clone https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
