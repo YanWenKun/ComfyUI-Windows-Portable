@@ -48,6 +48,7 @@ https://raw.githubusercontent.com/storyicon/comfyui_segment_anything/main/requir
 https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/main/requirements.txt
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/XLabs-AI/x-flux-comfyui/raw/refs/heads/main/requirements.txt
+https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";

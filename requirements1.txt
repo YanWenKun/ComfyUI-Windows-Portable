@@ -36,6 +36,7 @@ jaxtyping
 joblib
 kornia
 lark
+lark-parser
 loguru
 matplotlib
 matrix-client==0.4.0
