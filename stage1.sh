@@ -38,25 +38,22 @@ curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe get-pip.py
 
 # PIP installs
-$pip_exe install \
-    --upgrade pip wheel setuptools
+$pip_exe install --upgrade pip wheel setuptools
 
-$pip_exe install \
-    Cython cmake
+$pip_exe install Cython cmake
 
 $pip_exe install \
     xformers==0.0.28.post3 torch==2.5.1 torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/cu124 \
     --extra-index-url $PIP_INDEX_URL
 
-$pip_exe install \
-    -r "$workdir"/requirements1.txt
+$pip_exe install -r "$workdir"/requirements4.txt
 
-$pip_exe install \
-    -r "$workdir"/requirements2.txt
+$pip_exe install -r "$workdir"/requirements5.txt
 
-$pip_exe install \
-    -r "$workdir"/requirements3.txt
+$pip_exe install -r "$workdir"/requirements6.txt
+
+$pip_exe install -r "$workdir"/requirements7.txt
 
 # Add Ninja binary (replacing PIP Ninja)
 ## The 'python_embeded\Scripts\ninja.exe' is not working,

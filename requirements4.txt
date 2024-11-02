@@ -1,0 +1,39 @@
+# 'cupy-cuda12x' for Frame Interpolation
+# 'compel lark' for smZNodes
+# 'torchdiffeq' for DepthFM
+# 'fairscale' for APISR
+accelerate
+compel
+cupy-cuda12x
+diffusers
+fairscale
+ftfy
+imageio
+joblib
+kornia
+lark
+matplotlib
+numpy==1.26.4
+omegaconf
+onnx
+onnxruntime
+onnxruntime-gpu
+opencv-contrib-python-headless
+opencv-python-headless
+pandas
+pilgram
+pillow
+pygit2
+python-ffmpeg
+regex
+scikit-build-core
+scikit-image
+scikit-learn
+scipy
+timm
+torchdiffeq
+torchmetrics
+transformers
+git+https://github.com/rodjjo/filterpy.git
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/docopt-0.6.2-py2.py3-none-any.whl
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl

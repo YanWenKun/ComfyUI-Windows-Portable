@@ -1,24 +1,9 @@
 #!/bin/bash
 set -eu
 
-cat > requirements1.txt << EOF
-compel
-cupy-cuda12x
-fairscale
-joblib
-lark
-pilgram
-pygit2
-python-ffmpeg
-regex
-torchdiffeq
-torchmetrics
-scikit_build_core
+cat > requirements5.txt << EOF
 nanobind
-git+https://github.com/rodjjo/filterpy.git
 huggingface_hub[hf_transfer]
-https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/docopt-0.6.2-py2.py3-none-any.whl
-https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl
 EOF
 
 array=(
@@ -52,15 +37,15 @@ https://github.com/city96/ComfyUI-GGUF/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" -sSL "${line}" >> requirements1.txt
+    do curl -w "\n" -sSL "${line}" >> requirements5.txt
 done
 
-sed -i '/^#/d' requirements1.txt
-sed -i 's/[[:space:]]*$//' requirements1.txt
-sed -i 's/>=.*$//' requirements1.txt
-sed -i 's/_/-/g' requirements1.txt
+sed -i '/^#/d' requirements5.txt
+sed -i 's/[[:space:]]*$//' requirements5.txt
+sed -i 's/>=.*$//' requirements5.txt
+sed -i 's/_/-/g' requirements5.txt
 
-sort -uo requirements1.txt requirements1.txt
+sort -uo requirements5.txt requirements5.txt
 
 
-echo "<requirements1.txt> generated. Check before use."
+echo "<requirements5.txt> generated. Check before use."
