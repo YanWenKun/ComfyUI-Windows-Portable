@@ -6,6 +6,10 @@ rem set HTTPS_PROXY=http://localhost:1081
 set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 set HF_ENDPOINT=https://hf-mirror.com
 
+@REM 如需配置 HuggingFace Access Token，取消注释并编辑。
+@REM 管理 Tokens: https://huggingface.co/settings/tokens
+rem set HF_TOKEN=
+
 @REM 该命令启用 HF Hub 实验性高速传输，
 @REM 如果下载遇到卡死问题，将该行删除。
 @REM https://huggingface.co/docs/huggingface_hub/hf_transfer

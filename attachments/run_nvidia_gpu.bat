@@ -6,6 +6,10 @@ rem set HTTPS_PROXY=http://localhost:1081
 rem set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 rem set HF_ENDPOINT=https://hf-mirror.com
 
+@REM To set HuggingFace Access Token, uncomment and edit the line below.
+@REM https://huggingface.co/settings/tokens
+rem set HF_TOKEN=
+
 @REM In order to save your time on compiling PyTorch JIT CPP extensions, edit this line according to your GPU arch.
 @REM Ref: https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049
 set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
