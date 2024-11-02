@@ -40,6 +40,7 @@ $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 $gcs https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/crystian/ComfyUI-Crystools-save.git
+$gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
 
 # General
 $gcs https://github.com/bash-j/mikey_nodes.git

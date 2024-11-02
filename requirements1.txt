@@ -3,6 +3,7 @@ addict
 aiohttp
 albumentations
 bitsandbytes
+black
 blend-modes
 blind-watermark
 cachetools
