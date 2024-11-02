@@ -23,7 +23,7 @@ gpytoolbox
 imageio-ffmpeg
 importlib-metadata
 inference-cli
-inference-gpu[yolo-world]
+inference-gpu
 iopath
 jaxtyping
 lark-parser
