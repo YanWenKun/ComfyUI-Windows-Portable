@@ -55,19 +55,9 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     --index-url https://download.pytorch.org/whl/cu124 \
     --extra-index-url https://pypi.org/simple
 
-# PIP install
-# 1. requirements.txt
-# 2. onnxruntime-gpu
-# 3. requirements2.txt
+# PIP install requirements
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements.txt
-
-./python.exe -s -m pip uninstall --yes \
-    onnxruntime-gpu \
-&& ./python.exe -s -m pip --no-cache-dir install \
-    onnxruntime-gpu \
-    --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ \
-    --extra-index-url https://pypi.org/simple \
 
 ./python.exe -s -m pip install \
     -r "$workdir"/requirements2.txt

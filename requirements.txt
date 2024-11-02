@@ -39,6 +39,7 @@ numpy<2
 omegaconf
 onnx
 onnxruntime
+onnxruntime-gpu
 open-clip-torch
 opencv-contrib-python
 opencv-python
