@@ -16,7 +16,7 @@ export PIP_INDEX_URL="https://pypi.org/simple"
 ls -lahF
 
 # Setup Python embeded, part 1/3
-curl -L https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip \
+curl -sSL https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip \
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
@@ -34,7 +34,7 @@ rm -rf "$workdir"/Comfy3D_Pre_Builds
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
 sed -i 's/^#import site/import site/' ./python312._pth
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ./python.exe get-pip.py
 
 # PIP installs
@@ -65,7 +65,7 @@ $pip_exe install \
 ## So here we use the actual binary of Ninja.
 ## Whatsmore, if the end-user re-install/upgrade the PIP Ninja,
 ## the path problem will be fixed automatically.
-curl -L https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
+curl -sSL https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
     -o ninja-win.zip
 unzip -o ninja-win.zip -d "$workdir"/python_embeded/Scripts
 rm ninja-win.zip
@@ -77,4 +77,4 @@ $pip_exe list
 
 cd "$workdir"
 
-du -hd2
+du -hd1

@@ -105,11 +105,11 @@ du -hd2 "$workdir"/ComfyUI_Windows_portable
 
 # Download models for ReActor
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/models
-curl -L https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth \
+curl -sSL https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth \
     --create-dirs -o facerestore_models/codeformer-v0.1.0.pth
-curl -L https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth \
+curl -sSL https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth \
     --create-dirs -o facerestore_models/GFPGANv1.4.pth
-curl -L https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
+curl -sSL https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
     --create-dirs -o insightface/inswapper_128_fp16.onnx
 
 # Download Impact-Pack & Subpack & models

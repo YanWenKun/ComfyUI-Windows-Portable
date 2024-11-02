@@ -18,7 +18,7 @@ ftfy
 fvcore
 GitPython
 gpytoolbox
-huggingface_hub[hf_transfer]
+huggingface-hub[hf-transfer]
 imageio
 imageio-ffmpeg
 importlib-metadata
@@ -73,7 +73,7 @@ requirements-parser
 rich
 rich-argparse
 safetensors
-scikit_build_core
+scikit-build-core
 scikit-image
 scikit-learn
 scipy

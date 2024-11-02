@@ -46,7 +46,7 @@ https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" "${line}" >> requirements1.txt
+    do curl -w "\n" -sSL "${line}" >> requirements1.txt
 done
 
 sed -i '/^#/d' requirements1.txt
