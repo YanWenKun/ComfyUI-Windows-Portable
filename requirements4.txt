@@ -8,6 +8,7 @@ cupy-cuda12x
 diffusers
 fairscale
 ftfy
+huggingface-hub[hf-transfer]
 imageio
 joblib
 kornia
@@ -16,10 +17,8 @@ matplotlib
 numpy==1.26.4
 omegaconf
 onnx
-onnxruntime
 onnxruntime-gpu
 opencv-contrib-python-headless
-opencv-python-headless
 pandas
 pilgram
 pillow

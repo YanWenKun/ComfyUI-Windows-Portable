@@ -3,7 +3,6 @@ set -eu
 
 cat > requirements5.txt << EOF
 nanobind
-huggingface_hub[hf_transfer]
 EOF
 
 array=(
@@ -44,6 +43,8 @@ sed -i '/^#/d' requirements5.txt
 sed -i 's/[[:space:]]*$//' requirements5.txt
 sed -i 's/>=.*$//' requirements5.txt
 sed -i 's/_/-/g' requirements5.txt
+
+grep -Fxv -f requirements4.txt requirements5.txt > temp.txt && mv temp.txt requirements5.txt
 
 sort -uo requirements5.txt requirements5.txt
 
