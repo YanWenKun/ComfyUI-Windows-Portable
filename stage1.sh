@@ -31,19 +31,6 @@ mv \
 
 rm -rf "$workdir"/Comfy3D_Pre_Builds
 
-# Add missing header for StableFast3D
-curl -L https://raw.githubusercontent.com/martinus/unordered_dense/refs/heads/main/include/ankerl/unordered_dense.h \
-    --create-dirs -o "$workdir"/python_embeded/include/ankerl/unordered_dense.h
-
-$gcs https://github.com/shader-slang/slang.git \
-    "$workdir"/slang
-
-mv \
-    "$workdir"/slang/include/*.h \
-    "$workdir"/python_embeded/include/
-
-rm -rf "$workdir"/slang
-
 # Setup Python embeded, part 2/3
 cd "$workdir"/python_embeded
 sed -i 's/^#import site/import site/' ./python312._pth
