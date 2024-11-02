@@ -35,7 +35,6 @@ that download model files on the first run (may cause freezing for users with ba
 == How to Use
 
 1. Only NVIDIA GPUs are supported, preferably with the latest drivers installed.
-** AMD GPUs may __possibly__ work with ZLUDA after installing the HIP SDK, and this requires modifying startup parameters, among other things.
 
 2. Download the package files from the release page:
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
@@ -49,7 +48,8 @@ that download model files on the first run (may cause freezing for users with ba
 ** If you don't want the browser to open automatically, add `--disable-auto-launch` to the startup arguments.
 
 ** If you're using 40/Ada series or newer GPU, you can try adding `--fast` to the startup arguments.
-https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[It has magic].
+It has
+https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[magic].
 
 
 5. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
@@ -59,13 +59,15 @@ https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d
 Few steps before running Comfy3D:
 
 1. Install
-https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio Build Tools 2022]
-with "Desktop development with C++" workload.
-Its compiler will be needed (for some JIT code).
+https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio Build Tools 2022].
+In the installer window, in "Individual components" tab, search and check "C++ core features".
+Its C++ compiler will be needed (for some JIT code).
 
 2. Install
 https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_network[CUDA Toolkit 12.4.1].
-Only link:docs/cuda-toolkit-install-selection.webp[Libraries and Compilers] are needed.
+Only
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/raw/refs/heads/main/docs/cuda-toolkit-install-selection.webp[Libraries and Compilers]
+are needed.
 
 3. Edit `run_nvidia_gpu.bat`, reduce `TORCH_CUDA_ARCH_LIST` according to your
 https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU arch],

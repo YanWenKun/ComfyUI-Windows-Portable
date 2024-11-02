@@ -32,7 +32,7 @@ set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
 @REM 该行命令会配置 PATH 环境变量。
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
-@REM 该行命令会使 .pyc 文件集中保存在一处。
+@REM 该行命令会使 .pyc 缓存文件集中保存在一处。
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
 @REM 该命令会复制 u2net.onnx 到用户主目录下，以免启动时还需下载。
