@@ -7,6 +7,7 @@ fastapi
 fvcore
 gguf
 google-generativeai
+gpytoolbox
 image-reward
 inference[yolo-world]
 inference-cli

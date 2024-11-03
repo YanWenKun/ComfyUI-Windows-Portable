@@ -4,6 +4,7 @@ set -eu
 cat > requirements7.txt << EOF
 facexlib
 fvcore
+gpytoolbox
 image-reward
 EOF
 
