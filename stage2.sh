@@ -67,7 +67,6 @@ $gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/storyicon/comfyui_segment_anything.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
-$gcs https://github.com/XLabs-AI/x-flux-comfyui.git
 
 # Video
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
