@@ -2,7 +2,6 @@
 # 'compel lark' for smZNodes
 # 'torchdiffeq' for DepthFM
 # 'fairscale' for APISR
-numpy==1.26.4
 accelerate
 compel
 cupy-cuda12x

@@ -5,11 +5,9 @@ cat > requirements7.txt << EOF
 facexlib
 fvcore
 gpytoolbox
-image-reward
 EOF
 
 array=(
-https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/requirements.txt
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/XLabs-AI/x-flux-comfyui/raw/refs/heads/main/requirements.txt
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
