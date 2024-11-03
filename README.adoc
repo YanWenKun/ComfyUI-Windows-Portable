@@ -105,13 +105,13 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation[ComfyUI Translations]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
+|link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 |
 |===
 
 .General
 [cols=2]
 |===
-|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
 |link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
 |link:https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git[Derfuu Modded Nodes]
 |link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
@@ -122,6 +122,7 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
 |link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
+|link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
 |
 |===
 
@@ -147,7 +148,6 @@ set HTTPS_PROXY=http://localhost:1081
 .Video
 [cols=2]
 |===
-|link:https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved[AnimateAnyone Evolved]
 |link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
@@ -164,6 +164,7 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
 |link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
+|link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |
 |===
 
