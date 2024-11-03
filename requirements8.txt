@@ -1,3 +1,4 @@
+# Deps for 3D-Pack
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pointnet2_ops-3.0.0-cp312-cp312-win_amd64.whl
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/simple_knn-0.0.0-cp312-cp312-win_amd64.whl
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/diff_gaussian_rasterization-0.0.0-cp312-cp312-win_amd64.whl

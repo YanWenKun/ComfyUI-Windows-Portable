@@ -18,7 +18,7 @@ curl -sSL https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
-# ComfyUI-3D-Pack, part 1/2
+# Header files for ComfyUI-3D-Pack
 # Do this firstly (in a clean python_embeded folder)
 $gcs https://github.com/MrForExample/Comfy3D_Pre_Builds.git \
     "$workdir"/Comfy3D_Pre_Builds
