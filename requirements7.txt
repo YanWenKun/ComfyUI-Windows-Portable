@@ -1,3 +1,4 @@
+bitsandbytes
 black
 blend-modes
 blind-watermark
@@ -8,9 +9,6 @@ gguf
 google-generativeai
 gpytoolbox
 image-reward
-inference[yolo-world]
-inference-cli
-inference-gpu
 iopath
 lark-parser
 loguru

@@ -4,10 +4,10 @@ https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/
 https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl
 gradio
 gradio-client
-git+https://github.com/rodjjo/filterpy.git
 nanobind
 pixeloe
 scikit-build-core
+git+https://github.com/rodjjo/filterpy.git
 git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git

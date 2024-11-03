@@ -1,1 +1,4 @@
-bitsandbytes
+inference[yolo-world]
+inference-cli
+inference-gpu
+numpy==1.26.4
