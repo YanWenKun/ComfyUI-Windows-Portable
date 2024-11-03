@@ -1,10 +1,13 @@
 https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6-alpha/dlib-19.24.6-cp312-cp312-win_amd64.whl
 https://raw.githubusercontent.com/Gourieff/Assets/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
-facexlib
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/docopt-0.6.2-py2.py3-none-any.whl
+https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl
 gradio
 gradio-client
+git+https://github.com/rodjjo/filterpy.git
+nanobind
 pixeloe
-image-reward
+scikit-build-core
 git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git

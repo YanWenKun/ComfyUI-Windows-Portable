@@ -9,14 +9,8 @@ cupy-cuda12x
 diffusers
 fairscale
 ftfy
-fvcore>=0.1.5.post20221221
-gguf>=0.10.0
-gpytoolbox>=0.3.2
 huggingface-hub[hf-transfer]
 imageio
-inference-cli>=0.25.0
-inference-gpu>=0.25.0
-inference[yolo-world]>=0.25.0
 joblib
 kornia
 lark
@@ -31,7 +25,6 @@ pillow
 pygit2
 python-ffmpeg
 regex
-scikit-build-core
 scikit-image
 scikit-learn
 scipy
@@ -39,6 +32,3 @@ timm
 torchdiffeq
 torchmetrics
 transformers
-git+https://github.com/rodjjo/filterpy.git
-https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/docopt-0.6.2-py2.py3-none-any.whl
-https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/whl/hydra_core-1.3.2-py3-none-any.whl

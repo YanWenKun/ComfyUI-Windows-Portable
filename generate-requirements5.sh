@@ -1,38 +1,29 @@
 #!/bin/bash
 set -eu
 
-cat > requirements5.txt << EOF
-nanobind
-EOF
-
 array=(
-https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/refs/heads/main/requirements.txt
-https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt
-https://raw.githubusercontent.com/crystian/ComfyUI-Crystools/main/requirements.txt
-https://raw.githubusercontent.com/cubiq/ComfyUI_essentials/main/requirements.txt
-https://raw.githubusercontent.com/cubiq/ComfyUI_FaceAnalysis/main/requirements.txt
-https://raw.githubusercontent.com/cubiq/ComfyUI_InstantID/main/requirements.txt
-https://raw.githubusercontent.com/cubiq/PuLID_ComfyUI/refs/heads/main/requirements.txt
-https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
-https://raw.githubusercontent.com/Fannovel16/ComfyUI-Frame-Interpolation/main/requirements-no-cupy.txt
-https://raw.githubusercontent.com/FizzleDorf/ComfyUI_FizzNodes/main/requirements.txt
-https://raw.githubusercontent.com/Gourieff/comfyui-reactor-node/refs/heads/main/requirements.txt
-https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/refs/heads/main/requirements.txt
-https://raw.githubusercontent.com/jags111/efficiency-nodes-comfyui/main/requirements.txt
-https://raw.githubusercontent.com/kijai/ComfyUI-KJNodes/main/requirements.txt
-https://raw.githubusercontent.com/Kosinkadink/ComfyUI-VideoHelperSuite/main/requirements.txt
-https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Pack/Main/requirements.txt
-https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Subpack/main/requirements.txt
-https://raw.githubusercontent.com/ltdrdata/ComfyUI-Inspire-Pack/main/requirements.txt
-https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt
-https://raw.githubusercontent.com/melMass/comfy_mtb/main/requirements.txt
-https://raw.githubusercontent.com/MrForExample/ComfyUI-3D-Pack/main/requirements.txt
-https://raw.githubusercontent.com/storyicon/comfyui_segment_anything/main/requirements.txt
-https://raw.githubusercontent.com/WASasquatch/was-node-suite-comfyui/refs/heads/main/requirements.txt
-https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
-https://github.com/XLabs-AI/x-flux-comfyui/raw/refs/heads/main/requirements.txt
-https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
-https://github.com/city96/ComfyUI-GGUF/raw/refs/heads/main/requirements.txt
+https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
+https://github.com/crystian/ComfyUI-Crystools/raw/refs/heads/main/requirements.txt
+https://github.com/cubiq/ComfyUI_essentials/raw/refs/heads/main/requirements.txt
+https://github.com/cubiq/ComfyUI_FaceAnalysis/raw/refs/heads/main/requirements.txt
+https://github.com/cubiq/ComfyUI_InstantID/raw/refs/heads/main/requirements.txt
+https://github.com/cubiq/PuLID_ComfyUI/raw/refs/heads/main/requirements.txt
+https://github.com/Fannovel16/comfyui_controlnet_aux/raw/refs/heads/main/requirements.txt
+https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/raw/refs/heads/main/requirements-no-cupy.txt
+https://github.com/FizzleDorf/ComfyUI_FizzNodes/raw/refs/heads/main/requirements.txt
+https://github.com/Gourieff/comfyui-reactor-node/raw/refs/heads/main/requirements.txt
+https://github.com/huchenlei/ComfyUI-layerdiffuse/raw/refs/heads/main/requirements.txt
+https://github.com/jags111/efficiency-nodes-comfyui/raw/refs/heads/main/requirements.txt
+https://github.com/kijai/ComfyUI-KJNodes/raw/refs/heads/main/requirements.txt
+https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/raw/refs/heads/main/requirements.txt
+https://github.com/ltdrdata/ComfyUI-Impact-Pack/raw/refs/heads/Main/requirements.txt
+https://github.com/ltdrdata/ComfyUI-Impact-Subpack/raw/refs/heads/main/requirements.txt
+https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirements.txt
+https://github.com/ltdrdata/ComfyUI-Manager/raw/refs/heads/main/requirements.txt
+https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
+https://github.com/MrForExample/ComfyUI-3D-Pack/raw/refs/heads/main/requirements.txt
+https://github.com/storyicon/comfyui_segment_anything/raw/refs/heads/main/requirements.txt
+https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
@@ -44,9 +35,9 @@ sed -i 's/[[:space:]]*$//' requirements5.txt
 sed -i 's/>=.*$//' requirements5.txt
 sed -i 's/_/-/g' requirements5.txt
 
+# Remove duplicate items, compare to requirements4.txt
 grep -Fxv -f requirements4.txt requirements5.txt > temp.txt && mv temp.txt requirements5.txt
 
 sort -uo requirements5.txt requirements5.txt
-
 
 echo "<requirements5.txt> generated. Check before use."
