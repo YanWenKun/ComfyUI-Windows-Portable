@@ -45,6 +45,7 @@ $pip_exe install -r "$workdir"/requirements5.txt
 $pip_exe install -r "$workdir"/requirements6.txt
 $pip_exe install -r "$workdir"/requirements7.txt
 $pip_exe install -r "$workdir"/requirements8.txt
+$pip_exe install -r "$workdir"/requirements9.txt
 
 # Add Ninja binary (replacing PIP Ninja)
 ## The 'python_embeded\Scripts\ninja.exe' is not working,

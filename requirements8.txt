@@ -8,4 +8,3 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-whe
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/texture_baker-0.0.1-cp312-cp312-win_amd64.whl
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/uv_unwrapper-0.0.1-cp312-cp312-win_amd64.whl
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/v6.2-wheels/pynim-0.0.3-cp312-abi3-win_amd64.whl
-numpy==1.26.4
