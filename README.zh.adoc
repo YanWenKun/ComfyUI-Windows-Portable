@@ -56,10 +56,10 @@ https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d
 == 运行 3D-Pack 前置条件
 
 1. 安装
-https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022 生成工具]，
-安装时选择“单个组件”，搜索并勾选 `C++ 核心功能` ，其余不需要。
-因 3D 工作流需要 JIT 编译 PyTorch C＋＋ 扩展，所以需要安装编译器。
-如已安装其他形式的 C＋＋ 编译器，可以略过此步骤。
+https://visualstudio.microsoft.com/downloads/?q=build+tools[Visual Studio 2022 生成工具]
+（选择安装“桌面C++开发”），其他版本 VS + CPP 亦可。
+因 3D 工作流需要 JIT 编译 PyTorch C＋＋ 扩展，所以需要安装构建工具。
+如已安装其他形式的 MSVC 工作负载，可以略过此步骤。
 
 2. 安装
 https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_network[CUDA Toolkit 12.4.1]，
