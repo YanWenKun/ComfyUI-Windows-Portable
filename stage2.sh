@@ -52,6 +52,7 @@ $gcs https://github.com/kijai/ComfyUI-KJNodes.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
+$gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
@@ -74,6 +75,7 @@ $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 $gcs https://github.com/melMass/comfy_mtb.git
+$gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 
 # More
 $gcs https://github.com/city96/ComfyUI-GGUF.git
