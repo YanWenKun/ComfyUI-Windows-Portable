@@ -85,7 +85,6 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
-$gcs https://github.com/shadowcz007/comfyui-mixlab-nodes.git
 
 
 cd "$workdir"
