@@ -1,12 +1,13 @@
 # ComfyUI Windows 多节点整合包
 
-image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status"]
+image::docs/screenshot.zh.webp["界面截图"]
+
+[.text-center]
+中文 | *link:README.adoc[English]*
 
 类似 ComfyUI 官方的
 https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
 整合包，但是更大。
-
-image::docs/screenshot.zh.webp["Screenshot"]
 
 ## 特点
 
@@ -193,6 +194,8 @@ xFormers 作为优化 PyTorch 性能（交叉注意力机制）的组件出现�
 
 [[build-your-own]]
 ## 我也想生成整合包！
+
+image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub 工作流状态",link="https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml"]
 
 本仓库使用流水线构建整合包，直接 fork 本仓库即可开始执行 GitHub Workflow。代码库中不含特化配置，也不需要额外配置访问权限。
 

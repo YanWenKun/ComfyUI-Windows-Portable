@@ -1,13 +1,13 @@
 # Portable package for ComfyUI on Windows
 
-image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status"]
-*link:README.zh.adoc[＞💡中文说明点我💡＜]*
+image::docs/screenshot.webp["Screenshot"]
+
+[.text-center]
+English | *link:README.zh.adoc[中文]*
 
 Just like 
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
-
-image::docs/screenshot.webp["Screenshot"]
 
 __The rest of README was translated by ChatGPT and edited by me (how lazy, how good😙).__
 
@@ -195,6 +195,8 @@ There is no definitive conclusion about the performance of the two; specific tes
 
 [[build-your-own]]
 == Creating Your Own AIO Package
+
+image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml"]
 
 This repository utilizes a pipeline to build the integration package, and the codebase doesn't contain specific configurations or require additional access permissions. Hence, you can directly fork this repository to start executing the GitHub Workflow.
 
