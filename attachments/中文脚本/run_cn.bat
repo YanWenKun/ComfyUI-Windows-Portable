@@ -17,10 +17,9 @@ rem set HTTPS_PROXY=http://localhost:1081
 @REM 管理令牌： https://huggingface.co/settings/tokens
 rem set HF_TOKEN=
 
-@REM 该环境变量启用 HF Hub 实验性高速传输，
-@REM 如果下载遇到卡死问题，将该行删除。
+@REM 如需启用 HF Hub 实验性高速传输，取消该行注释。仅在千兆比特以上网速有意义。
 @REM https://huggingface.co/docs/huggingface_hub/hf_transfer
-set HF_HUB_ENABLE_HF_TRANSFER=1
+rem set HF_HUB_ENABLE_HF_TRANSFER=1
 
 @REM 该环境变量配置 PIP 使用国内镜像站点。
 set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
