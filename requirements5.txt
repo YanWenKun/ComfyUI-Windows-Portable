@@ -13,7 +13,9 @@ filelock
 GitPython
 imageio-ffmpeg
 importlib-metadata
+iopath
 jaxtyping
+libigl
 matrix-client==0.4.0
 mediapipe
 mss
