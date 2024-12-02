@@ -1,0 +1,41 @@
+name: "Build & Upload No-3D Package"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_upload:
+    permissions:
+        contents: "write"
+        packages: "write"
+        pull-requests: "read"
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v4
+
+        - name: Stage 1 Gathering Dependencies
+          shell: bash
+          working-directory: no-3d
+          run: bash stage1.sh
+
+        - name: Stage 2 Assembling Repositories
+          shell: bash
+          working-directory: no-3d
+          run: bash stage2.sh
+
+        - name: Stage 3 Compressing Package
+          shell: cmd
+          working-directory: no-3d
+          run: stage3.bat
+
+        - name: Upload archive to release
+          uses: xresloader/upload-to-github-release@v1
+          env:
+            # This is a always-on token when you run GitHub Actions
+            # You don't need to cofigure it
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            file: "no-3d/ComfyUI_Windows_portable_cu124.7z*"
+            # always draft before release
+            draft: true
+            overwrite: true
