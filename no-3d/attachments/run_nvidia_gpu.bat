@@ -20,14 +20,6 @@ set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 @REM This command will let the .pyc files to be stored in one place.
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
-@REM This command will copy u2net.onnx to user's home path, to skip download at first start.
-IF NOT EXIST "%USERPROFILE%\.u2net\u2net.onnx" (
-    IF EXIST ".\extras\u2net.onnx" (
-        mkdir "%USERPROFILE%\.u2net" 2>nul
-        copy ".\extras\u2net.onnx" "%USERPROFILE%\.u2net\u2net.onnx"
-    )
-)
-
 @REM If you don't want the browser to open automatically, add " --disable-auto-launch" (without quotation marks) to the end of the line below.
 .\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build
 
