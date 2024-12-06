@@ -134,6 +134,8 @@ mkdir extras
 cp ~/.u2net/u2net.onnx ./extras/u2net.onnx
 
 # Copy example files of 3D-Pack
+mkdir -p "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows
+
 cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/. \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/
 
