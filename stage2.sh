@@ -128,10 +128,23 @@ $gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git impact_subpack
 cd "$workdir"/ComfyUI_Windows_portable
 ./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
 
-# Copy model files from ~/
+# Copy u2net model files needed by rembg (to avoid download at first start)
 cd "$workdir"/ComfyUI_Windows_portable
 mkdir extras
 cp ~/.u2net/u2net.onnx ./extras/u2net.onnx
+
+# Copy example files of 3D-Pack
+cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/. \
+    "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/
+
+rm -rf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/_Example_Inputs_Files
+rm -rf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/_Example_Outputs
+
+cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/_Example_Inputs_Files/. \
+    "$workdir"/ComfyUI_Windows_portable/ComfyUI/input/
+
+cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/_Example_Outputs/. \
+    "$workdir"/ComfyUI_Windows_portable/ComfyUI/output/
 
 # Clean up
 rm "$workdir"/ComfyUI_Windows_portable/*.log
