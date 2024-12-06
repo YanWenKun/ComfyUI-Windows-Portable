@@ -3,7 +3,7 @@ addict
 aiohttp
 albumentations
 cachetools
-clip-interrogator
+clip-interrogator==0.6.0
 color-matcher
 colour-science
 deepdiff
@@ -25,6 +25,7 @@ ninja
 numba
 numexpr
 open-clip-torch
+openai
 packaging
 peft
 piexif
@@ -38,6 +39,7 @@ PyMCubes
 pymeshlab
 pynvml
 python-dateutil
+python-dotenv
 pytorch-lightning
 pytorch-msssim
 pyyaml
@@ -63,7 +65,7 @@ transparent-background
 trimesh[easy]
 typer
 typing-extensions
-ultralytics
+ultralytics==8.3.40
 webcolors
 xatlas
 yacs

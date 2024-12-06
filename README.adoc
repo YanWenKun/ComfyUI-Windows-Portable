@@ -132,6 +132,7 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
 |link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
+|link:https://github.com/edenartlab/eden_comfy_pipelines[Eden.art nodes]
 |
 |===
 

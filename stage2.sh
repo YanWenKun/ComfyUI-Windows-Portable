@@ -54,6 +54,7 @@ $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
+$gcs https://github.com/edenartlab/eden_comfy_pipelines.git
 
 # Control
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
