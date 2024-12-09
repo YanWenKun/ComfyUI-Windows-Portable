@@ -9,7 +9,19 @@ Just like
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
-__The rest of README was translated by ChatGPT and edited by me (how lazy, how good😙).__
+== NEWS
+
+To solve the compatibility issues, I made a dedicated package for ComfyUI-3D-Pack, check it out:
+
+https://github.com/YanWenKun/Comfy3D-WinPortable
+
+Also, by separating the builds, updates will be less likely to break your ComfyUI.
+
+The ComfyUI-Windows-Portable will be phasing out support for 3D-Pack,
+after porting pt25 builds to Comfy3D-WinPortable.
+
+For now I leave the following README unchanged.
+
 
 == Features
 
