@@ -6,7 +6,6 @@ workdir=$(pwd)
 pip_exe="${workdir}/python_embeded/python.exe -s -m pip"
 
 export PYTHONPYCACHEPREFIX="${workdir}/pycache"
-export PATH="$PATH:$workdir/Comfy3D_WinPortable/python_embeded/Scripts"
 export PIP_NO_WARN_SCRIPT_LOCATION=0
 
 ls -lahF

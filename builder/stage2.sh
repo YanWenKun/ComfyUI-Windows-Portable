@@ -7,7 +7,7 @@ git config --global core.autocrlf true
 gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 workdir=$(pwd)
 
-export PYTHONPYCACHEPREFIX="$workdir"/pycache
+export PYTHONPYCACHEPREFIX="${workdir}/pycache"
 export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_embeded/Scripts"
 
 ls -lahF

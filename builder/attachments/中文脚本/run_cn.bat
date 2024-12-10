@@ -1,14 +1,3 @@
-@REM 依照下表，修改为你的 GPU 对应架构，以节约运行时编译 PyTorch C++ 扩展的时间：
-@REM 'Pascal', '6.0;6.1+PTX'
-@REM 'Volta+Tegra', '7.2'
-@REM 'Volta', '7.0+PTX'
-@REM 'Turing', '7.5+PTX'
-@REM 'Ampere+Tegra', '8.7'
-@REM 'Ampere', '8.0;8.6+PTX'
-@REM 'Ada', '8.9+PTX'
-@REM 'Hopper', '9.0+PTX'
-set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
-
 @REM 如需配置代理，取消注释（移除行首的 'rem '）并编辑下两行环境变量。
 rem set HTTP_PROXY=http://localhost:1081
 rem set HTTPS_PROXY=http://localhost:1081
