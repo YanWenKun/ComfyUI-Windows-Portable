@@ -41,7 +41,6 @@ svglib
 tokenizers
 torchsde
 tqdm
-transparent-background
 trimesh[easy]
 typer
 typing-extensions
