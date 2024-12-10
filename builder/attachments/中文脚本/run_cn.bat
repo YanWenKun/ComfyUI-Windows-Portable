@@ -25,14 +25,6 @@ set PATH=%PATH%;%~dp0\python_embeded\Scripts
 @REM 该环境变量使 .pyc 缓存文件集中保存在一个文件夹下，而不是随 .py 文件分布。
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
-@REM 该命令会复制 u2net.onnx 到用户主目录下，以免启动时还需下载。
-IF NOT EXIST "%USERPROFILE%\.u2net\u2net.onnx" (
-    IF EXIST ".\extras\u2net.onnx" (
-        mkdir "%USERPROFILE%\.u2net" 2>nul
-        copy ".\extras\u2net.onnx" "%USERPROFILE%\.u2net\u2net.onnx"
-    )
-)
-
 @REM 如不希望 ComfyUI 启动后自动打开浏览器，添加 --disable-auto-launch 到下行末尾（注意空格）。
 @REM 如在用 40 系显卡，可添加 --fast 开启实验性高性能模式。
 .\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build

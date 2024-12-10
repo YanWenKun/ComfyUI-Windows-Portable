@@ -127,11 +127,6 @@ $gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git impact_subpack
 cd "$workdir"/ComfyUI_Windows_portable
 ./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
 
-# Copy u2net model files needed by rembg (to avoid download at first start)
-cd "$workdir"/ComfyUI_Windows_portable
-mkdir extras
-cp ~/.u2net/u2net.onnx ./extras/u2net.onnx
-
 # Clean up
 rm "$workdir"/ComfyUI_Windows_portable/*.log
 # DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
