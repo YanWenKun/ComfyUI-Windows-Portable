@@ -5,4 +5,3 @@ fvcore
 gguf
 gpytoolbox
 lark-parser
-transparent-background
