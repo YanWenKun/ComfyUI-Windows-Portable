@@ -1,12 +1,13 @@
 #!/bin/bash
 set -eux
 
-gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
+# Chores
+git config --global core.autocrlf true
 
+gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 workdir=$(pwd)
 
 export PYTHONPYCACHEPREFIX="$workdir"/pycache
-
 export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_embeded/Scripts"
 
 ls -lahF
@@ -54,7 +55,6 @@ $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
-$gcs https://github.com/edenartlab/eden_comfy_pipelines.git
 
 # Control
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
@@ -81,7 +81,6 @@ $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 # More
 $gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
-$gcs https://github.com/MrForExample/ComfyUI-3D-Pack.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
@@ -132,21 +131,6 @@ cd "$workdir"/ComfyUI_Windows_portable
 cd "$workdir"/ComfyUI_Windows_portable
 mkdir extras
 cp ~/.u2net/u2net.onnx ./extras/u2net.onnx
-
-# Copy example files of 3D-Pack
-mkdir -p "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows
-
-cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/. \
-    "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/
-
-rm -rf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/_Example_Inputs_Files
-rm -rf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/workflows/_Example_Outputs
-
-cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/_Example_Inputs_Files/. \
-    "$workdir"/ComfyUI_Windows_portable/ComfyUI/input/
-
-cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-3D-Pack/_Example_Workflows/_Example_Outputs/. \
-    "$workdir"/ComfyUI_Windows_portable/ComfyUI/output/
 
 # Clean up
 rm "$workdir"/ComfyUI_Windows_portable/*.log
