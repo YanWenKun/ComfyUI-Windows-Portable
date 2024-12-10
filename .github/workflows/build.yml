@@ -15,14 +15,17 @@ jobs:
 
         - name: Stage 1 Gathering Dependencies
           shell: bash
+          working-directory: builder
           run: bash stage1.sh
 
         - name: Stage 2 Assembling Repositories
           shell: bash
+          working-directory: builder
           run: bash stage2.sh
 
         - name: Stage 3 Compressing Package
           shell: cmd
+          working-directory: builder
           run: stage3.bat
 
         - name: Upload archive to release
@@ -32,7 +35,7 @@ jobs:
             # You don't need to cofigure it
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            file: "ComfyUI_Windows_portable_cu124.7z*"
+            file: "builder/ComfyUI_Windows_portable_cu124.7z*"
             # always draft before release
             draft: true
             overwrite: true
