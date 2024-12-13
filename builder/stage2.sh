@@ -54,6 +54,7 @@ $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+$gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
@@ -65,6 +66,8 @@ $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/comfyui-reactor-node.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
+$gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
+$gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/storyicon/comfyui_segment_anything.git
@@ -84,7 +87,6 @@ $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
-$gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 
 
 cd "$workdir"
@@ -114,14 +116,6 @@ curl -sSL https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1
     --create-dirs -o facerestore_models/GFPGANv1.4.pth
 curl -sSL https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
     --create-dirs -o insightface/inswapper_128_fp16.onnx
-
-# Download Impact-Pack & Subpack & models
-cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
-$gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
-cd ComfyUI-Impact-Pack
-$gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git impact_subpack
-# Use its installer to download models
-"$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
 
 # Run test, also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
