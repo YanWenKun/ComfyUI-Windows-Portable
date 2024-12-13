@@ -133,7 +133,3 @@ rm ./ComfyUI-Impact-Pack/impact-pack.ini
 rm ./ComfyUI-Custom-Scripts/pysssss.json
 
 cd "$workdir"
-
-ls -lahF
-
-du -hd2 ComfyUI_Windows_portable
