@@ -117,6 +117,12 @@ curl -sSL https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1
 curl -sSL https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
     --create-dirs -o insightface/inswapper_128_fp16.onnx
 
+# Download models for Impact-Pack & Impact-Subpack
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
+"$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpack
+"$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
+
 # Run test, also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
 ./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
@@ -129,7 +135,6 @@ rm "$workdir"/ComfyUI_Windows_portable/*.log
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm ./was-node-suite-comfyui/was_suite_config.json
 rm ./ComfyUI-Manager/config.ini
-rm ./ComfyUI-Impact-Pack/impact-pack.ini
 rm ./ComfyUI-Custom-Scripts/pysssss.json
 
 cd "$workdir"
