@@ -24,12 +24,14 @@ Previous releases will remain unchanged.
 
 == Features
 
-* Pre-installed with 40+ frequently-used custom nodes. <<custom-nodes, [Full list]>>
+* Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full list]>>
 
 ** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet Connection).
 
-* Includes 240+ Python packages, versions compatible, including:
-** Packages like `insightface`, `dlib` and `CLIP` that require compilation.
+* Includes 240+ mutually compatible Python packages, including: 
+
+** `insightface`, `dlib`, etc., which require compilation during installation.
+
 ** xFormers, which is not included in the ComfyUI official package for an understandable reason. It may not be significant for text-to-image, but could be useful for video workflows.
 
 * Only a few functional models that might slow down the program startup are pre-installed; users please prepare SD models of your favorite.
@@ -278,7 +280,7 @@ However, the packaging concept is similar: providing a self-contained, portable,
 
 The difference is that I didn't download wheels first and then install them in bulk like Comfy did. Because dependency relationships are too tricky, I went straight to `pip install` for dependency solving.
 
-To add a memo, a common issue with Python Embedded in such pre-installed packages is that most of the executables in the `Scripts` directory cannot run properly. This is because these executables are often Python command wrappers that invoke `python.exe` through an absolute path. Once the directory changes (or is relocated), they naturally fail to execute. Fortunately, this does not affect the current project significantly."
+As a note, a common issue with Python Embedded in such pre-installed packages is that most of the executables in the `Scripts` directory cannot run properly. This is because these executables are often Python command wrappers that invoke `python.exe` through an absolute path. Once the directory changes (or is relocated), they naturally fail to execute. Fortunately, this does not affect the current project significantly.
 
 
 == See Also

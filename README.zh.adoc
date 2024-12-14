@@ -29,7 +29,7 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 会在初次启动时下载的模型文件等，避免国内用户启动时卡下载。
 
 * 包含 240+ 互相兼容的 Python 包，包括：
-** 需要编译安装的 `insightface`、`dlib`、`CLIP` 等
+** 需要编译安装的 `insightface`、`dlib` 等
 ** ComfyUI 官方包里没装的 xFormers（对文生图影响不大，对视频类有用）
 
 * 仅预置了少量功能性模型，绘图模型还请用户自行下载
