@@ -9,40 +9,33 @@ Just like
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
-== NEWS
 
-To solve the compatibility issues, I made a dedicated package for ComfyUI-3D-Pack, check it out:
+== NEW: A Dedicated Package for ComfyUI-3D-Pack
+
+For better compatibility,
+I made a dedicated package for ComfyUI-3D-Pack.
+Check it out:
 
 https://github.com/YanWenKun/Comfy3D-WinPortable
 
-Also, by separating the builds, updates will be less likely to break your ComfyUI.
-
-The ComfyUI-Windows-Portable will be phasing out support for 3D-Pack,
-after porting pt25 builds to Comfy3D-WinPortable.
-
-For now I leave the following README unchanged.
+New releases of this `ComfyUI-Windows-Portable` will not include 3D-Pack.
+Previous releases will remain unchanged.
 
 
 == Features
 
-* Pre-installed with 30+ custom nodes including:
+* Pre-installed with 40+ frequently-used custom nodes. <<custom-nodes, [Full list]>>
 
-** link:https://github.com/MrForExample/ComfyUI-3D-Pack[ComfyUI-3D-Pack]
-which you may want to spend less time on installing.
-
-** Nodes like link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
-and https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
-that download model files on the first run (may cause freezing for users with bad Internet Connection)
-
-** See <<custom-nodes, Full List>>
+** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet Connection).
 
 * Includes 240+ Python packages, versions compatible, including:
 ** Packages like `insightface`, `dlib` and `CLIP` that require compilation.
-** xFormers. It's not included in the ComfyUI official package (for a understandable reason). See details in <<xformers, About xFormers>>.
+** xFormers, which is not included in the ComfyUI official package for an understandable reason. It may not be significant for text-to-image, but could be useful for video workflows.
 
 * Only a few functional models that might slow down the program startup are pre-installed; users please prepare SD models of your favorite.
 
 * This repo uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork the repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own AIO Package>>.
+
 
 == How to Use
 
@@ -57,62 +50,123 @@ that download model files on the first run (may cause freezing for users with ba
 
 4. Edit and run `run_nvidia_gpu.bat` to start ComfyUI.
 
+** If you need to config HTTP proxy, follow the instruction in this file.
+
 ** If you don't want the browser to open automatically, add `--disable-auto-launch` to the startup arguments.
 
 ** If you're using 40/Ada series or newer GPU, you can try adding `--fast` to the startup arguments.
 It has
 https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[magic].
 
-
 5. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
 
-== Important Prerequisites For 3D-Pack Users
+6. Change language: Click the gear (⚙) icon at the bottom left corner of the ComfyUI page to modify settings. Find *AGL* to change the language (default is English, options are {Chinese, Japanese, Korean, Russian}).
 
-Few steps before running Comfy3D:
 
-1. Install Visual Studio Build Tools 2022
-(
-https://visualstudio.microsoft.com/downloads/?q=build+tools[Page]
-|
-https://aka.ms/vs/17/release/vs_BuildTools.exe[EXE]
-).
-During the setup, select "Desktop development with C++" workload.
-You only need these two optional components:
+== Tips and Tricks
 
-** MSVC Build Tools (compilers and libraries)
-** CMake for C++ on Windows
-** Note: Some PyTorch extension code needs to be compiled during runtime, so the build tools are needed. If you already installed Visual Studio with C++ workload, just skip this step.
+. Take full advantage of ComfyUI-Manager (the *Manager* button in the top-right corner of the ComfyUI page) to manage custom nodes: install, update, disable, and uninstall.
+** Be cautious when using "Update All"; there's no need to update unused nodes to avoid Python package conflicts.
 
-2. Install
-https://developer.nvidia.com/cuda-12-4-1-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_network[CUDA Toolkit 12.4.1].
-Only
-https://github.com/YanWenKun/ComfyUI-Windows-Portable/raw/refs/heads/main/docs/cuda-toolkit-install-selection.webp[Libraries and Compilers]
-are needed.
+. To disable xFormers, add `--use-pytorch-cross-attention` to the ComfyUI startup parameters.
+** This will enable the native PyTorch cross-attention. Once enabled, the time, VRAM usage, and image consistency for SD image generation may vary slightly.
+** It is recommended not to disable this if you plan to generate videos.
 
-3. Edit `run_nvidia_gpu.bat`, reduce `TORCH_CUDA_ARCH_LIST` according to your
-https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049[GPU arch],
-to save your time on JIT compiling.
+. For power users, consider using https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] to limit cache files while isolating the environment.
+** For better I/O performance when using Sandboxie, it is recommended to configure the program's main directory (`ComfyUI_Windows_portable`) as "Open Access" in "Sandbox Options" -> "Resource Access".
 
-After successfully launching ComfyUI and loading the ComfyUI-3D-Pack, it is recommended to first run the *TripoSR* workflow, as the model files required for this workflow are smaller, execute faster, and have a high success rate.
 
-== Tips for Usage
+=== 4. External Model Directories
 
-1. Model Path: If model files are already saved in another location and you don't want to move them, you can configure the program to load them:
-** Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory to `extra_model_paths.yaml`.
-** Edit `extra_model_paths.yaml` according to the directory structure, removing corresponding comments.
-** Items other than `base_path` can be added or removed freely to map newly added subdirectories; the program will try load all of them.
+ComfyUI can load model files from directories outside of the main directory.
+Here's how to configure it:
 
-2. Proxy: If a network proxy is needed, edit `run_nvidia_gpu.bat` and add the following at the beginning:
-[source,cmd]
-set HTTP_PROXY=http://localhost:1081
-set HTTPS_PROXY=http://localhost:1081
+* Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory to remove the `.example` suffix.
+* Edit `extra_model_paths.yaml`, where lines starting with `#` are comments.
 
-3. Manager: Take advantage of the ComfyUI-Manager (the *Manager* button located at the bottom right corner of the ComfyUI page) to install additional custom nodes, update ComfyUI and nodes, or disable unnecessary nodes.
-** If you find that some unused nodes affect the startup time, you can disable them.
+.Example file (click to expand)
+[%collapsible]
+====
+----
+comfyui:
+    base_path: D:\models\
+    animatediff_models: animatediff_models
+    animatediff_motion_lora: animatediff_motion_lora
+    bert-base-uncased: bert-base-uncased
+    checkpoints: checkpoints
+    clip: clip
+    clip_vision: clip_vision
+    configs: configs
+    controlnet: controlnet
+    depthfm: depthfm
+    diffusers: diffusers
+    embeddings: embeddings
+    facerestore_models: facerestore_models
+    gligen: gligen
+    grounding-dino: grounding-dino
+    hypernetworks: hypernetworks
+    insightface: insightface
+    ipadapter: ipadapter
+    loras: loras
+    mmdets: mmdets
+    onnx: onnx
+    photomaker: photomaker
+    reactor: reactor
+    sams: sams
+    style_models: style_models
+    ultralytics: ultralytics
+    unet: unet
+    upscale_models: upscale_models
+    vae: vae
+    vae_approx: vae_approx
+----
+====
 
-4. Language: Click the gear (⚙) icon at the top right corner of the ComfyUI page to modify settings. Find *AGLTranslation* to change the language (default is English, options are {Chinese, Japanese, Korean}).
 
-5. How to upgrade: ComfyUI-Manager can do most updates, but if you want a "fresh" upgrade, you can first delete the `python_embeded` directory, and then extract the same-named directory from the new version's package to the original location. Additional "try fix" in ComfyUI-Manager may be needed.
+=== 5. External HuggingFace Hub Directory
+
+ComfyUI has three main locations for saving model files:
+
+* The official `models` directory (and the aforementioned external model directory)
+* Model files downloaded locally by each node in `custom_nodes`
+* Model files downloaded via `HuggingFace Hub` (the official HF downloader)
+
+By default, HF Hub downloads files to `C:\Users\UserName\.cache\huggingface\hub`.  
+This package modifies this path to
+`ComfyUI_Windows_portable\HuggingFaceHub`
+in the startup script for easier file management.
+
+If the user has multiple ComfyUI instances and wants to share a common HF Hub model directory, modify the startup script as follows:
+
+ set HF_HUB_CACHE=%~dp0\HuggingFaceHub
+
+To something like:
+
+ set HF_HUB_CACHE=D:\HuggingFaceHub
+
+
+=== 6. How to Perform a "Swap-Out and Swap-In" Style Major Update
+
+This method bypasses ComfyUI-Manager updates and directly replaces the old package with a new version.  
+If done correctly, it avoids installing or upgrading Python packages, thus preventing dependency version conflicts.
+
+. First, install https://git-scm.com/download/win[Git for Windows],  
+and select Git Bash (default).
+
+. Unzip the new integration package  
+. Delete the `ComfyUI` and `HuggingFaceHub` folders in the new version  
+. Copy the two folders from the old version into the new one  
+. In the new main directory, open Git Bash (right-click in an empty area and select "Open Git Bash here")
+
+. Copy and paste the following command in Git Bash (right-click to paste and hit Enter):
+
+ bash force-update-all.sh
+
+[start=7]
+. Refer to the "How to Use" section to edit and run the startup script.
+
+. If any nodes fail to load, you may need to click "try fix" in ComfyUI-Manager.
+
 
 == Details
 
@@ -144,7 +198,6 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
 |link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
-|link:https://github.com/edenartlab/eden_comfy_pipelines[Eden.art nodes]
 |
 |===
 
@@ -154,6 +207,7 @@ set HTTPS_PROXY=http://localhost:1081
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
 |link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
 |link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
@@ -182,7 +236,6 @@ set HTTPS_PROXY=http://localhost:1081
 .More
 [cols=2]
 |===
-|link:https://github.com/MrForExample/ComfyUI-3D-Pack[3D Pack by MrForExample]
 |link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
 |link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
 |link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
@@ -191,27 +244,16 @@ set HTTPS_PROXY=http://localhost:1081
 |
 |===
 
-Most of the popular custom nodes are denpendency-compatible. You can install more custom nodes through ComfyUI-Manager.
 
 If compatibility issues arise, you can try disabling conflicting nodes in ComfyUI-Manager.
 
-[[xformers]]
-=== About xFormers
-
-The cross-attention mechanism in PyTorch 2.2+ performs well on Windows and is more consistent (albeit subtly), so it's understandable why the ComfyUI official package chose not to include xFormers.
-
-However, there is still a strong demand for xFormers in 3D and video-related components, so it has been retained for compatibility.
-
-To disable xFormers, add `--use-pytorch-cross-attention` to the ComfyUI startup parameters.
-
-There is no definitive conclusion about the performance of the two; specific testing is required.
 
 [[build-your-own]]
 == Creating Your Own AIO Package
 
 image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml"]
 
-This repository utilizes a pipeline to build the integration package, and the codebase doesn't contain specific configurations or require additional access permissions. Hence, you can directly fork this repository to start executing the GitHub Workflow.
+This repository utilizes a pipeline to build the package, and the codebase doesn't contain specific configurations or require additional access permissions. Hence, you can directly fork this repository to start executing the GitHub Workflow.
 
 1. After forking, go to *Actions* on the page.
 2. Locate *Build & Upload Package*.
@@ -227,37 +269,26 @@ and set the parameters to
 This adjustment will reduce the workflow duration to under 15 minutes, at the cost of a larger file size.
 5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
 
-== Temp Files
-
-image::docs/sandboxie.avif["file diff",width=40%]
-
-Files detected by Sandboxie as shown in the image; registry changes are not clear.
-
-If you need to configure a sandbox, it is recommended to set the program directory (the parent directory of ComfyUI) to "Full Access" under "Resource Access."
-
-.Complaints
-In my personal experience, I use a sandbox not so much for security considerations but mainly to avoid various Python packages downloading files haphazardly. Especially Huggingface Hub likes to download to `%USERPROFILE%\.cache`, and some rough and ready nodes directly call its downloader, downloading Git LFS blob files rather than individual model files, which are neither intuitive nor convenient for copying and reusing. Of course, despite the complaints, sandboxing is mainly for easy cleaning of temporary files.
-
-.Advertisement
-Linux/WSL2 users may want to check out my link:https://github.com/YanWenKun/ComfyUI-Docker[ComfyUI-Docker], which is the exact opposite of the Windows integration package in terms of being large and comprehensive but difficult to update. I designed the Docker image with a meticulous eye, selecting a series of non-conflicting and latest version dependencies, and adhering to the KISS principle by only including ComfyUI-Manager, leaving the choice of custom nodes to the users. Not to mention the benefits of easy upgrades, easy cleanup, and secure isolation provided by container runtime itself.
 
 == Development Idea
 
 Originally, the code was copied from ComfyUI's GitHub workflow, but I found it difficult to debug, so I rewrote the script.
 
-However, the packaging concept is similar: providing a self-contained, portable, and fully equipped environment with a pre-installed Python Embedded. 
+However, the packaging concept is similar: providing a self-contained, portable, and fully equipped environment with a pre-installed Python Embedded.
 
-The difference is that I didn't download wheels first and then install them in bulk like comfyanonymous did. Because dependency relationships are too tricky, I went straight to `pip install` for dependency solving.
+The difference is that I didn't download wheels first and then install them in bulk like Comfy did. Because dependency relationships are too tricky, I went straight to `pip install` for dependency solving.
 
-== Development Memo
+To add a memo, a common issue with Python Embedded in such pre-installed packages is that most of the executables in the `Scripts` directory cannot run properly. This is because these executables are often Python command wrappers that invoke `python.exe` through an absolute path. Once the directory changes (or is relocated), they naturally fail to execute. Fortunately, this does not affect the current project significantly."
 
-* link:docs/bumping-versions.adoc[Development Memo - Version Upgrades]
 
 == See Also
 
+* link:docs/bumping-versions.adoc[Development Memo - Version Upgrades]
+
 * link:docs/manual-setup.adoc[How To: Manually Setup ComfyUI]
+
 
 == Thanks
 
-Thanks to the link:https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow], from which I drew inspiration. The initial code was also copied from there.
+Thanks to the link:https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow], from which I drew inspiration.
 

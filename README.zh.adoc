@@ -20,7 +20,7 @@ https://github.com/YanWenKun/Comfy3D-WinPortable
 
 ## 特点
 
-* 预装了 30+ 常用自定义节点 <<custom-nodes, 【查看详细列表】>>
+* 预装了 40+ 常用自定义节点 <<custom-nodes, 【查看详细列表】>>
 
 ** 预先下载了部分模型文件，包括
 https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
@@ -91,7 +91,7 @@ ComfyUI 可以加载主目录外的模型文件，
 
 * 将 `ComfyUI` 目录下的 `extra_model_paths.yaml.example` 重命名，去掉末尾的 `.example`
 
-* 编辑 `extra_model_paths.yaml`，其中以 `#` 开头的部分为注释
+* 编辑 `extra_model_paths.yaml`，其中以 `#` 开头的部分为注释内容
 
 .参考文件（点击展开）
 [%collapsible]
@@ -132,7 +132,27 @@ comfyui:
 ====
 
 
-### 5. 如何“翻新式”大更新
+### 5. 外部 HuggingFace Hub 目录
+
+ComfyUI 有三处主要的模型文件保存位置：
+
+* 官方推荐的 `models` 目录（以及上述的外部模型目录）
+* 各节点在 `custom_nodes` 中原地下载的文件
+* 通过 `HuggingFace Hub`（HF 官方下载器）下载的模型文件
+
+其中 HF Hub 默认将文件下载到 `C:\Users\UserName\.cache\huggingface\hub` 。
+本整合包在启动脚本中，将其修改为了 `程序目录\HuggingFaceHub` 文件夹，以便用户直观管理。
+
+如果用户有多个 ComfyUI 实例，希望共用一套 HF Hub 模型目录，可将启动脚本中的
+
+ set HF_HUB_CACHE=%~dp0\HuggingFaceHub
+
+修改为类似形式：
+
+ set HF_HUB_CACHE=D:\HuggingFaceHub
+
+
+### 6. 如何“翻新式”大更新
 
 该方法不通过 ComfyUI-Manager 更新，而是直接替换为新版整合包。
 如果流程顺利，可以避免安装升级 Python 包，进而避免依赖项版本混乱。
@@ -144,11 +164,6 @@ https://git-scm.com/download/win[Git for Windows]，
 . 解压新版整合包
 . 删除新版中的 `ComfyUI` 与 `HuggingFaceHub` 文件夹
 . 将旧版中的这两个文件夹复制过来
-
-. 如果是较早版本的整合包，没有 `HuggingFaceHub` 文件夹，可以将
-`%USERPROFILE%\.cache\huggingface\hub` 下的文件复制或移动到新版的
-`HuggingFaceHub` 文件夹下
-
 . 在新版主目录下，打开 Git Bash（在空白处点击右键，菜单中选择“Open Git Bash here”）
 
 . 复制下行内容，在 Git Bash 中点击鼠标右键，菜单中选择粘贴，并回车：
@@ -156,16 +171,14 @@ https://git-scm.com/download/win[Git for Windows]，
  bash 使用国内镜像强制更新全部节点.sh
 
 
-[start=8]
+[start=7]
 . 参照“如何使用”一节，编辑启动脚本并运行
 
 . 如有节点加载失败，需在 ComfyUI-Manager 中“try fix”。
 
 
-## 细节
-
 [[custom-nodes]]
-### 预置自定义节点列表
+## 预置自定义节点列表
 
 .工作空间
 [cols=2]
@@ -201,6 +214,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
 |link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
 |link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
