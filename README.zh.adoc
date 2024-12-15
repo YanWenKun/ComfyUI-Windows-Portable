@@ -38,33 +38,35 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
 ## 如何使用
 
-1. 仅支持 NVIDIA 显卡，建议先装好最新驱动
+. 仅支持 NVIDIA 显卡，建议先装好最新驱动
 
-2. 在发布页面下载整合包：
+. 安装好 https://git-scm.com/download/win[Git for Windows]，默认设置即可。
+
+. 在发布页面下载整合包：
 
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
 ** 注意有多个文件（压缩包分卷），需要全部下载后解压。
 
-3. 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
+. 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 
 ** 可随意建立子目录，便于分类
 
-4. （按需）选择启动脚本
+. （按需）选择启动脚本
 
 ** 将 `中文脚本` 目录下的文件复制到主目录
 ** 如能流畅访问 PIP、HuggingFace、GitHub，略过此步骤
 
-5. （可选）编辑启动脚本，`run_cn.bat` 或 `run_nvidia_gpu.bat`
+. （可选）编辑启动脚本，`run_cn.bat` 或 `run_nvidia_gpu.bat`
 
 ** 如果不希望程序启动后自动打开浏览器，在启动脚本中添加启动参数 `--disable-auto-launch`
 ** 如果正在用 40 系及更新的 GPU，可尝试添加启动参数 `--fast`，有
 https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[魔法]
 
-6. 执行启动脚本
+. 执行启动脚本
 
 ** 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
 
-7. 配置为中文界面
+. 配置为中文界面
 
 ** 点击 ComfyUI 页面左下角的 齿轮（⚙）图标进入设置
 ** 在右侧，确认 *Locale* 为 zh

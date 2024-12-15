@@ -41,16 +41,18 @@ Previous releases will remain unchanged.
 
 == How to Use
 
-1. Only NVIDIA GPUs are supported, preferably with the latest drivers installed.
+. Only NVIDIA GPUs are supported, preferably with the latest drivers installed.
 
-2. Download the package files from the release page:
+. Install https://git-scm.com/download/win[Git for Windows]. The setup will prompt you with several options; it's fine to use the default settings for all of them.
+
+. Download the package files from the release page:
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
 ** Note that there are multiple files (compressed in volumes) that need to be downloaded and extracted.
 
-3. Place SD models in `ComfyUI\models\checkpoints`.
+. Place SD models in `ComfyUI\models\checkpoints`.
 ** Subdirectories can be created for better organization.
 
-4. Edit and run `run_nvidia_gpu.bat` to start ComfyUI.
+. Edit and run `run_nvidia_gpu.bat` to start ComfyUI.
 
 ** If you need to config HTTP proxy, follow the instruction in this file.
 
@@ -60,9 +62,9 @@ Previous releases will remain unchanged.
 It has
 https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[magic].
 
-5. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
+. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
 
-6. Change language: Click the gear (⚙) icon at the bottom left corner of the ComfyUI page to modify settings. Find *AGL* to change the language (default is English, options are {Chinese, Japanese, Korean, Russian}).
+. Change language: Click the gear (⚙) icon at the bottom left corner of the ComfyUI page to modify settings. Find *AGL* to change the language (default is English, options are {Chinese, Japanese, Korean, Russian}).
 
 
 == Tips and Tricks
