@@ -17,6 +17,9 @@ rem set HF_HUB_ENABLE_HF_TRANSFER=1
 @REM This command redirects HuggingFace-Hub to download model files in this folder.
 set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
+@REM This command redirects Pytorch Hub to download model files in this folder.
+set TORCH_HOME=%~dp0\TorchHome
+
 @REM This command will set PATH environment variable.
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 

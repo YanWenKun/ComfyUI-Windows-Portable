@@ -17,6 +17,9 @@ mkdir -p "$workdir"/ComfyUI_Windows_portable
 # Redirect HuggingFace-Hub model folder
 export HF_HUB_CACHE="$workdir/ComfyUI_Windows_portable/HuggingFaceHub"
 mkdir -p "$HF_HUB_CACHE"
+# Redirect Pytorch Hub model folder
+export TORCH_HOME="$workdir/Comfy3D_WinPortable/TorchHome"
+mkdir -p "${TORCH_HOME}"
 
 # ComfyUI main app
 git clone https://github.com/comfyanonymous/ComfyUI.git \

@@ -19,6 +19,9 @@ set HF_ENDPOINT=https://hf-mirror.com
 @REM 该环境变量指示 HuggingFace Hub 下载模型到"本目录\HuggingFaceHub"，而不是"用户\.cache"目录。
 set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
+@REM 该环境变量指示 Pytorch Hub 下载模型到"本目录\TorchHome"，而不是"用户\.cache"目录。
+set TORCH_HOME=%~dp0\TorchHome
+
 @REM 该命令配置 PATH 环境变量。
 set PATH=%PATH%;%~dp0\python_embeded\Scripts
 
