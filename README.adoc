@@ -3,7 +3,7 @@
 image::docs/screenshot.webp["Screenshot"]
 
 [.text-center]
-English | *link:README.zh.adoc[中文]*
+English | *link:README.zh.adoc[中文说明]*
 
 Just like 
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
@@ -13,8 +13,7 @@ but preloaded with numerous custom nodes and Python packages, with all dependenc
 == NEW: A Dedicated Package for ComfyUI-3D-Pack
 
 For better compatibility,
-I made a dedicated package for ComfyUI-3D-Pack.
-Check it out:
+I made a dedicated package for ComfyUI-3D-Pack:
 
 https://github.com/YanWenKun/Comfy3D-WinPortable
 
@@ -24,9 +23,9 @@ Previous releases will remain unchanged.
 
 == Features
 
-* Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full list]>>
+* Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
 
-** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet Connection).
+** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet connection).
 
 * Includes 240+ mutually compatible Python packages, including: 
 
@@ -34,20 +33,25 @@ Previous releases will remain unchanged.
 
 ** xFormers, which is not included in the ComfyUI official package for an understandable reason. It may not be significant for text-to-image, but could be useful for video workflows.
 
-* Only a few functional models that might slow down the program startup are pre-installed; users please prepare SD models of your favorite.
+* Only a few functional models are pre-installed; users please prepare SD models of your favorite.
 
 * This repo uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork the repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own AIO Package>>.
 
 
 == How to Use
 
-. Only NVIDIA GPUs are supported, preferably with the latest drivers installed.
+. Only NVIDIA GPUs are supported, preferably with the latest driver installed.
 
 . Install https://git-scm.com/download/win[Git for Windows]. The setup will prompt you with several options; it's fine to use the default settings for all of them.
 
 . Download the package files from the release page:
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
-** Note that there are multiple files (compressed in volumes) that need to be downloaded and extracted.
+** Note that there are multiple files (`.7z.001`, `.7z.002` ...) that need to be downloaded.
+** Open the `.7z.001` and extract it to a convenient place. If you can't open 7z files, install
+https://www.7-zip.org/[7-zip]
+or
+https://peazip.github.io/peazip-64bit.html[PeaZip]
+first.
 
 . Place SD models in `ComfyUI\models\checkpoints`.
 ** Subdirectories can be created for better organization.
@@ -74,7 +78,7 @@ https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d
 
 . To disable xFormers, add `--use-pytorch-cross-attention` to the ComfyUI startup parameters.
 ** This will enable the native PyTorch cross-attention. Once enabled, the time, VRAM usage, and image consistency for SD image generation may vary slightly.
-** It is recommended not to disable this if you plan to generate videos.
+** It is recommended not to disable xFormers if you plan to generate videos.
 
 . For power users, consider using https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] to limit cache files while isolating the environment.
 ** For better I/O performance when using Sandboxie, it is recommended to configure the program's main directory (`ComfyUI_Windows_portable`) as "Open Access" in "Sandbox Options" -> "Resource Access".
@@ -140,7 +144,7 @@ This package modifies this path to
 `ComfyUI_Windows_portable\HuggingFaceHub`
 in the startup script for easier file management.
 
-If the user has multiple ComfyUI instances and wants to share a common HF Hub model directory, modify the startup script as follows:
+If you have multiple ComfyUI instances and wants to share a common HF Hub model directory, modify the startup script as follows:
 
  set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
@@ -157,10 +161,10 @@ If done correctly, it avoids installing or upgrading Python packages, thus preve
 . First, install https://git-scm.com/download/win[Git for Windows],  
 and select Git Bash (default).
 
-. Unzip the new integration package  
-. Delete the `ComfyUI` and `HuggingFaceHub` folders in the new version  
-. Copy the two folders from the old version into the new one  
-. In the new main directory, open Git Bash (right-click in an empty area and select "Open Git Bash here")
+. Unzip the new version of pre-built package.
+. Delete the `ComfyUI` and `HuggingFaceHub` folders in the new version.
+. Copy the two folders from the old version into the new one.
+. In the new main directory, open Git Bash (right-click in an empty area and select "Open Git Bash here").
 
 . Copy and paste the following command in Git Bash (right-click to paste and hit Enter):
 
