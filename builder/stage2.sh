@@ -41,7 +41,6 @@ cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 
 # Workspace
-$gcs https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation.git
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/crystian/ComfyUI-Crystools-save.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git

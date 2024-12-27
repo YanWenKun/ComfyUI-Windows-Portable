@@ -68,8 +68,6 @@ https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d
 
 . After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
 
-. Change language: Click the gear (⚙) icon at the bottom left corner of the ComfyUI page to modify settings. Find *AGL* to change the language (default is English, options are {Chinese, Japanese, Korean, Russian}).
-
 
 == Tips and Tricks
 
@@ -185,7 +183,6 @@ and select Git Bash (default).
 [cols=2]
 |===
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
-|link:https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation[ComfyUI Translations]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 |

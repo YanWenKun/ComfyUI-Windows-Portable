@@ -66,13 +66,6 @@ https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d
 
 ** 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
 
-. 配置为中文界面
-
-** 点击 ComfyUI 页面左下角的 齿轮（⚙）图标进入设置
-** 在右侧，确认 *Locale* 为 zh
-** 在左侧，找到 *AGL*，选择中文
-** 刷新浏览器即可
-
 
 ## 使用技巧
 
@@ -186,7 +179,6 @@ https://git-scm.com/download/win[Git for Windows]，
 [cols=2]
 |===
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
-|link:https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Translation[ComfyUI 翻译]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 |
