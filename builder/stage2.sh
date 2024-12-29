@@ -3,40 +3,35 @@ set -eux
 
 # Chores
 git config --global core.autocrlf true
-
-gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 workdir=$(pwd)
-
-export PYTHONPYCACHEPREFIX="${workdir}/pycache"
+gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
+export PYTHONPYCACHEPREFIX="$workdir/pycache2"
 export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_embeded/Scripts"
 
 ls -lahF
 
-mkdir -p "$workdir"/ComfyUI_Windows_portable
-
+# MKDIRs
+mkdir -p "$workdir"/ComfyUI_Windows_portable/update
 # Redirect HuggingFace-Hub model folder
 export HF_HUB_CACHE="$workdir/ComfyUI_Windows_portable/HuggingFaceHub"
-mkdir -p "$HF_HUB_CACHE"
+mkdir -p "${HF_HUB_CACHE}"
 # Redirect Pytorch Hub model folder
-export TORCH_HOME="$workdir/Comfy3D_WinPortable/TorchHome"
+export TORCH_HOME="$workdir/ComfyUI_Windows_portable/TorchHome"
 mkdir -p "${TORCH_HOME}"
 
+# Relocate python_embeded.
+# This move is intentional. It will fast-fail if this breaks anything.
+mv  "$workdir"/python_embeded  "$workdir"/ComfyUI_Windows_portable/python_embeded
+
+################################################################################
 # ComfyUI main app
 git clone https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
-
-# Using stable version (has a release tag)
+# Use latest stable version (has a release tag)
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI
 git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
 
-# TAESD model for image on-the-fly preview
-cd "$workdir"
-$gcs https://github.com/madebyollin/taesd.git
-cp taesd/*_decoder.pth \
-    "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
-rm -rf taesd
-
-# CUSTOM NODES
+# Custom Nodes
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 
@@ -90,16 +85,14 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 
-
-cd "$workdir"
-mv  python_embeded  ComfyUI_Windows_portable/python_embeded
-
-cd "$workdir"/ComfyUI_Windows_portable
-mkdir update
-cp -r ComfyUI/.ci/update_windows/* ./update/
-cp -r ComfyUI/.ci/windows_base_files/* ./
-
+################################################################################
 # Copy & Replace start script files
+# First copy ComfyUI's attachments
+cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/update_windows/* \
+    "$workdir"/ComfyUI_Windows_portable/update/
+cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/windows_base_files/* \
+    "$workdir"/ComfyUI_Windows_portable/
+
 # If ComfyUI have breaking-changes, stop the build
 if [ ! -f "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat ] ; then
     return 1
@@ -109,6 +102,14 @@ cp -rf "$workdir"/attachments/* \
     "$workdir"/ComfyUI_Windows_portable/
 
 du -hd2 "$workdir"/ComfyUI_Windows_portable
+
+################################################################################
+# TAESD model for image on-the-fly preview
+cd "$workdir"
+$gcs https://github.com/madebyollin/taesd.git
+cp taesd/*_decoder.pth \
+    "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
+rm -rf taesd
 
 # Download models for ReActor
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/models
@@ -125,18 +126,24 @@ cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpack
 "$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
 
-# Run test, also let custom nodes download some models
+################################################################################
+# Run the test (CPU only), also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
 ./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
 
+################################################################################
 # Clean up
-rm "$workdir"/ComfyUI_Windows_portable/*.log
 # DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
 #rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
+rm -v "$workdir"/ComfyUI_Windows_portable/*.log
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm ./was-node-suite-comfyui/was_suite_config.json
-rm ./ComfyUI-Manager/config.ini
 rm ./ComfyUI-Custom-Scripts/pysssss.json
+rm ./ComfyUI-Impact-Pack/impact-pack.ini
+
+cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Manager
+git reset --hard
+git clean -fxd
 
 cd "$workdir"

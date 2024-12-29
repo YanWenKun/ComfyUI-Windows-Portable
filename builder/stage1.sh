@@ -5,7 +5,7 @@ set -eux
 workdir=$(pwd)
 pip_exe="${workdir}/python_embeded/python.exe -s -m pip"
 
-export PYTHONPYCACHEPREFIX="${workdir}/pycache"
+export PYTHONPYCACHEPREFIX="${workdir}/pycache1"
 export PIP_NO_WARN_SCRIPT_LOCATION=0
 
 ls -lahF
@@ -34,6 +34,7 @@ $pip_exe install -r "$workdir"/requirements8.txt
 $pip_exe install -r "$workdir"/requirements9.txt
 
 # Setup Python embeded, part 3/3
+cd "$workdir"/python_embeded
 sed -i '1i../ComfyUI' ./python312._pth
 
 $pip_exe list
