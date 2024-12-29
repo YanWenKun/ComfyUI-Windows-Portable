@@ -15,7 +15,7 @@ function change_url_or_pull () {
     elif [[ $git_remote_url =~ ^(https:\/\/github\.com\/)(.*)(\.git)$ ]]; then
         echo "正在修改URL并更新: $1" ;
         git -C "$1" reset --hard ;
-        git -C "$1" remote set-url origin "https://ghp.ci/$git_remote_url" ;
+        git -C "$1" remote set-url origin "https://gh-proxy.com/$git_remote_url" ;
         git -C "$1" pull --ff-only ;
         echo "更新完成: $1" ;
     fi ;
