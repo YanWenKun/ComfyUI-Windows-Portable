@@ -5,8 +5,8 @@ image::docs/screenshot.webp["Screenshot"]
 [.text-center]
 English | *link:README.zh.adoc[中文说明]*
 
-Just like 
-https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official Standalone Portable],
+Similar to the 
+https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official standalone portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
 
