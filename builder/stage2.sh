@@ -40,6 +40,7 @@ $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
 
 # General
+$gcs https://github.com/akatz-ai/ComfyUI-AKatz-Nodes.git
 $gcs https://github.com/Amorano/Jovimetrix.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
@@ -74,6 +75,7 @@ $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
 
 # Video
+$gcs https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
@@ -90,6 +92,7 @@ $gcs https://github.com/neverbiasu/ComfyUI-SAM2.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+$gcs https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git
 
 ################################################################################
 # Copy & Replace start script files

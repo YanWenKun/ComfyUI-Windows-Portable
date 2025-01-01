@@ -9,7 +9,7 @@ diffusers
 fairscale
 ftfy
 huggingface-hub[hf-transfer]
-imageio
+imageio[ffmpeg]
 joblib
 kornia
 lark

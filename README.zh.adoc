@@ -187,6 +187,7 @@ https://git-scm.com/download/win[Git for Windows]，
 .综合
 [cols=2]
 |===
+|link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
 |link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
 |link:https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git[Derfuu Modded Nodes]
@@ -231,6 +232,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |===
 |link:https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved[AnimateAnyone Evolved]
 |link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
+|link:https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes[Depthflow by akatz]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
 |link:https://github.com/melMass/comfy_mtb[MTB Nodes]
@@ -249,6 +251,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/digitaljohn/comfyui-propost[ProPost]
 |link:https://github.com/neverbiasu/ComfyUI-SAM2[Segment Anything 2 by neverbiasu]
 |link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
+|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
 |
 |===
 

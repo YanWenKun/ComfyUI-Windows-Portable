@@ -17,6 +17,9 @@ https://github.com/Jonseed/ComfyUI-Detail-Daemon/raw/refs/heads/main/requirement
 https://github.com/digitaljohn/comfyui-propost/raw/refs/heads/master/requirements.txt
 https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt
 https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
+https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
+https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes/raw/refs/heads/main/requirements.txt
+https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";

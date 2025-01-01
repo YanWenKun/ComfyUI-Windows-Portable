@@ -3,6 +3,7 @@ aenum
 black
 blendmodes
 daltonlens
+depthflow
 facexlib
 fvcore
 gdown
@@ -22,6 +23,8 @@ ollama
 openai
 pdf2image
 peft
+pydantic
+pydub
 PyMuPDF
 PyOpenGL
 PyPDF2
