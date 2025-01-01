@@ -48,6 +48,7 @@ $gcs https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
 $gcs https://github.com/filliptm/ComfyUI_Fill-Nodes.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/kijai/ComfyUI-KJNodes.git
+$gcs https://github.com/mirabarukaso/ComfyUI_Mira.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
@@ -62,6 +63,7 @@ $gcs https://github.com/cubiq/PuLID_ComfyUI.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/comfyui-reactor-node.git
+$gcs https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
 $gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git

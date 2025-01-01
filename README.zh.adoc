@@ -196,6 +196,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/Amorano/Jovimetrix[Jovimetrix]
 |link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
 |link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
+|link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
 |link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
 |link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
@@ -209,6 +210,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |===
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
+|link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
