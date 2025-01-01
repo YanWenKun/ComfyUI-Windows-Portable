@@ -218,6 +218,8 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
 |link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
 |link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
+|link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
+|link:https://github.com/chflame163/ComfyUI_LayerStyle_Advance[Layer Style Advance]
 |link:https://github.com/cubiq/PuLID_ComfyUI[PuLID by cubiq]
 |link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
 |link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
