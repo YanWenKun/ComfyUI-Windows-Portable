@@ -58,7 +58,6 @@ $gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
-$gcs https://github.com/chflame163/ComfyUI_LayerStyle_Advance.git
 $gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
