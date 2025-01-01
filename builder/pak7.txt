@@ -18,7 +18,6 @@ glitch-this
 google-generativeai
 gpytoolbox
 hydra-core
-image-reward
 iopath
 librosa
 loguru
@@ -47,7 +46,6 @@ sageattention
 sounddevice
 SpoutGL
 stereoscopy[auto-align]
-torchscale
 typer-config
 vnoise
 wget

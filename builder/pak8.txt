@@ -1,2 +1,4 @@
 # To avoid version chaos
 transparent-background
+image-reward
+torchscale
