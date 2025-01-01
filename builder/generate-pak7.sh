@@ -15,6 +15,8 @@ https://github.com/Amorano/Jovimetrix/raw/refs/heads/main/requirements.txt
 https://github.com/filliptm/ComfyUI_Fill-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/Jonseed/ComfyUI-Detail-Daemon/raw/refs/heads/main/requirements.txt
 https://github.com/digitaljohn/comfyui-propost/raw/refs/heads/master/requirements.txt
+https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt
+https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";

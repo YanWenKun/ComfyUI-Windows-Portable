@@ -10,6 +10,9 @@ gguf
 glfw
 glitch-this
 gpytoolbox
+hydra
+hydra-core
+iopath
 librosa
 loguru
 markdown
@@ -18,6 +21,7 @@ moviepy
 ollama
 openai
 pdf2image
+peft
 PyMuPDF
 PyOpenGL
 PyPDF2

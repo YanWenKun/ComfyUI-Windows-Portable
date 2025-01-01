@@ -247,6 +247,8 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/digitaljohn/comfyui-propost[ProPost]
+|link:https://github.com/neverbiasu/ComfyUI-SAM2[Segment Anything 2 by neverbiasu]
+|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
 |
 |===
 
