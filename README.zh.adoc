@@ -246,15 +246,15 @@ https://git-scm.com/download/win[Git for Windows]，
 .更多
 [cols=2]
 |===
-|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
-|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
-|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
-|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
+|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
+|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
+|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
+|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
 |link:https://github.com/digitaljohn/comfyui-propost[ProPost]
 |link:https://github.com/neverbiasu/ComfyUI-SAM2[Segment Anything 2 by neverbiasu]
-|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
-|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
+|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
+|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |
 |===
 
