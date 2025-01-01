@@ -4,4 +4,3 @@ facexlib
 fvcore
 gguf
 gpytoolbox
-lark-parser
