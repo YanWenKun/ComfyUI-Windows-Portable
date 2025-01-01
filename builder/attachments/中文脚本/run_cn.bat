@@ -1,14 +1,10 @@
 @REM 如需配置代理，取消注释（移除行首的 'rem '）并编辑下两行环境变量。
-rem set HTTP_PROXY=http://localhost:1081
-rem set HTTPS_PROXY=http://localhost:1081
+rem set HTTP_PROXY=http://localhost:1080
+rem set HTTPS_PROXY=http://localhost:1080
 
 @REM 如需配置 HuggingFace Access Token（访问令牌），取消注释并编辑。
 @REM 管理令牌： https://huggingface.co/settings/tokens
 rem set HF_TOKEN=
-
-@REM 如需启用 HF Hub 实验性高速传输，取消该行注释。仅在千兆比特以上网速有意义。
-@REM https://huggingface.co/docs/huggingface_hub/hf_transfer
-rem set HF_HUB_ENABLE_HF_TRANSFER=1
 
 @REM 该环境变量配置 PIP 使用国内镜像站点。
 set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
