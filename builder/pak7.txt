@@ -12,7 +12,6 @@ gguf
 glfw
 glitch-this
 gpytoolbox
-hydra
 hydra-core
 iopath
 librosa
