@@ -15,6 +15,13 @@ curl -sSL https://www.python.org/ftp/python/3.12.8/python-3.12.8-embed-amd64.zip
     -o python_embeded.zip
 unzip python_embeded.zip -d "$workdir"/python_embeded
 
+# Special fix for 'triton' on Windows
+cd "$workdir"/python_embeded
+curl -sSL https://github.com/woct0rdho/triton-windows/releases/download/v3.0.0-windows.post1/python_3.12.7_include_libs.zip \
+    -o temp.zip
+unzip -q temp.zip
+rm temp.zip
+
 # Setup PIP
 cd "$workdir"/python_embeded
 sed -i 's/^#import site/import site/' ./python312._pth

@@ -4,6 +4,7 @@ black
 blendmodes
 daltonlens
 depthflow
+face-alignment
 facexlib
 fvcore
 gdown
@@ -28,9 +29,11 @@ pydub
 PyMuPDF
 PyOpenGL
 PyPDF2
+pytorch-lightning
 pywin32
 reportlab
 requests
+sageattention
 sounddevice
 SpoutGL
 stereoscopy[auto-align]

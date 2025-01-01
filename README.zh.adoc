@@ -237,6 +237,7 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
 |link:https://github.com/melMass/comfy_mtb[MTB Nodes]
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
+|link:https://github.com/akatz-ai/ComfyUI-X-Portrait-Nodes[X-Portrait by akatz]
 |
 |===
 

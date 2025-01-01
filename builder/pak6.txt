@@ -1,5 +1,6 @@
 https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6-alpha/dlib-19.24.6-cp312-cp312-win_amd64.whl
 https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
+https://github.com/woct0rdho/triton-windows/releases/download/v3.1.0-windows.post5/triton-3.1.0-cp312-cp312-win_amd64.whl
 gradio
 gradio-client
 nanobind
