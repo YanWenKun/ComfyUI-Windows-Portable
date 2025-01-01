@@ -24,14 +24,14 @@ curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 # PIP installs
 $pip_exe install --upgrade pip wheel setuptools
 
-$pip_exe install -r "$workdir"/requirements2.txt
-$pip_exe install -r "$workdir"/requirements3.txt
-$pip_exe install -r "$workdir"/requirements4.txt
-$pip_exe install -r "$workdir"/requirements5.txt
-$pip_exe install -r "$workdir"/requirements6.txt
-$pip_exe install -r "$workdir"/requirements7.txt
-$pip_exe install -r "$workdir"/requirements8.txt
-$pip_exe install -r "$workdir"/requirements9.txt
+$pip_exe install -r "$workdir"/pak2.txt
+$pip_exe install -r "$workdir"/pak3.txt
+$pip_exe install -r "$workdir"/pak4.txt
+$pip_exe install -r "$workdir"/pak5.txt
+$pip_exe install -r "$workdir"/pak6.txt
+$pip_exe install -r "$workdir"/pak7.txt
+$pip_exe install -r "$workdir"/pak8.txt
+$pip_exe install -r "$workdir"/pak9.txt
 
 # Setup Python embeded, part 3/3
 cd "$workdir"/python_embeded
