@@ -65,6 +65,7 @@ $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/comfyui-reactor-node.git
 $gcs https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
+$gcs https://github.com/Jonseed/ComfyUI-Detail-Daemon.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
 $gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
 $gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git
@@ -83,6 +84,7 @@ $gcs https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved.git
 # More
 $gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
+$gcs https://github.com/digitaljohn/comfyui-propost.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git

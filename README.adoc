@@ -214,6 +214,7 @@ and select Git Bash (default).
 |===
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
+|link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
 |link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 |link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
@@ -249,6 +250,7 @@ and select Git Bash (default).
 |link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
+|link:https://github.com/digitaljohn/comfyui-propost[ProPost]
 |
 |===
 
