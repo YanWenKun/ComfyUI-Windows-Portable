@@ -37,7 +37,6 @@ $gcs https://github.com/ltdrdata/ComfyUI-Manager.git
 
 # Workspace
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
-$gcs https://github.com/crystian/ComfyUI-Crystools-save.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
 
 # General
