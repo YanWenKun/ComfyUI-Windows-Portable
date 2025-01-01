@@ -33,6 +33,7 @@ sed -i '/^#/d' pak7.txt
 sed -i 's/[[:space:]]*$//' pak7.txt
 sed -i 's/>=.*$//' pak7.txt
 sed -i 's/_/-/g' pak7.txt
+sed -i 's/; platform-system=="Windows"//' pak7.txt
 
 sort -ufo pak7.txt pak7.txt
 
