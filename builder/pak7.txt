@@ -6,7 +6,7 @@ blend-modes
 blendmodes
 blind-watermark
 daltonlens
-depthflow
+depthflow==0.8.0.dev0
 face-alignment
 facexlib
 fastapi
