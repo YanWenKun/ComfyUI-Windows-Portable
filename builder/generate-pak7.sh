@@ -12,6 +12,7 @@ https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirem
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
 https://github.com/city96/ComfyUI-GGUF/raw/refs/heads/main/requirements.txt
 https://github.com/Amorano/Jovimetrix/raw/refs/heads/main/requirements.txt
+https://github.com/filliptm/ComfyUI_Fill-Nodes/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
