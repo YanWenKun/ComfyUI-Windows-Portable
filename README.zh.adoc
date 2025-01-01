@@ -218,7 +218,6 @@ https://git-scm.com/download/win[Git for Windows]，
 |link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
-|link:https://github.com/storyicon/comfyui_segment_anything[Segment Anything]
 |
 |===
 

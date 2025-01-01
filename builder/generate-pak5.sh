@@ -24,7 +24,6 @@ https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirement
 https://github.com/ltdrdata/ComfyUI-Manager/raw/refs/heads/main/requirements.txt
 https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
 https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/raw/refs/heads/main/requirements.txt
-https://github.com/storyicon/comfyui_segment_anything/raw/refs/heads/main/requirements.txt
 https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 )
 
