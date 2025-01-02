@@ -250,6 +250,7 @@ and select Git Bash (default).
 [cols=2]
 |===
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
+|link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
 |link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
 |link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]

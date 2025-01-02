@@ -23,6 +23,7 @@ https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes/raw/refs/heads/main/requirem
 https://github.com/akatz-ai/ComfyUI-X-Portrait-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/requirements.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/repair_dependency_list.txt
+https://github.com/kijai/ComfyUI-DepthAnythingV2/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
