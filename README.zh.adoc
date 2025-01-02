@@ -20,7 +20,7 @@ https://github.com/YanWenKun/Comfy3D-WinPortable
 
 ## 特点
 
-* 预装了 40+ 常用自定义节点 <<custom-nodes, 【查看详细列表】>>
+* 预装了 50+ 常用自定义节点 <<custom-nodes, 【查看详细列表】>>
 
 ** 预先下载了部分模型文件，包括
 https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
@@ -28,7 +28,7 @@ https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
 https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 会在初次启动时下载的模型文件等，避免国内用户启动时卡下载。
 
-* 包含 240+ 互相兼容的 Python 包，包括：
+* 包含 300+ 互相兼容的 Python 包，包括：
 ** 需要编译安装的 `insightface`、`dlib` 等
 ** ComfyUI 官方包里没装的 xFormers（对文生图影响不大，对视频类有用）
 
