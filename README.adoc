@@ -106,6 +106,9 @@ comfyui:
     controlnet: controlnet
     depthfm: depthfm
     diffusers: diffusers
+    diffusion_models: |
+        diffusion_models
+        unet
     embeddings: embeddings
     facerestore_models: facerestore_models
     gligen: gligen
@@ -118,8 +121,10 @@ comfyui:
     onnx: onnx
     photomaker: photomaker
     reactor: reactor
+    rembg: rembg
     sams: sams
     style_models: style_models
+    text_encoders: text_encoders
     ultralytics: ultralytics
     unet: unet
     upscale_models: upscale_models
