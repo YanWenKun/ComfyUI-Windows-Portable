@@ -45,7 +45,7 @@ $pip_exe install --upgrade albucore albumentations
 
 $pip_exe install -r "$workdir"/pakZ.txt
 
-# Setup Python embeded, part 3/3
+# Config Python Embedded
 cd "$workdir"/python_embeded
 sed -i '1i../ComfyUI' ./python312._pth
 

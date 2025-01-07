@@ -103,7 +103,7 @@ cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/update_windows/* \
 cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/windows_base_files/* \
     "$workdir"/ComfyUI_Windows_portable/
 
-# If ComfyUI have breaking-changes, stop the build
+# If ComfyUI has breaking-changes, stop building
 if [ ! -f "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat ] ; then
     return 1
 fi ;
