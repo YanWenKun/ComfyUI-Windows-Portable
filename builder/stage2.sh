@@ -76,7 +76,6 @@ $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
 
 # Video
-$gcs https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes.git
 $gcs https://github.com/akatz-ai/ComfyUI-X-Portrait-Nodes.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git

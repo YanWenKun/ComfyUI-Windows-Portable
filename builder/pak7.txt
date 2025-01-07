@@ -4,7 +4,6 @@ black
 blend-modes
 blendmodes
 daltonlens
-depthflow==0.8.0.dev0
 face-alignment
 facexlib
 fvcore
@@ -24,7 +23,6 @@ ollama
 openai
 pdf2image
 peft
-pydantic
 pydub
 pymatting
 PyMuPDF
