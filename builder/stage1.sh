@@ -38,7 +38,12 @@ $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
 $pip_exe install -r "$workdir"/pak8.txt
-$pip_exe install -r "$workdir"/pak9.txt
+
+# Tweak for transparent-background. TODO: remove if upstream updated.
+# https://github.com/plemeri/transparent-background/blob/f54975ce489af549dcfc4dc0a2d39e8f69a204fd/setup.py#L45
+$pip_exe install --upgrade albucore albumentations
+
+$pip_exe install -r "$workdir"/pakZ.txt
 
 # Setup Python embeded, part 3/3
 cd "$workdir"/python_embeded
