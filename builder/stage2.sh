@@ -146,11 +146,14 @@ cd "$workdir"/ComfyUI_Windows_portable
 # DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
 #rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
 rm -vf "$workdir"/ComfyUI_Windows_portable/*.log
+rm -vrf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/ComfyUI-Manager
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
-rm -vf ./was-node-suite-comfyui/was_suite_config.json
 rm -vf ./ComfyUI-Custom-Scripts/pysssss.json
+rm -vf ./ComfyUI-Easy-Use/config.yaml
 rm -vf ./ComfyUI-Impact-Pack/impact-pack.ini
+rm -vf ./Jovimetrix/web/config.json
+rm -vf ./was-node-suite-comfyui/was_suite_config.json
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Manager
 git reset --hard
