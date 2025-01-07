@@ -21,6 +21,7 @@ mido[ports-rtmidi]
 moviepy
 ollama
 openai
+open-clip-torch
 pdf2image
 peft
 pydub
