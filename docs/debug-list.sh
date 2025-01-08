@@ -23,7 +23,6 @@ https://github.com/ltdrdata/ComfyUI-Impact-Subpack/raw/refs/heads/main/requireme
 https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirements.txt
 https://github.com/ltdrdata/ComfyUI-Manager/raw/refs/heads/main/requirements.txt
 https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
-https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved/raw/refs/heads/main/requirements.txt
 https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
@@ -36,7 +35,6 @@ https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt
 https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes/raw/refs/heads/main/requirements.txt
-https://github.com/akatz-ai/ComfyUI-X-Portrait-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/requirements.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/repair_dependency_list.txt
 https://github.com/kijai/ComfyUI-DepthAnythingV2/raw/refs/heads/main/requirements.txt
