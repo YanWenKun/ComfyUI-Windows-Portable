@@ -46,4 +46,25 @@ $pip_exe list
 
 cd "$workdir"
 
+# Add Ninja binary (replacing PIP Ninja if exists)
+curl -sSL https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip \
+    -o ninja-win.zip
+unzip -q -o ninja-win.zip -d "$workdir"/python_embeded/Scripts
+rm ninja-win.zip
+
+# Add aria2 binary
+curl -sSL https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip \
+    -o aria2.zip
+unzip -q aria2.zip -d "$workdir"/aria2
+mv "$workdir"/aria2/*/aria2c.exe  "$workdir"/python_embeded/Scripts/
+rm aria2.zip
+
+# Add FFmpeg binary
+curl -sSL https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-full_build.zip \
+    -o ffmpeg.zip
+unzip -q ffmpeg.zip -d "$workdir"/ffmpeg
+mv "$workdir"/ffmpeg/*/bin/ffmpeg.exe  "$workdir"/python_embeded/Scripts/
+rm ffmpeg.zip
+
+cd "$workdir"
 du -hd1
