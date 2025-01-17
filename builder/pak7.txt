@@ -15,7 +15,7 @@ hydra-core
 iopath
 librosa
 loguru
-markdown
+markdownify
 mido[ports-rtmidi]
 moviepy
 ollama
