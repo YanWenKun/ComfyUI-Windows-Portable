@@ -1,18 +1,10 @@
-# 'cupy-cuda12x' for Frame Interpolation
-# 'compel lark' for smZNodes
-# 'torchdiffeq' for DepthFM
-# 'fairscale' for APISR
 accelerate
-compel
-cupy-cuda12x
 diffusers
-fairscale
 ftfy
 huggingface-hub[hf-transfer]
 imageio[ffmpeg]
 joblib
 kornia
-lark
 matplotlib
 omegaconf
 onnx
@@ -28,6 +20,5 @@ scikit-image
 scikit-learn
 scipy
 timm
-torchdiffeq
 torchmetrics
 transformers
