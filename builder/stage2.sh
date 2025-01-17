@@ -64,7 +64,7 @@ $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 $gcs https://github.com/cubiq/PuLID_ComfyUI.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
-$gcs https://github.com/Gourieff/comfyui-reactor-node.git
+# $gcs https://github.com/Gourieff/comfyui-reactor-node.git
 $gcs https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/Jonseed/ComfyUI-Detail-Daemon.git
