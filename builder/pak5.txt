@@ -13,7 +13,7 @@ filelock
 GitPython
 imageio-ffmpeg
 importlib-metadata
-#mediapipe
+mediapipe
 mss
 numba
 numexpr
