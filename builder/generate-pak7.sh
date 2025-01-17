@@ -12,7 +12,6 @@ https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirem
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
 https://github.com/city96/ComfyUI-GGUF/raw/refs/heads/main/requirements.txt
 https://github.com/Amorano/Jovimetrix/raw/refs/heads/main/requirements.txt
-https://github.com/filliptm/ComfyUI_Fill-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/Jonseed/ComfyUI-Detail-Daemon/raw/refs/heads/main/requirements.txt
 https://github.com/digitaljohn/comfyui-propost/raw/refs/heads/master/requirements.txt
 https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt

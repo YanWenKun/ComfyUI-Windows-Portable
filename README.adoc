@@ -202,7 +202,6 @@ and select Git Bash (default).
 |link:https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git[Derfuu Modded Nodes]
 |link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
 |link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
-|link:https://github.com/filliptm/ComfyUI_Fill-Nodes[Fill-Nodes]
 |link:https://github.com/Amorano/Jovimetrix[Jovimetrix]
 |link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
 |link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
