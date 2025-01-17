@@ -10,20 +10,14 @@ export PIP_NO_WARN_SCRIPT_LOCATION=0
 
 ls -lahF
 
-# Download Python embeded
-curl -sSL https://www.python.org/ftp/python/3.12.8/python-3.12.8-embed-amd64.zip \
-    -o python_standalone.zip
-unzip -q python_standalone.zip -d "$workdir"/python_standalone
-
-# Setup PIP
-cd "$workdir"/python_standalone
-sed -i 's/^#import site/import site/' ./python312._pth
-curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-./python.exe get-pip.py
+# Download Python Standalone
+curl -sSL \
+https://github.com/astral-sh/python-build-standalone/releases/download/20250115/cpython-3.12.8+20250115-x86_64-pc-windows-msvc-shared-install_only.tar.gz \
+    -o python.tar.gz
+tar -zxf python.tar.gz
+mv python python_standalone
 
 # PIP installs
-$pip_exe install --upgrade pip wheel setuptools
-
 $pip_exe install -r "$workdir"/pak2.txt
 $pip_exe install -r "$workdir"/pak3.txt
 $pip_exe install -r "$workdir"/pak4.txt
@@ -37,10 +31,6 @@ $pip_exe install -r "$workdir"/pak8.txt
 $pip_exe install --upgrade albucore albumentations
 
 $pip_exe install -r "$workdir"/pakZ.txt
-
-# Config Python Embedded
-cd "$workdir"/python_standalone
-sed -i '1i../ComfyUI' ./python312._pth
 
 $pip_exe list
 
