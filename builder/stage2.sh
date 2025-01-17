@@ -10,8 +10,6 @@ export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_standalone/Scripts"
 
 ls -lahF
 
-# MKDIRs
-mkdir -p "$workdir"/ComfyUI_Windows_portable/update
 # Redirect HuggingFace-Hub model folder
 export HF_HUB_CACHE="$workdir/ComfyUI_Windows_portable/HuggingFaceHub"
 mkdir -p "${HF_HUB_CACHE}"
@@ -19,7 +17,7 @@ mkdir -p "${HF_HUB_CACHE}"
 export TORCH_HOME="$workdir/ComfyUI_Windows_portable/TorchHome"
 mkdir -p "${TORCH_HOME}"
 
-# Relocate python_standalone.
+# Relocate python_standalone
 # This move is intentional. It will fast-fail if this breaks anything.
 mv  "$workdir"/python_standalone  "$workdir"/ComfyUI_Windows_portable/python_standalone
 
@@ -95,18 +93,7 @@ $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 
 ################################################################################
-# Copy & Replace start script files
-# First copy ComfyUI's attachments
-cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/update_windows/* \
-    "$workdir"/ComfyUI_Windows_portable/update/
-cp -r "$workdir"/ComfyUI_Windows_portable/ComfyUI/.ci/windows_base_files/* \
-    "$workdir"/ComfyUI_Windows_portable/
-
-# If ComfyUI has breaking-changes, stop building
-if [ ! -f "$workdir"/ComfyUI_Windows_portable/run_nvidia_gpu.bat ] ; then
-    return 1
-fi ;
-
+# Copy attachments files (incl. start scripts)
 cp -rf "$workdir"/attachments/* \
     "$workdir"/ComfyUI_Windows_portable/
 
