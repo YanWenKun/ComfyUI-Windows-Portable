@@ -6,7 +6,7 @@ git config --global core.autocrlf true
 workdir=$(pwd)
 gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 export PYTHONPYCACHEPREFIX="$workdir/pycache2"
-export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_embeded/Scripts"
+export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_standalone/Scripts"
 
 ls -lahF
 
@@ -19,9 +19,9 @@ mkdir -p "${HF_HUB_CACHE}"
 export TORCH_HOME="$workdir/ComfyUI_Windows_portable/TorchHome"
 mkdir -p "${TORCH_HOME}"
 
-# Relocate python_embeded.
+# Relocate python_standalone.
 # This move is intentional. It will fast-fail if this breaks anything.
-mv  "$workdir"/python_embeded  "$workdir"/ComfyUI_Windows_portable/python_embeded
+mv  "$workdir"/python_standalone  "$workdir"/ComfyUI_Windows_portable/python_standalone
 
 ################################################################################
 # ComfyUI main app
@@ -131,19 +131,19 @@ rm -rf taesd
 
 # Download models for Impact-Pack & Impact-Subpack
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
-"$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
+"$workdir"/ComfyUI_Windows_portable/python_standalone/python.exe -s -B install.py
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpack
-"$workdir"/ComfyUI_Windows_portable/python_embeded/python.exe -s -B install.py
+"$workdir"/ComfyUI_Windows_portable/python_standalone/python.exe -s -B install.py
 
 ################################################################################
 # Run the test (CPU only), also let custom nodes download some models
 cd "$workdir"/ComfyUI_Windows_portable
-./python_embeded/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
+./python_standalone/python.exe -s -B ComfyUI/main.py --quick-test-for-ci --cpu
 
 ################################################################################
 # Clean up
 # DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
-#rm -rf "$workdir"/ComfyUI_Windows_portable/python_embeded/Lib/site-packages/pymatting
+#rm -rf "$workdir"/ComfyUI_Windows_portable/python_standalone/Lib/site-packages/pymatting
 rm -vf "$workdir"/ComfyUI_Windows_portable/*.log
 rm -vrf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/ComfyUI-Manager
 

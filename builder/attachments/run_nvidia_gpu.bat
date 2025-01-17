@@ -17,12 +17,12 @@ set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 set TORCH_HOME=%~dp0\TorchHome
 
 @REM This command will set PATH environment variable.
-set PATH=%PATH%;%~dp0\python_embeded\Scripts
+set PATH=%PATH%;%~dp0\python_standalone\Scripts
 
 @REM This command will let the .pyc files to be stored in one place.
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
 @REM If you don't want the browser to open automatically, add [ --disable-auto-launch ] to the end of the line below.
-.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build 
+.\python_standalone\python.exe -s ComfyUI\main.py --windows-standalone-build 
 
 pause
