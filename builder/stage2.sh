@@ -28,6 +28,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git \
 # Use latest stable version (has a release tag)
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI
 git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
+# Clear models folder (will restore in the next stage)
+rm -vrf models
+mkdir models
 
 # Custom Nodes
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes

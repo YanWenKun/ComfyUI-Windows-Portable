@@ -9,6 +9,18 @@ du -hd1 ComfyUI_Windows_portable/ComfyUI/custom_nodes
 
 du -h ComfyUI_Windows_portable/ComfyUI/models
 
+# Separate models and the rest
+mkdir ComfyUI
+mv "ComfyUI_Windows_portable/ComfyUI/models"  "ComfyUI/models"
+git -C "ComfyUI_Windows_portable/ComfyUI" checkout "models"
+
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=32m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_Windows_portable_cu124.7z ComfyUI_Windows_portable
+
+"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b models.zip ComfyUI
+
+ls -lahF
+
+################################################################################
 # Notes on 7zip compression:
 
 # Use 2140000000b as volume size just because GitHub think 2147483648b is "larger than 2GB".
@@ -37,7 +49,4 @@ du -h ComfyUI_Windows_portable/ComfyUI/models
 # Compression Time: 565s
 
 # So I choose the "Normal Compression". Also, its decompression time is ideal.
-
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=16m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_Windows_portable_cu124.7z ComfyUI_Windows_portable
-
-ls -lahF
+################################################################################

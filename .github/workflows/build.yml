@@ -35,7 +35,7 @@ jobs:
             # You don't need to cofigure it
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            file: "builder/ComfyUI_Windows_portable_cu124.7z*"
+            file: "builder/*.7z*;builder/*.zip*"
             # always draft before release
             draft: true
             overwrite: true
