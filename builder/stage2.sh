@@ -93,7 +93,7 @@ $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 
 ################################################################################
 # Copy attachments files (incl. start scripts)
-cp -rf "$workdir"/attachments/* \
+cp -rf "$workdir"/attachments/. \
     "$workdir"/ComfyUI_Windows_portable/
 
 du -hd2 "$workdir"/ComfyUI_Windows_portable

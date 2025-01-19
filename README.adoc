@@ -23,11 +23,11 @@ Previous releases will remain unchanged.
 
 == Features
 
-* Pre-installed with 50+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
+* Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
 
 ** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet connection).
 
-* Includes 300+ mutually compatible Python packages, including: 
+* Includes 200+ mutually compatible Python packages, including: 
 
 ** `insightface`, `dlib`, etc., which require compilation during installation.
 
