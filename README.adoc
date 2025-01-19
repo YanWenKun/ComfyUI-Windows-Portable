@@ -230,7 +230,7 @@ and select Git Bash (default).
 |link:https://github.com/cubiq/PuLID_ComfyUI[PuLID by cubiq]
 |link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
 |link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
-// |link:https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
+|link:https://github.com/Gourieff/ComfyUI-ReActor[ReActor Node]
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |
