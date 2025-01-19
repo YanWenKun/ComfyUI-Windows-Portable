@@ -117,6 +117,14 @@ curl -sSL https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1
     --create-dirs -o facerestore_models/GFPGANv1.4.pth
 curl -sSL https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
     --create-dirs -o insightface/inswapper_128_fp16.onnx
+curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/config.json \
+    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/config.json
+curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/confusion_matrix.png \
+    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/confusion_matrix.png
+curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/model.safetensors \
+    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/model.safetensors
+curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/preprocessor_config.json \
+    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/preprocessor_config.json
 
 # Download models for Impact-Pack & Impact-Subpack
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
