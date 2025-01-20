@@ -282,9 +282,7 @@ on my repository page.
 3. Click *Run Workflow*.
 4. Wait about 20~40 minutes until the workflow run complete.
 ** If you want to speed up the compression process, edit
-`stage3.sh`
-and set the parameters to
-`-mx=3 -mfb=32 -md=4m`.
+`stage3.sh` and follow the instructions to comment/uncomment corresponding code.
 This adjustment will reduce the workflow duration to under 15 minutes, at the cost of a larger file size.
 5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
 
