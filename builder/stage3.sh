@@ -14,18 +14,18 @@ mkdir ComfyUI
 mv "ComfyUI_Windows_portable/ComfyUI/models"  "ComfyUI/models"
 git -C "ComfyUI_Windows_portable/ComfyUI" checkout "models"
 
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=5 -mfb=32 -md=32m -ms=on -mf=BCJ2 -v2146435072b ComfyUI_Windows_portable_cu124.7z ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 -v2145386496b ComfyUI_Windows_portable_cu124.7z ComfyUI_Windows_portable
 # In case you need faster compression, comment the line above, and uncomment the line below. 
-# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2146435072b ComfyUI_Windows_portable_cu124.zip ComfyUI_Windows_portable
+# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2145386496b ComfyUI_Windows_portable_cu124.zip ComfyUI_Windows_portable
 
-"C:\Program Files\7-Zip\7z.exe" a -tzip -v2146435072b models.zip ComfyUI
+"C:\Program Files\7-Zip\7z.exe" a -tzip -v2145386496b models.zip ComfyUI
 
 ls -lahF
 
 ################################################################################
 # Notes on 7zip compression:
 
-# Use 2146435072b as volume size just because GitHub think 2147483648b is "larger than 2GB".
+# Use 2145386496b as volume size because GitHub accept max 2145649486b (~2046.25 MiB).
 
 # LZMA2 is ~75% faster than LZMA, but consumes significant more RAM.
 # The param "-mx=5 -mfb=32 -md=16m" is equivalent to "Normal Compression" in 7-Zip GUI.
