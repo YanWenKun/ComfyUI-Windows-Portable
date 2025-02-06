@@ -1,0 +1,41 @@
+name: "Build & Upload MEGAPAK"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_upload:
+    permissions:
+        contents: "write"
+        packages: "write"
+        pull-requests: "read"
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v4
+
+        - name: Stage 1 Gathering Dependencies
+          shell: bash
+          working-directory: builder-megapak
+          run: bash stage1.sh
+
+        - name: Stage 2 Assembling Repositories
+          shell: bash
+          working-directory: builder-megapak
+          run: bash stage2.sh
+
+        - name: Stage 3 Compressing Package
+          shell: bash
+          working-directory: builder-megapak
+          run: bash stage3.sh
+
+        - name: Upload archive to release
+          uses: xresloader/upload-to-github-release@v1
+          env:
+            # This is a always-on token when you run GitHub Actions
+            # You don't need to cofigure it
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            file: "builder-megapak/*.7z*;builder-megapak/*.zip*"
+            # always draft before release
+            draft: true
+            overwrite: true

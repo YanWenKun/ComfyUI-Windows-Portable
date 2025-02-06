@@ -1,0 +1,20 @@
+name: "Test Build MEGAPAK"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v4
+
+        - name: Stage 1 Gathering Dependencies
+          shell: bash
+          working-directory: builder-megapak
+          run: bash stage1.sh
+
+        - name: Stage 2 Assembling Repositories
+          shell: bash
+          working-directory: builder-megapak
+          run: bash stage2.sh
