@@ -47,9 +47,9 @@ Previous releases will remain unchanged.
 . Download the package files from the
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
 ** Or you can download them directly:
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
 
 ** Open the `.7z.001` and extract it to a convenient place. 
 Open the `.zip.001` and extract it to the same place. 
