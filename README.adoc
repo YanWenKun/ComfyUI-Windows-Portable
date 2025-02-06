@@ -1,9 +1,9 @@
+[.text-center]
+English | *link:README.zh.adoc[中文说明]*
+
 # Portable package for ComfyUI on Windows
 
 image::docs/screenshot.webp["Screenshot"]
-
-[.text-center]
-English | *link:README.zh.adoc[中文说明]*
 
 Similar to the 
 https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official standalone portable],
