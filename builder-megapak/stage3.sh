@@ -3,24 +3,24 @@ set -eux
 
 ls -lahF
 
-du -hd2 ComfyUI_Windows_portable
+du -hd2 ComfyUI_MEGAPAK
 
-du -hd1 ComfyUI_Windows_portable/ComfyUI/custom_nodes
+du -hd1 ComfyUI_MEGAPAK/ComfyUI/custom_nodes
 
-du -h ComfyUI_Windows_portable/ComfyUI/models
+du -h ComfyUI_MEGAPAK/ComfyUI/models
 
 # Separate models and the rest
-mkdir -p m_folder/ComfyUI_Windows_portable/ComfyUI
-mv "ComfyUI_Windows_portable/ComfyUI/models"  "m_folder/ComfyUI_Windows_portable/ComfyUI/models"
-git -C "ComfyUI_Windows_portable/ComfyUI" checkout "models"
+mkdir -p m_folder/ComfyUI_MEGAPAK/ComfyUI
+mv "ComfyUI_MEGAPAK/ComfyUI/models"  "m_folder/ComfyUI_MEGAPAK/ComfyUI/models"
+git -C "ComfyUI_MEGAPAK/ComfyUI" checkout "models"
 
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_Windows_portable_cu126.7z ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_MEGAPAK_cu126.7z ComfyUI_MEGAPAK
 
 # In case you need faster compression, comment the line above, and uncomment the line below. 
-# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b ComfyUI_Windows_portable_cu126.zip ComfyUI_Windows_portable
+# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b ComfyUI_MEGAPAK_cu126.zip ComfyUI_MEGAPAK
 
 cd m_folder
-"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b models.zip ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b models.zip ComfyUI_MEGAPAK
 mv ./*.zip* ../
 cd ..
 
