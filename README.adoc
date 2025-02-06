@@ -44,10 +44,16 @@ Previous releases will remain unchanged.
 
 . Install https://git-scm.com/download/win[Git for Windows]. The setup will prompt you with several options; it's fine to use the default settings for all of them.
 
-. Download the package files from the release page:
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
-** Note that there are multiple files (`.7z.001`, `.7z.002` ...) that need to be downloaded.
-** Open the `.7z.001` and extract it to a convenient place. If you can't open 7z files, install
+. Download the package files from the
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
+** Or you can download them directly:
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
+
+** Open the `.7z.001` and extract it to a convenient place. 
+Open the `.zip.001` and extract it to the same place. 
+If you can't open 7z files, install
 https://www.7-zip.org/[7-zip]
 or
 https://peazip.github.io/peazip-64bit.html[PeaZip]

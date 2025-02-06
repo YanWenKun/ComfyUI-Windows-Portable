@@ -42,21 +42,26 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
 . 安装好 https://git-scm.com/download/win[Git for Windows]，默认设置即可。
 
-. 在发布页面下载整合包：
+. 在
+https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
+下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases
-** 注意有多个文件（压缩包分卷），需要全部下载后解压。
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/download/latest/models.zip.001[models.zip.001] （模型包，如果是从之前版本升级，不需要下载）
+
+** 打开 `.7z.001` 并解压（建议目录不要太深），打开 `.zip.001` 并解压到同一个目录。
 
 . 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 
 ** 可随意建立子目录，便于分类
 
-. （按需）选择启动脚本
+. （按需）改用中文启动脚本
 
 ** 将 `中文脚本` 目录下的文件复制到主目录
 ** 如能流畅访问 PIP、HuggingFace、GitHub，略过此步骤
 
-. （可选）编辑启动脚本，`run_cn.bat` 或 `run_nvidia_gpu.bat`
+. （按需）编辑启动脚本，`run_cn.bat` (中) 或 `run_nvidia_gpu.bat` (英)
 
 ** 如果不希望程序启动后自动打开浏览器，在启动脚本中添加启动参数 `--disable-auto-launch`
 ** 如果正在用 40 系及更新的 GPU，可尝试添加启动参数 `--fast`，有
