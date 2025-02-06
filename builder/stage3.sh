@@ -10,7 +10,7 @@ du -hd1 ComfyUI_Windows_portable/ComfyUI/custom_nodes
 du -h ComfyUI_Windows_portable/ComfyUI/models
 
 # Separate models and the rest
-mkdir m_folder/ComfyUI_Windows_portable/ComfyUI
+mkdir -p m_folder/ComfyUI_Windows_portable/ComfyUI
 mv "ComfyUI_Windows_portable/ComfyUI/models"  "m_folder/ComfyUI_Windows_portable/ComfyUI/models"
 git -C "ComfyUI_Windows_portable/ComfyUI" checkout "models"
 
