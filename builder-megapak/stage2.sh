@@ -140,8 +140,6 @@ cd "$workdir"/ComfyUI_MEGAPAK
 
 ################################################################################
 # Clean up
-# DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
-#rm -rf "$workdir"/ComfyUI_MEGAPAK/python_standalone/Lib/site-packages/pymatting
 rm -vf "$workdir"/ComfyUI_MEGAPAK/*.log
 rm -vrf "$workdir"/ComfyUI_MEGAPAK/ComfyUI/user/default/ComfyUI-Manager
 

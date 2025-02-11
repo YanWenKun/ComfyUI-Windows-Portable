@@ -16,11 +16,8 @@ git -C "ComfyUI_MEGAPAK/ComfyUI" checkout "models"
 
 "C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_MEGAPAK_cu126.7z ComfyUI_MEGAPAK
 
-# In case you need faster compression, comment the line above, and uncomment the line below. 
-# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b ComfyUI_MEGAPAK_cu126.zip ComfyUI_MEGAPAK
-
 cd m_folder
-"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b models.zip ComfyUI_MEGAPAK
+"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b MODELS.zip ComfyUI_MEGAPAK
 mv ./*.zip* ../
 cd ..
 
