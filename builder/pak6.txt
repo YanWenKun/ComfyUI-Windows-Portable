@@ -7,8 +7,11 @@ git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git
 git+https://github.com/WASasquatch/img2texture.git
+# Janus' real dep list is in its pyproject.toml, not requirements.txt
+git+https://github.com/deepseek-ai/Janus.git
 cupy-cuda12x # For Frame Interpolation
 compel # For smZNodes
 lark # For smZNodes
 torchdiffeq # For DepthFM
 fairscale # For APISR
+attrdict # For Janus
