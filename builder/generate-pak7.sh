@@ -18,6 +18,7 @@ https://github.com/digitaljohn/comfyui-propost/raw/refs/heads/master/requirement
 https://github.com/Jonseed/ComfyUI-Detail-Daemon/raw/refs/heads/main/requirements.txt
 https://github.com/kijai/ComfyUI-DepthAnythingV2/raw/refs/heads/main/requirements.txt
 https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt
+https://github.com/mirabarukaso/ComfyUI_Mira/raw/refs/heads/main/requirements.txt
 https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt

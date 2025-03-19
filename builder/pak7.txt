@@ -15,9 +15,11 @@ loguru
 markdownify
 mido[ports-rtmidi]
 peft
+protobuf
 pydub
 pymatting
 PyOpenGL
+PyOpenGL-accelerate
 pywin32
 requests
 SpoutGL

@@ -32,6 +32,9 @@ $pip_exe install -r "$workdir"/pak8.txt
 # https://github.com/plemeri/transparent-background/blob/f54975ce489af549dcfc4dc0a2d39e8f69a204fd/setup.py#L45
 $pip_exe install --upgrade albucore albumentations
 
+# Install comfyui-frontend-package, version determined by ComfyUI.
+$pip_exe install -r https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
+
 $pip_exe install -r "$workdir"/pakZ.txt
 
 $pip_exe list

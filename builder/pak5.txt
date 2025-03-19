@@ -2,7 +2,9 @@
 addict
 aiohttp
 albumentations
+av
 cachetools
+chardet
 clip-interrogator
 color-matcher
 colour-science
@@ -13,7 +15,6 @@ filelock
 GitPython
 imageio-ffmpeg
 importlib-metadata
-mediapipe
 mss
 numba
 numexpr
@@ -44,6 +45,8 @@ trimesh[easy]
 typer
 typing-extensions
 ultralytics
+uv
 webcolors
 yacs
 yapf
+yarl
