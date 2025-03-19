@@ -21,6 +21,12 @@ mkdir -p "${TORCH_HOME}"
 # This move is intentional. It will fast-fail if this breaks anything.
 mv  "$workdir"/python_standalone  "$workdir"/ComfyUI_Windows_portable/python_standalone
 
+# Add MinGit (Portable Git)
+curl -sSL https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/MinGit-2.49.0-64-bit.zip \
+    -o MinGit.zip
+unzip -q MinGit.zip -d "$workdir"/ComfyUI_Windows_portable/MinGit
+rm MinGit.zip
+
 ################################################################################
 # ComfyUI main app
 git clone https://github.com/comfyanonymous/ComfyUI.git \
