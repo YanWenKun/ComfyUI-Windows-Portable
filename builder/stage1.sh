@@ -35,6 +35,7 @@ $pip_exe install --upgrade albucore albumentations
 # Install comfyui-frontend-package, version determined by ComfyUI.
 $pip_exe install -r https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
 
+$pip_exe install -r "$workdir"/pakY.txt
 $pip_exe install -r "$workdir"/pakZ.txt
 
 $pip_exe list
