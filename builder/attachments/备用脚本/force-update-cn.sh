@@ -7,7 +7,7 @@ set -eu
 function set_url_and_pull () {
     git_remote_url=$(git -C "$1" remote get-url origin) ;
 
-    if [[ $git_remote_url =~ ^(https:\/\/gh-proxy\.com\/)(.*)(\.git)$ ]]; then
+    if [[ $git_remote_url =~ ^(https:\/\/)(gh-proxy\.com|ghfast\.top)(\/)(.*)(\.git)$ ]]; then
         echo "正在更新: $1" ;
         git -C "$1" reset --hard ;
         git -C "$1" pull --ff-only ;
@@ -15,14 +15,14 @@ function set_url_and_pull () {
     elif [[ $git_remote_url =~ ^(https:\/\/github\.com\/)(.*)(\.git)$ ]]; then
         echo "正在修改URL并更新: $1" ;
         git -C "$1" reset --hard ;
-        git -C "$1" remote set-url origin "https://gh-proxy.com/$git_remote_url" ;
+        git -C "$1" remote set-url origin "https://ghfast.top/$git_remote_url" ;
         git -C "$1" pull --ff-only ;
         echo "更新完成: $1" ;
     elif [[ $git_remote_url =~ ^(https:\/\/ghp\.ci\/)((https:\/\/github\.com\/)(.*)(\.git))$ ]]; then
         echo "正在修改URL并更新: $1" ;
         echo "提取URL: ${BASH_REMATCH[2]}" ;
         git -C "$1" reset --hard ;
-        git -C "$1" remote set-url origin "https://gh-proxy.com/${BASH_REMATCH[2]}" ;
+        git -C "$1" remote set-url origin "https://ghfast.top/${BASH_REMATCH[2]}" ;
         git -C "$1" pull --ff-only ;
         echo "更新完成: $1" ;
     fi ;
