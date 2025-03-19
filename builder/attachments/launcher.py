@@ -21,6 +21,7 @@ def save_config(args):
         "fast_mode": args.fast_mode,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
+        "use_pytorch_cross_attention": args.use_pytorch_cross_attention,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -96,6 +97,11 @@ def main():
                             action='store_true',
                             help='More conservative VRAM usage, reduce speed, recommended only when VRAM is insufficient (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
+    launch_tab.add_argument('--use-pytorch-cross-attention', 
+                            metavar='Disable xFormers', 
+                            action='store_true',
+                            help='This will enable the native PyTorch cross-attention. Not recommended if you plan to generate videos (--use-pytorch-cross-attention)',
+                            default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
                             help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
@@ -145,6 +151,8 @@ def main():
         command.append('--disable-smart-memory')
     if args.lowvram:
         command.append('--lowvram')
+    if args.use_pytorch_cross_attention:
+        command.append('--use-pytorch-cross-attention')
 
     # Add user-defined extra parameters
     if args.extra_args:

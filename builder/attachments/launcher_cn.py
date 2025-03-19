@@ -21,6 +21,7 @@ def save_config(args):
         "fast_mode": args.fast_mode,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
+        "use_pytorch_cross_attention": args.use_pytorch_cross_attention,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -131,6 +132,11 @@ def main():
                             action='store_true',
                             help='更“节约”地使用显存， 牺牲速度， 仅建议显存不足时开启 (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
+    launch_tab.add_argument('--use-pytorch-cross-attention', 
+                            metavar='禁用 xFormers', 
+                            action='store_true',
+                            help='禁用后，会启用 PyTorch 原生交叉注意力机制。 如需生成视频， 建议不要勾选 (--use-pytorch-cross-attention)',
+                            default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='额外启动参数', 
                             help='参数列表在 ComfyUI 的 cli_args.py， 注意添加空格 （例如 " --cpu" 启用仅 CPU 模式）',
@@ -184,6 +190,8 @@ def main():
         command.append('--disable-smart-memory')
     if args.lowvram:
         command.append('--lowvram')
+    if args.use_pytorch_cross_attention:
+        command.append('--use-pytorch-cross-attention')
 
     # 添加用户自定义的额外参数
     if args.extra_args:
