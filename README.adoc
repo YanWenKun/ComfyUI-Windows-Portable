@@ -10,17 +10,6 @@ https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official standalone p
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
 
-== NEW: A Dedicated Package for ComfyUI-3D-Pack
-
-For better compatibility,
-I made a dedicated package for ComfyUI-3D-Pack:
-
-https://github.com/YanWenKun/Comfy3D-WinPortable
-
-New releases of this `ComfyUI-Windows-Portable` will not include 3D-Pack.
-Previous releases will remain unchanged.
-
-
 == Features
 
 * Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
@@ -35,14 +24,12 @@ Previous releases will remain unchanged.
 
 * Only a few functional models are pre-installed; users please prepare SD models of your favorite.
 
-* This repo uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork the repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own AIO Package>>.
+* This repo uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork the repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own All-In-One Package>>.
 
 
 == How to Use
 
 . Only NVIDIA GPUs are supported, preferably with the latest driver installed.
-
-. Install https://git-scm.com/download/win[Git for Windows]. The setup will prompt you with several options; it's fine to use the default settings for all of them.
 
 . Download the package files from the
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
@@ -62,41 +49,36 @@ first.
 . Place SD models in `ComfyUI\models\checkpoints`.
 ** Subdirectories can be created for better organization.
 
-. Edit and run `run_nvidia_gpu.bat` to start ComfyUI.
+. Run `RUN_Launcher.bat` to start.
 
-** If you need to config HTTP proxy, follow the instruction in this file.
+image::docs/screenshot-launcher.webp["Launcher Screenshot"]
 
-** If you don't want the browser to open automatically, add `--disable-auto-launch` to the startup arguments.
+* After launching, the program will automatically open a browser. You can also manually access: http://localhost:8188/.
 
-** If you're using 40/Ada series or newer GPU, you can try adding `--fast` to the startup arguments.
-It has
-https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[magic].
-
-. After starting, the program will automatically open a browser, or you can visit: http://localhost:8188/
+* Close the window to exit the program.
 
 
 == Tips and Tricks
 
+. The `ExtraScripts` folder contains command-line launch scripts, which are equivalent to the launcher. 
+
 . Take full advantage of ComfyUI-Manager (the *Manager* button in the top-right corner of the ComfyUI page) to manage custom nodes: install, update, disable, and uninstall.
 ** Be cautious when using "Update All"; there's no need to update unused nodes to avoid Python package conflicts.
-
-. To disable xFormers, add `--use-pytorch-cross-attention` to the ComfyUI startup parameters.
-** This will enable the native PyTorch cross-attention. Once enabled, the time, VRAM usage, and image consistency for SD image generation may vary slightly.
-** It is recommended not to disable xFormers if you plan to generate videos.
 
 . For power users, consider using https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] to limit cache files while isolating the environment.
 ** For better I/O performance when using Sandboxie, it is recommended to configure the program's main directory (`ComfyUI_Windows_portable`) as "Open Access" in "Sandbox Options" -> "Resource Access".
 
 
-=== 4. External Model Directories
+=== 4. External Model Directory
 
-ComfyUI can load model files from directories outside of the main directory.
-Here's how to configure it:
+If you place model files on different partitions or share a set of model files across multiple ComfyUI instances,
+you can configure ComfyUI to load external model directories:
 
-* Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory to remove the `.example` suffix.
+* Rename `extra_model_paths.yaml.example` in the `ComfyUI` directory, removing the `.example` suffix.
+
 * Edit `extra_model_paths.yaml`, where lines starting with `#` are comments.
 
-.Example file (click to expand)
+.Reference file (click to expand)
 [%collapsible]
 ====
 ----
@@ -121,6 +103,7 @@ comfyui:
     grounding-dino: grounding-dino
     hypernetworks: hypernetworks
     insightface: insightface
+    instantid: instantid
     ipadapter: ipadapter
     loras: loras
     mmdets: mmdets
@@ -140,50 +123,34 @@ comfyui:
 ====
 
 
-=== 5. External HuggingFace Hub Directory
+=== 5. More External Model Directories
 
-ComfyUI has three main locations for saving model files:
+ComfyUI has five common locations for saving model files:
 
-* The official `models` directory (and the aforementioned external model directory)
-* Model files downloaded locally by each node in `custom_nodes`
-* Model files downloaded via `HuggingFace Hub` (the official HF downloader)
+* The built-in `ComfyUI\models` directory.
+* External model directories configured via `extra_model_paths.yaml`.
+* Model files downloaded via HuggingFace Hub (HF official downloader).
+* Model files downloaded via PyTorch.
+* Files downloaded in-place by nodes in `ComfyUI\custom_nodes`.
 
-By default, HF Hub downloads files to `C:\Users\UserName\.cache\huggingface\hub`.  
-This package modifies this path to
-`ComfyUI_Windows_portable\HuggingFaceHub`
-in the startup script for easier file management.
+Among these:
 
-If you have multiple ComfyUI instances and wants to share a common HF Hub model directory, modify the startup script as follows:
+* HF Hub defaults to downloading files to `C:\Users\UserName\.cache\huggingface\hub`.
+* PyTorch defaults to downloading files to `C:\Users\UserName\.cache\torch\hub`.
 
- set HF_HUB_CACHE=%~dp0\HuggingFaceHub
-
-To something like:
-
- set HF_HUB_CACHE=D:\HuggingFaceHub
+This package modifies the launch script to redirect these to the program's root directory, under `HuggingFaceHub` and `TorchHome` folders, respectively, for easier management. If needed, you can edit the launch script to change these paths.
 
 
-=== 6. How to Perform a "Swap-Out and Swap-In" Style Major Update
+=== 6. How to Perform a "Refresh" Major Update
 
-This method bypasses ComfyUI-Manager updates and directly replaces the old package with a new version.  
-If done correctly, it avoids installing or upgrading Python packages, thus preventing dependency version conflicts.
+This method does not use ComfyUI-Manager for updates but directly replaces the package with a new version.
+If the process goes smoothly, it avoids installing or upgrading Python packages, thus preventing dependency conflicts.
 
-. First, install https://git-scm.com/download/win[Git for Windows],  
-and select Git Bash (default).
-
-. Unzip the new version of pre-built package.
-. Delete the `ComfyUI` and `HuggingFaceHub` folders in the new version.
-. Copy the two folders from the old version into the new one.
-. In the new main directory, open Git Bash (right-click in an empty area and select "Open Git Bash here").
-
-. Copy and paste the following command in Git Bash (right-click to paste and hit Enter):
-
- bash force-update-all.sh
-
-[start=7]
-. Refer to the "How to Use" section to edit and run the startup script.
-
-. If any nodes fail to load, you may need to click "try fix" in ComfyUI-Manager.
-
+. Extract the new package.
+. Delete the `ComfyUI`, `HuggingFaceHub`, and `TorchHome` folders in the new package.
+. Copy (or move) these three folders from the old package to the new one.
+. Run `RUN_Force_Updater.bat` in the new package's root directory.
+. If any nodes fail to load, use ComfyUI-Manager to "try fix."
 
 == Details
 
@@ -275,7 +242,7 @@ If compatibility issues arise, you can try disabling conflicting nodes in ComfyU
 
 
 [[build-your-own]]
-== Creating Your Own AIO Package
+== Creating Your Own All-In-One Package
 
 image:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml"]
 
@@ -283,15 +250,11 @@ This repository utilizes a pipeline to build the package, and the codebase doesn
 
 1. After forking, go to *Actions* on the page.
 2. Locate *Build & Upload Package*.
-** For example, it looks like 
-link:https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.yml[this]
-on my repository page.
+** For example, the page in my repository looks like
+https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/actions/workflows/build.yml[this].
 3. Click *Run Workflow*.
 4. Wait about 20~40 minutes until the workflow run complete.
-** If you want to speed up the compression process, edit
-`stage3.sh` and follow the instructions to comment/uncomment corresponding code.
-This adjustment will reduce the workflow duration to under 15 minutes, at the cost of a larger file size.
-5. Go to the *releases* page of your repository, where you'll find the newly generated draft for download or publish.
+5. Go to the *releases* page of your repository, where you will find the newly generated draft, ready for download or editing.
 
 
 == Development Idea

@@ -9,14 +9,6 @@ image::docs/screenshot.zh.webp["界面截图"]
 https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
 整合包，但是更大。
 
-== 新： ComfyUI-3D-Pack 整合包
-
-为了更好的兼容性，我为 ComfyUI-3D-Pack 单独做了一个整合包：
-
-https://github.com/YanWenKun/Comfy3D-WinPortable
-
-本仓库 `ComfyUI-Windows-Portable` 新发布的整合包就不再包含 3D-Pack 了，之前发布的版本都将保留。
-
 
 ## 特点
 
@@ -40,8 +32,6 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
 . 仅支持 NVIDIA 显卡，建议先装好最新驱动
 
-. 安装好 https://git-scm.com/download/win[Git for Windows]，默认设置即可。
-
 . 在
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
 下载整合包文件，或者直接下载链接：
@@ -50,44 +40,35 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] （模型包，如果是从之前版本升级，不需要下载）
 
-** 打开 `.7z.001` 并解压（建议目录不要太深），打开 `.zip.001` 并解压到同一个目录。
+** 打开 `.7z.001` 并解压（建议不要放在太深的目录）；打开 `.zip.001` 并解压到同一个目录。
 
 . 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 
 ** 可随意建立子目录，便于分类
 
-. （按需）改用中文启动脚本
+. 运行 `启动器.bat` 即可启动
 
-** 将 `中文脚本` 目录下的文件复制到主目录
-** 如能流畅访问 PIP、HuggingFace、GitHub，略过此步骤
+image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
-. （按需）编辑启动脚本，`run_cn.bat` (中) 或 `run_nvidia_gpu.bat` (英)
+* 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
 
-** 如果不希望程序启动后自动打开浏览器，在启动脚本中添加启动参数 `--disable-auto-launch`
-** 如果正在用 40 系及更新的 GPU，可尝试添加启动参数 `--fast`，有
-https://github.com/comfyanonymous/ComfyUI/commit/9953f22fce0ba899da0676a0b374e5d1f72bf259[魔法]
-
-. 执行启动脚本
-
-** 启动后程序会自动打开浏览器，也可手动访问： http://localhost:8188/
+* 关闭窗口即可退出程序
 
 
 ## 使用技巧
 
+. `备用脚本` 文件夹下包含了命令行启动脚本，其内容与启动器等价。
+
 . 善加利用 ComfyUI-Manager （ComfyUI 页面右上角 *Manager* 按钮），用它来管理自定义节点：安装、更新、禁用、卸载。
 ** “更新全部”需谨慎，用不到的节点没必要更新，避免 Python 包混乱。
 
-. 如需禁用 xFormers，在 ComfyUI 启动参数中添加 `--use-pytorch-cross-attention` 即可。
-** 这样会使用 PyTorch 原生交叉注意力机制。启用后，SD 文生图的用时、显存占用、画面一致性可能会略有不同。
-** 如需生成视频，建议不要禁用。
-
-. 可以考虑使用 https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] 沙盒来约束缓存文件，同时隔离环境。
+. 如果你讨厌程序产生的临时文件、下载缓存等，可以考虑使用 https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] 沙盒来约束它们，同时隔离环境。
 ** 在使用沙盒时，为了 I/O 性能，建议在“沙盒选项”-“资源访问”中，将程序主目录（`ComfyUI_Windows_portable`）配置为“开放”。
 
 ### 4. 外部模型目录
 
-ComfyUI 可以加载主目录外的模型文件，
-配置方法：
+如果你将模型文件放在不同的分区，或者多个 ComfyUI 实例共用一套模型文件，
+可以配置 ComfyUI 加载外部模型目录：
 
 * 将 `ComfyUI` 目录下的 `extra_model_paths.yaml.example` 重命名，去掉末尾的 `.example`
 
@@ -118,6 +99,7 @@ comfyui:
     grounding-dino: grounding-dino
     hypernetworks: hypernetworks
     insightface: insightface
+    instantid: instantid
     ipadapter: ipadapter
     loras: loras
     mmdets: mmdets
@@ -137,24 +119,24 @@ comfyui:
 ====
 
 
-### 5. 外部 HuggingFace Hub 目录
+### 5. 更多外部模型目录
 
-ComfyUI 有三处主要的模型文件保存位置：
+ComfyUI 有五处常见的模型文件保存位置：
 
-* 官方推荐的 `models` 目录（以及上述的外部模型目录）
-* 各节点在 `custom_nodes` 中原地下载的文件
-* 通过 `HuggingFace Hub`（HF 官方下载器）下载的模型文件
+* 内置的 `ComfyUI\models` 目录
+* 通过 `extra_model_paths.yaml` 配置的外部模型目录
+* 通过 HuggingFace Hub（HF 官方下载器）下载的模型文件
+* 通过 PyTorch 下载的模型文件
+* 各节点在 `ComfyUI\custom_nodes` 中原地下载的文件
 
-其中 HF Hub 默认将文件下载到 `C:\Users\UserName\.cache\huggingface\hub` 。
-本整合包在启动脚本中，将其修改为了 `程序目录\HuggingFaceHub` 文件夹，以便用户直观管理。
+其中：
 
-如果用户有多个 ComfyUI 实例，希望共用一套 HF Hub 模型目录，可将启动脚本中的
+* HF Hub 默认将文件下载到 `C:\Users\UserName\.cache\huggingface\hub`
+** 本整合包修改到了 `程序目录\HuggingFaceHub`
+* PyTorch 默认将文件下载到 `C:\Users\UserName\.cache\torch\hub`
+** 本整合包修改到了 `程序目录\TorchHome`
 
- set HF_HUB_CACHE=%~dp0\HuggingFaceHub
-
-修改为类似形式：
-
- set HF_HUB_CACHE=D:\HuggingFaceHub
+如需修改，可在启动脚本中编辑。
 
 
 ### 6. 如何“翻新式”大更新
@@ -162,23 +144,10 @@ ComfyUI 有三处主要的模型文件保存位置：
 该方法不通过 ComfyUI-Manager 更新，而是直接替换为新版整合包。
 如果流程顺利，可以避免安装升级 Python 包，进而避免依赖项版本混乱。
 
-. 先安装好
-https://git-scm.com/download/win[Git for Windows]，
-并选择安装 Git Bash（默认）。
-
 . 解压新版整合包
-. 删除新版中的 `ComfyUI` 与 `HuggingFaceHub` 文件夹
-. 将旧版中的这两个文件夹复制过来
-. 在新版主目录下，打开 Git Bash（在空白处点击右键，菜单中选择“Open Git Bash here”）
-
-. 复制下行内容，在 Git Bash 中点击鼠标右键，菜单中选择粘贴，并回车：
-
- bash 使用国内镜像强制更新全部节点.sh
-
-
-[start=7]
-. 参照“如何使用”一节，编辑启动脚本并运行
-
+. 删除新版中的 `ComfyUI` 、 `HuggingFaceHub` 与 `TorchHome` 文件夹
+. 将旧版中的这三个文件夹复制（移动）过来
+. 在新版主目录下，运行 `强制更新.bat`
 . 如有节点加载失败，需在 ComfyUI-Manager 中“try fix”。
 
 
