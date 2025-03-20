@@ -91,7 +91,7 @@ def main():
                             metavar='Disable Smart Memory Management', 
                             action='store_true',
                             help='Offloads models from VRAM to RAM more frequently to mitigate VRAM leaks (--disable-smart-memory)',
-                            default=saved_config.get("disable_smart_memory", False) if saved_config else True)
+                            default=saved_config.get("disable_smart_memory", False) if saved_config else False)
     launch_tab.add_argument('--lowvram', 
                             metavar='Low VRAM Mode', 
                             action='store_true',

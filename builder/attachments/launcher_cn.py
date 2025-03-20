@@ -126,7 +126,7 @@ def main():
                             metavar='禁用智能内存管理', 
                             action='store_true',
                             help='更频繁地将显存中的模型卸载到内存中， 用于缓解显存泄露 (--disable-smart-memory)',
-                            default=saved_config.get("disable_smart_memory", False) if saved_config else True)
+                            default=saved_config.get("disable_smart_memory", False) if saved_config else False)
     launch_tab.add_argument('--lowvram', 
                             metavar='低显存模式', 
                             action='store_true',
