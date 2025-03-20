@@ -70,7 +70,7 @@ channel_url = https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/Comf
     else:
         print(f"文件已存在: {config_ini_path}")
 
-@Gooey(program_name="ComfyUI 启动器 for XPU", 
+@Gooey(program_name="ComfyUI 启动器", 
        language='chinese',
        tabbed_groups=True)  # 启用分 Tab 布局
 def main():

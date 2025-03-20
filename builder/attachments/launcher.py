@@ -34,7 +34,7 @@ def load_config():
             return json.load(f)
     return None
 
-@Gooey(program_name="ComfyUI Launcher for XPU", 
+@Gooey(program_name="ComfyUI Launcher", 
        language='english',
        tabbed_groups=True)  # Enable tabbed layout
 
