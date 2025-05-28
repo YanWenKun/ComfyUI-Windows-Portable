@@ -34,8 +34,8 @@ but preloaded with numerous custom nodes and Python packages, with all dependenc
 . Download the package files from the
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
 ** Or you can download them directly:
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
 *** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
 
 ** Open the `.7z.001` and extract it to a convenient place. 

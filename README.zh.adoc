@@ -36,8 +36,8 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.001[ComfyUI_Windows_portable_cu126.7z.001]
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu126.7z.002[ComfyUI_Windows_portable_cu126.7z.002]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] （模型包，如果是从之前版本升级，不需要下载）
 
 ** 打开 `.7z.001` 并解压（建议不要放在太深的目录）；打开 `.zip.001` 并解压到同一个目录。
