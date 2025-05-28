@@ -21,6 +21,7 @@ numexpr
 piexif
 psutil
 py-cpuinfo
+pydantic
 PyGithub
 pynvml
 python-dateutil

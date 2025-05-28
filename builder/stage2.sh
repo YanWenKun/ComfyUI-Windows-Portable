@@ -40,7 +40,7 @@ mkdir models
 
 # Custom Nodes
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
-$gcs https://github.com/ltdrdata/ComfyUI-Manager.git
+$gcs https://github.com/Comfy-Org/ComfyUI-Manager.git
 
 # Workspace
 $gcs https://github.com/crystian/ComfyUI-Crystools.git

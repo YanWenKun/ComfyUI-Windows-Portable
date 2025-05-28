@@ -1,4 +1,4 @@
-https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.6-alpha/dlib-19.24.6-cp312-cp312-win_amd64.whl
+https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.9-alpha/dlib-19.24.9-cp312-cp312-win_amd64.whl
 https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
 pixeloe
 scikit-build-core
