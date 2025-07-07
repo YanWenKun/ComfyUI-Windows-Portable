@@ -2,6 +2,7 @@
 addict
 aiohttp
 albumentations
+alembic
 av
 cachetools
 chardet
@@ -22,6 +23,7 @@ piexif
 psutil
 py-cpuinfo
 pydantic
+pydantic-settings
 PyGithub
 pynvml
 python-dateutil
@@ -37,6 +39,7 @@ sentencepiece
 simpleeval
 soundfile
 spandrel
+SQLAlchemy
 svglib
 tokenizers
 toml

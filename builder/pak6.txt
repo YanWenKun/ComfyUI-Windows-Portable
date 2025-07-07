@@ -1,4 +1,4 @@
-https://github.com/eddiehe99/dlib-whl/releases/download/v19.24.9-alpha/dlib-19.24.9-cp312-cp312-win_amd64.whl
+https://github.com/eddiehe99/dlib-whl/releases/download/v20.0.0-alpha/dlib-20.0.0-cp312-cp312-win_amd64.whl
 https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
 pixeloe
 scikit-build-core
@@ -7,6 +7,7 @@ git+https://github.com/openai/CLIP.git
 git+https://github.com/WASasquatch/cstr
 git+https://github.com/WASasquatch/ffmpy.git
 git+https://github.com/WASasquatch/img2texture.git
+git+https://github.com/facebookresearch/sam2
 # Janus' real dep list is in its pyproject.toml, not requirements.txt
 git+https://github.com/deepseek-ai/Janus.git
 cupy-cuda12x # For Frame Interpolation
