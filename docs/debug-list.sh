@@ -5,6 +5,7 @@ echo '#' > debug-list.txt
 
 array=(
 https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
+https://github.com/Comfy-Org/ComfyUI-Manager/raw/refs/heads/main/requirements.txt
 https://github.com/crystian/ComfyUI-Crystools/raw/refs/heads/main/requirements.txt
 https://github.com/cubiq/ComfyUI_essentials/raw/refs/heads/main/requirements.txt
 https://github.com/cubiq/ComfyUI_FaceAnalysis/raw/refs/heads/main/requirements.txt
@@ -21,7 +22,6 @@ https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/raw/refs/heads/main/requ
 https://github.com/ltdrdata/ComfyUI-Impact-Pack/raw/refs/heads/Main/requirements.txt
 https://github.com/ltdrdata/ComfyUI-Impact-Subpack/raw/refs/heads/main/requirements.txt
 https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirements.txt
-https://github.com/ltdrdata/ComfyUI-Manager/raw/refs/heads/main/requirements.txt
 https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
 https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
@@ -34,6 +34,7 @@ https://github.com/digitaljohn/comfyui-propost/raw/refs/heads/master/requirement
 https://github.com/Jonseed/ComfyUI-Detail-Daemon/raw/refs/heads/main/requirements.txt
 https://github.com/kijai/ComfyUI-DepthAnythingV2/raw/refs/heads/main/requirements.txt
 https://github.com/kijai/ComfyUI-Florence2/raw/refs/heads/main/requirements.txt
+https://github.com/mirabarukaso/ComfyUI_Mira/raw/refs/heads/main/requirements.txt
 https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt

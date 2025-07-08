@@ -22,3 +22,11 @@ scipy
 timm
 torchmetrics
 transformers
+
+# Make sure opencv version is compatible with numpy1.
+numpy==1.26.4
+
+# Who needs numpy1: 
+# 1. Jovimetrix (and 'cozy-comfyui' and 'blendmodes')
+# 2. ComfyUI-SAM2
+# 3. ComfyUI-ReActor
