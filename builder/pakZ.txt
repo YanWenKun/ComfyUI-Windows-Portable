@@ -1,2 +1,2 @@
-# Ensure Numpy 1
-numpy==1.26.4
+# (No longer needed) Ensure Numpy 1
+# numpy==1.26.4
