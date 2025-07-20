@@ -231,6 +231,7 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
+|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
 |
 |===
 
@@ -261,9 +262,15 @@ https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[GitHub w
 ，后来发现实在是难调试，就重写了一遍脚本。
 但打包理念都差不多，都是自带一个免安装的 Python Embedded，半绿色，可移植，依赖项完备，解压即可运行。
 
+（注：
+https://www.python.org/downloads/windows/[Python Embedded]
+现已替换为特性更完备、自带头文件的 
+https://github.com/astral-sh/python-build-standalone[Python Standalone]
+）
+
 不同之处在于，我没有像 comfyanonymous 一样先下载 wheel，再批量安装。因为依赖关系太棘手，我是直接走的 `pip install`，以便 PIP 解析。
 
-当然，这类预装包的 Python Embedded 都有个通病：`Scripts` 目录下的 exe 大多无法正常执行。因这些 exe 多为 Python 命令套壳，并通过绝对路径执行 `python.exe`，一旦目录变动（移植）自然无法执行。所幸对本项目无甚影响。
+当然，这类预装包的 Python Standalone 都有个通病：`Scripts` 目录下的 exe 大多无法正常执行。因这些 exe 多为 Python 命令套壳，并通过绝对路径执行 `python.exe`，一旦目录变动（移植）自然无法执行。所幸对本项目无甚影响。
 
 ## 开发备忘
 
