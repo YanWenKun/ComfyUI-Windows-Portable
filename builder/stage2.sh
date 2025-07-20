@@ -100,6 +100,7 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
+$gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 
 ################################################################################
 # Copy attachments files (incl. start scripts)
