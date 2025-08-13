@@ -12,7 +12,7 @@ ls -lahF
 
 # Download Python Standalone
 curl -sSL \
-https://github.com/astral-sh/python-build-standalone/releases/download/20250712/cpython-3.12.11+20250712-x86_64-pc-windows-msvc-install_only.tar.gz \
+https://github.com/astral-sh/python-build-standalone/releases/download/20250808/cpython-3.12.11+20250808-x86_64-pc-windows-msvc-install_only.tar.gz \
     -o python.tar.gz
 tar -zxf python.tar.gz
 mv python python_standalone
@@ -32,8 +32,9 @@ $pip_exe install -r "$workdir"/pak8.txt
 # https://github.com/plemeri/transparent-background/blob/f54975ce489af549dcfc4dc0a2d39e8f69a204fd/setup.py#L45
 $pip_exe install --upgrade albucore albumentations
 
-# Install comfyui-frontend-package, version determined by ComfyUI.
-$pip_exe install -r https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
+# Install comfyui-frontend-package, version determined by ComfyUI release version.
+latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | grep -m 1 -oP '"name": "\Kv[\d.]+')
+$pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
 $pip_exe install -r "$workdir"/pakY.txt
 $pip_exe install -r "$workdir"/pakZ.txt
