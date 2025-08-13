@@ -51,22 +51,17 @@ $gcs https://github.com/akatz-ai/ComfyUI-AKatz-Nodes.git
 $gcs https://github.com/Amorano/Jovimetrix.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
-$gcs https://github.com/cubiq/ComfyUI_essentials.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/kijai/ComfyUI-KJNodes.git
 $gcs https://github.com/mirabarukaso/ComfyUI_Mira.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
-$gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 $gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
 $gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
-$gcs https://github.com/cubiq/ComfyUI_InstantID.git
-$gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
-$gcs https://github.com/cubiq/PuLID_ComfyUI.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/Gourieff/ComfyUI-ReActor.git
@@ -82,7 +77,6 @@ $gcs https://github.com/twri/sdxl_prompt_styler.git
 
 # Video
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
-$gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 $gcs https://github.com/melMass/comfy_mtb.git
@@ -90,7 +84,6 @@ $gcs https://github.com/melMass/comfy_mtb.git
 # More
 $gcs https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git
 $gcs https://github.com/city96/ComfyUI-GGUF.git
-$gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/digitaljohn/comfyui-propost.git
 $gcs https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 $gcs https://github.com/kijai/ComfyUI-Florence2.git
@@ -98,8 +91,18 @@ $gcs https://github.com/neverbiasu/ComfyUI-SAM2.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
-$gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
+
+# To be removed in future
+$gcs https://github.com/cubiq/ComfyUI_essentials.git
+$gcs https://github.com/cubiq/ComfyUI_InstantID.git
+$gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+$gcs https://github.com/cubiq/PuLID_ComfyUI.git
+$gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
+$gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
+$gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
+$gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+
 
 ################################################################################
 # Copy attachments files (incl. start scripts)
