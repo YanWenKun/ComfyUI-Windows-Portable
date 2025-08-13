@@ -33,7 +33,7 @@ $pip_exe install -r "$workdir"/pak8.txt
 $pip_exe install --upgrade albucore albumentations
 
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
-latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | grep -m 1 -oP '"name": "\Kv[\d.]+')
+latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
 $pip_exe install -r "$workdir"/pakY.txt
