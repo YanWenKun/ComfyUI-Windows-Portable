@@ -52,7 +52,6 @@ $gcs https://github.com/Amorano/Jovimetrix.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
-$gcs https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/kijai/ComfyUI-KJNodes.git
 $gcs https://github.com/mirabarukaso/ComfyUI_Mira.git

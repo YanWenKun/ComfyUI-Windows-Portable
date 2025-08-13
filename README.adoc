@@ -172,7 +172,6 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
 |link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
-|link:https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git[Derfuu Modded Nodes]
 |link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
 |link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
 |link:https://github.com/Amorano/Jovimetrix[Jovimetrix]
