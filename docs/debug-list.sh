@@ -23,7 +23,7 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack/raw/refs/heads/Main/requirements
 https://github.com/ltdrdata/ComfyUI-Impact-Subpack/raw/refs/heads/main/requirements.txt
 https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirements.txt
 https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
-https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
+https://github.com/ltdrdata/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/Amorano/Jovimetrix/raw/refs/heads/main/requirements.txt

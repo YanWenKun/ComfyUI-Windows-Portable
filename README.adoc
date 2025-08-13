@@ -182,7 +182,7 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
 |link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
-|link:https://github.com/WASasquatch/was-node-suite-comfyui[WAS Node Suite]
+|link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
 |
 |===

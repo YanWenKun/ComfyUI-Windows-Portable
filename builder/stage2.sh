@@ -60,7 +60,7 @@ $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
-$gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
+$gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
