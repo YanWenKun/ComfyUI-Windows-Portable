@@ -112,9 +112,12 @@ $gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 
-# Replace original tree with the short-path assembled one
+# Replace original tree with the short-path assembled one (copy-back to avoid Windows mv issues)
 rm -rf "$workdir/ComfyUI_Windows_portable"
-mv "$port_root" "$workdir/"
+cp -r "$port_root" "$workdir/"
+# cleanup short-path workspace
+rm -rf "$(dirname "$port_root")"
+
 
 ################################################################################
 # Copy attachments files (incl. start scripts)
