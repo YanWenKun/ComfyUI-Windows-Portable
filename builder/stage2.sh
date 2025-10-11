@@ -36,14 +36,13 @@ rm -vrf models
 mkdir models
 
 ################################################################################
-# MOVE WHOLE TREE TO A SHORT PHYSICAL PATH FOR ALL GIT CLONES (fix long paths)
+# COPY WHOLE TREE TO A SHORT PHYSICAL PATH FOR ALL GIT CLONES (fix long paths)
 run_tmp="${RUNNER_TEMP:-/d/a}"
-short_root_win="${run_tmp}\cwp_phys"
-short_root="$(cygpath -u "$short_root_win")"
-
+short_root="$(cygpath -u "$run_tmp")/cwp_phys"
 mkdir -p "$short_root"
+# Fresh short copy
 rm -rf "$short_root/ComfyUI_Windows_portable" || true
-mv "$workdir/ComfyUI_Windows_portable" "$short_root/"
+cp -r "$workdir/ComfyUI_Windows_portable" "$short_root/"
 port_root="$short_root/ComfyUI_Windows_portable"
 
 ################################################################################
@@ -113,7 +112,8 @@ $gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 
-# Move back to original path before next steps
+# Replace original tree with the short-path assembled one
+rm -rf "$workdir/ComfyUI_Windows_portable"
 mv "$port_root" "$workdir/"
 
 ################################################################################
@@ -154,7 +154,6 @@ cd "$workdir/ComfyUI_Windows_portable"
 ################################################################################
 # Clean up
 # DO NOT clean pymatting cache, they are nbi/nbc files for Numba, and won't be regenerated.
-# rm -rf "$workdir/ComfyUI_Windows_portable/python_standalone/Lib/site-packages/pymatting"
 rm -vf "$workdir/ComfyUI_Windows_portable/"*.log
 rm -vf "$workdir/ComfyUI_Windows_portable/ComfyUI/user/"*.log
 rm -vrf "$workdir/ComfyUI_Windows_portable/ComfyUI/user/default/ComfyUI-Manager"
