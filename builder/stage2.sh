@@ -41,13 +41,26 @@ mkdir models
 ################################################################################
 # Custom Nodes (clone via a SHORT PATH junction to avoid Windows path limits)
 # cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
+# --- FIX: créer une jonction courte et y accéder avec un chemin POSIX ---
 short_base="${RUNNER_TEMP:-/d/a}/cwp"
-# Create a short base dir and a junction "ComfyUI_Windows_portable" -> "$workdir/ComfyUI_Windows_portable"
-cmd.exe /C "if not exist \"$(cygpath -w "$short_base")\" mkdir \"$(cygpath -w "$short_base")\"" >NUL
-# Remove any previous junction if it exists (ignore errors)
-cmd.exe /C "rmdir \"$(cygpath -w "$short_base")\\ComfyUI_Windows_portable\"" >NUL 2>&1 || true
-cmd.exe /C "mklink /J \"$(cygpath -w "$short_base")\\ComfyUI_Windows_portable\" \"$(cygpath -w "$workdir/ComfyUI_Windows_portable")\"" >NUL
-cd "$short_base/ComfyUI_Windows_portable/ComfyUI/custom_nodes"
+short_base_win="$(cygpath -w "$short_base")"
+workdir_win="$(cygpath -w "$workdir/ComfyUI_Windows_portable")"
+
+# Crée le dossier court si besoin
+cmd.exe /C "if not exist \"$short_base_win\" mkdir \"$short_base_win\"" >NUL
+
+# Supprime l'ancienne jonction si elle existe (ignore erreurs)
+cmd.exe /C "if exist \"$short_base_win\\CWP\" rmdir \"$short_base_win\\CWP\"" >NUL 2>&1 || true
+
+# Crée la jonction CWP -> ComfyUI_Windows_portable
+cmd.exe /C "mklink /J \"$short_base_win\\CWP\" \"$workdir_win\"" >NUL
+
+# Convertit la jonction en chemin POSIX utilisable par bash
+junc_posix="$(cygpath -u "$short_base_win\\CWP")"
+
+# Va dans custom_nodes (avec fallback sur le chemin long si la jonction rate)
+cd "$junc_posix/ComfyUI/custom_nodes" || cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes"
+
 
 # Workspace
 $gcs https://github.com/Comfy-Org/ComfyUI-Manager.git
