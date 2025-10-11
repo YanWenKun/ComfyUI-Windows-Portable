@@ -37,7 +37,10 @@ mkdir models
 
 ################################################################################
 # MOVE WHOLE TREE TO A SHORT PHYSICAL PATH FOR ALL GIT CLONES (fix long paths)
-short_root="${RUNNER_TEMP:-/d/a}/cwp_phys"
+run_tmp="${RUNNER_TEMP:-/d/a}"
+short_root_win="${run_tmp}\cwp_phys"
+short_root="$(cygpath -u "$short_root_win")"
+
 mkdir -p "$short_root"
 rm -rf "$short_root/ComfyUI_Windows_portable" || true
 mv "$workdir/ComfyUI_Windows_portable" "$short_root/"
