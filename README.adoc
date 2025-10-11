@@ -1,5 +1,5 @@
 [.text-center]
-English |
+English
 
 # Portable package for ComfyUI on Windows
 
