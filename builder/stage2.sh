@@ -86,7 +86,8 @@ $gcs https://github.com/twri/sdxl_prompt_styler.git
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
-$gcs https://github.com/melMass/comfy_mtb.git
+# $gcs https://github.com/melMass/comfy_mtb.git
+tmp_base="${RUNNER_TEMP:-/d/a}"; mkdir -p "$tmp_base/mtb" || true; git -c core.longpaths=true clone --depth=1 --no-tags --recurse-submodules --shallow-submodules https://github.com/melMass/comfy_mtb.git "$tmp_base/mtb/comfy_mtb"; mv "$tmp_base/mtb/comfy_mtb" "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/"
 
 # More
 $gcs https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git
