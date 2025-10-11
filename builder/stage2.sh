@@ -5,7 +5,8 @@ set -eux
 # git config --global core.autocrlf true
 git config --global core.autocrlf true && git config --global core.longpaths true
 workdir=$(pwd)
-gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
+# gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
+gcs='git -c core.longpaths=true clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 export PYTHONPYCACHEPREFIX="$workdir/pycache2"
 export PATH="$PATH:$workdir/ComfyUI_Windows_portable/python_standalone/Scripts"
 
