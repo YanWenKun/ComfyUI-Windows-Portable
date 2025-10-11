@@ -62,7 +62,9 @@ $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
-$gcs https://github.com/yolain/ComfyUI-Easy-Use.git
+# $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
+tmp_base="${RUNNER_TEMP:-/d/a}"; mkdir -p "$tmp_base/eu" || true; git -c core.longpaths=true clone --depth=1 --no-tags --recurse-submodules --shallow-submodules https://github.com/yolain/ComfyUI-Easy-Use.git "$tmp_base/eu/ComfyUI-Easy-Use"; mv "$tmp_base/eu/ComfyUI-Easy-Use" "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/"
+
 
 # Control
 $gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
