@@ -25,7 +25,7 @@ transformers
 
 # Make sure opencv version is compatible with numpy1.
 numpy==1.26.4
-opencv-python-headless
+# opencv-python-headless  # désactivé (en doublon avec opencv-contrib-python-headless)
 
 # Who needs numpy1: 
 # 1. Jovimetrix (and 'cozy-comfyui' and 'blendmodes')
