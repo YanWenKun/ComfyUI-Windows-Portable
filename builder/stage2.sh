@@ -2,7 +2,8 @@
 set -eux
 
 # Chores
-git config --global core.autocrlf true
+# git config --global core.autocrlf true
+git config --global core.autocrlf true && git config --global core.longpaths true
 workdir=$(pwd)
 gcs='git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules'
 export PYTHONPYCACHEPREFIX="$workdir/pycache2"
