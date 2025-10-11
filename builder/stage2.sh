@@ -33,7 +33,9 @@ git clone https://github.com/comfyanonymous/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
 # Use latest stable version (has a release tag)
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI
-git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
+# git reset --hard "$(git tag | grep -e '^v' | sort -V | tail -1)"
+git fetch --tags --force && latest_app_tag=$(git tag -l 'v*' | sort -V | tail -1) && git reset --hard "$latest_app_tag"
+
 # Clear models folder (will restore in the next stage)
 rm -vrf models
 mkdir models
