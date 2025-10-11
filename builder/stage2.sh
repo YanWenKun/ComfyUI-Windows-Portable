@@ -98,7 +98,8 @@ $gcs https://github.com/kijai/ComfyUI-Florence2.git
 $gcs https://github.com/neverbiasu/ComfyUI-SAM2.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
-$gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+# $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+tmp_base="${RUNNER_TEMP:-/d/a}"; mkdir -p "$tmp_base/usd" || true; git -c core.longpaths=true clone --depth=1 --no-tags --recurse-submodules --shallow-submodules https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git "$tmp_base/usd/ComfyUI_UltimateSDUpscale"; mv "$tmp_base/usd/ComfyUI_UltimateSDUpscale" "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/"
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 
 # To be removed in future
