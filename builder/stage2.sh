@@ -133,6 +133,31 @@ mkdir -p "$workdir/ComfyUI_Windows_portable/ComfyUI/models/vae_approx"
 cp taesd/*_decoder.pth "$workdir/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/"
 rm -rf taesd
 
+################################################################################
+# AnimateDiff-Evolved: déposer au moins un motion model par défaut
+# - On place le modèle à la fois dans le dossier du node et dans le dossier global.
+# - Si le téléchargement échoue (proxy/pare-feu), on n'arrête pas la build.
+ad_file="mm_sd_v14.ckpt"
+ad_url="https://huggingface.co/guoyww/animatediff/resolve/main/models/motion_module/mm_sd_v14.ckpt"
+
+ad_dir_node="$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models"
+ad_dir_global="$workdir/ComfyUI_Windows_portable/ComfyUI/models/animatediff_models"
+
+mkdir -p "$ad_dir_node" "$ad_dir_global"
+
+echo "[AnimateDiff] Téléchargement du motion model: $ad_file"
+# Télécharge d'abord dans le dossier du node
+curl -L --fail --retry 3 --retry-all-errors --connect-timeout 20 \
+     -o "$ad_dir_node/$ad_file" "$ad_url" || true
+
+# Copie vers le dossier global si présent
+if [ -f "$ad_dir_node/$ad_file" ]; then
+  cp -f "$ad_dir_node/$ad_file" "$ad_dir_global/$ad_file" || true
+else
+  echo "[AnimateDiff] ATTENTION: téléchargement du motion model non effectué (réseau ?)."
+fi
+
+################################################################################
 # Download models for ReActor
 cd "$workdir/ComfyUI_Windows_portable/ComfyUI/models"
 curl -sSL https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth --create-dirs -o facerestore_models/codeformer-v0.1.0.pth
@@ -143,7 +168,8 @@ curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/co
 curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/model.safetensors     --create-dirs -o nsfw_detector/vit-base-nsfw-detector/model.safetensors
 curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/preprocessor_config.json --create-dirs -o nsfw_detector/vit-base-nsfw-detector/preprocessor_config.json
 
-# Download models for Impact-Pack & Impact-Subpack
+################################################################################
+# Download models for Impact-Pack & Impact-Subpack (scripts officiels)
 cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack"
 "$workdir/ComfyUI_Windows_portable/python_standalone/python.exe" -s -B install.py
 cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpack"
