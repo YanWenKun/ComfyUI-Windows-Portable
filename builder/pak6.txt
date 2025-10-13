@@ -18,3 +18,4 @@ lark # For smZNodes
 torchdiffeq # For DepthFM
 fairscale # For APISR
 attrdict # For Janus
+cozy-comfyui
