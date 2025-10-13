@@ -23,10 +23,8 @@ torchdiffeq           # DepthFM
 fairscale             # APISR (si build trop long -> commente)
 attrdict              # Janus
 
-# --- Cozy utils (version ZIP, évite le git prompt sur GitHub Actions) ---
-# https://codeload.github.com/Amorano/cozy-comfyui/zip/refs/heads/main
-https://github.com/Amorano/cozy-comfyui/archive/refs/heads/master.zip
-# https://github.com/Amorano/cozy-comfyui/archive/8f1c3b0b3f7b1f0b0f2f7a9a9b4c7d8e9f0a1b2c.zip
+# --- Cozy utils ---
+git+https://github.com/cozy-comfyui/cozy_comfyui.git#egg=cozy-comfyui
 
 # --- Dépendances Git ---
 git+https://github.com/rodjjo/filterpy.git
