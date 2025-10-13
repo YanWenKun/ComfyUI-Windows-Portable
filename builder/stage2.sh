@@ -101,6 +101,8 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
+$gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git  # PulidFluxModelLoader / ApplyPulidFlux
+$gcs https://github.com/jamesWalker55/comfyui-various.git  # JWImageResizeByLongerSide
 
 # To be removed in future
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
