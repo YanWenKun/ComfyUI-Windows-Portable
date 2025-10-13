@@ -20,11 +20,11 @@ cupy-cuda12x          # Frame Interpolation
 compel                # smZNodes
 lark                  # smZNodes
 torchdiffeq           # DepthFM
-fairscale             # APISR (compile source; commente si inutile)
+fairscale             # APISR (si build trop long -> commente)
 attrdict              # Janus
 
-# --- Cozy utils (PAS sur PyPI) ---
-git+https://github.com/Amorano/cozy-comfyui.git
+# --- Cozy utils (version ZIP, évite le git prompt sur GitHub Actions) ---
+https://codeload.github.com/Amorano/cozy-comfyui/zip/refs/heads/main
 
 # --- Dépendances Git ---
 git+https://github.com/rodjjo/filterpy.git
@@ -36,16 +36,6 @@ git+https://github.com/facebookresearch/sam2
 # Janus: ses deps réelles sont dans son pyproject
 git+https://github.com/deepseek-ai/Janus.git
 
-
-# --- Git deps (pinned aux repos upstream) ---
-git+https://github.com/rodjjo/filterpy.git
-git+https://github.com/openai/CLIP.git
-git+https://github.com/ltdrdata/cstr.git
-git+https://github.com/ltdrdata/ffmpy.git
-git+https://github.com/ltdrdata/img2texture.git
-git+https://github.com/facebookresearch/sam2
-# Janus: deps réelles dans pyproject.toml
-git+https://github.com/deepseek-ai/Janus.git
 
 # # https://github.com/nunchaku-tech/nunchaku/releases/download/v0.3.2/nunchaku-0.3.2+torch2.8-cp312-cp312-win_amd64.whl
 # https://github.com/nunchaku-tech/nunchaku/releases/download/v1.0.0/nunchaku-1.0.0+torch2.8-cp312-cp312-win_amd64.whl
