@@ -120,7 +120,7 @@ $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 $gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git        # PulidFlux suite (ModelLoader, EvaClip, InsightFace, ApplyPulidFlux)
 $gcs https://github.com/jamesWalker55/comfyui-various.git      # JW nodes (ex: JWImageResizeByLongerSide)
-$gcs https://github.com/Causan/ComfyMath.git                   # CM_ math and logic nodes (IntToFloat, BoolOps, etc.)
+$gcs https://github.com/evanspearman/ComfyMath                  # CM_ math and logic nodes (IntToFloat, BoolOps, etc.)
 
 # Legacy (dépréciés)
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
