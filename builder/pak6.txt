@@ -1,29 +1,41 @@
 # --- Nunchaku (compatible ComfyUI-nunchaku 1.0.x) ---
 https://github.com/nunchaku-tech/nunchaku/releases/download/v1.0.0/nunchaku-1.0.0+torch2.8-cp312-cp312-win_amd64.whl
 
-# --- Dlib précompilé (pour ReActor / FaceAnalysis selon config) ---
+# --- Dlib précompilé (Windows cp312) ---
 https://github.com/eddiehe99/dlib-whl/releases/download/v20.0.0-alpha/dlib-20.0.0-cp312-cp312-win_amd64.whl
 
 # --- InsightFace (wheel Windows cp312) ---
-# NOTE: ce wheel ne doit PAS forcer onnxruntime CPU. On impose onnxruntime-gpu plus bas.
 https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
 
-# --- ONNX Runtime (GPU seulement) : épingle une version récente CUDA 12.x ---
+# --- ONNX Runtime GPU uniquement (évite le CPU) ---
 onnxruntime-gpu==1.19.2
 
-# (Optionnel) Remplace l’avertissement torch 'pynvml' par le package recommandé :
+# (Optionnel) pour remplacer l’avertissement pynvml
 nvidia-ml-py
 
-# --- Dépendances diverses / nodes ---
+# --- Divers / nodes ---
 pixeloe
 scikit-build-core
 cupy-cuda12x          # Frame Interpolation
 compel                # smZNodes
 lark                  # smZNodes
 torchdiffeq           # DepthFM
-fairscale             # APISR
+fairscale             # APISR (compile source; commente si inutile)
 attrdict              # Janus
-cozy-comfyui          # Cozy utils (Jovimetrix messages etc.)
+
+# --- Cozy utils (PAS sur PyPI) ---
+git+https://github.com/Amorano/cozy-comfyui.git
+
+# --- Dépendances Git ---
+git+https://github.com/rodjjo/filterpy.git
+git+https://github.com/openai/CLIP.git
+git+https://github.com/ltdrdata/cstr.git
+git+https://github.com/ltdrdata/ffmpy.git
+git+https://github.com/ltdrdata/img2texture.git
+git+https://github.com/facebookresearch/sam2
+# Janus: ses deps réelles sont dans son pyproject
+git+https://github.com/deepseek-ai/Janus.git
+
 
 # --- Git deps (pinned aux repos upstream) ---
 git+https://github.com/rodjjo/filterpy.git
