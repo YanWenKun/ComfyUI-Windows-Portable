@@ -104,6 +104,7 @@ $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 $gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git  # PulidFluxModelLoader / ApplyPulidFlux
 $gcs https://github.com/jamesWalker55/comfyui-various.git  # JWImageResizeByLongerSide
 $gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git
+$gcs https://github.com/Causan/ComfyMath.git
 
 # To be removed in future
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
