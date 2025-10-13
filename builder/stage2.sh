@@ -101,10 +101,10 @@ $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
-$gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git  # PulidFluxModelLoader / ApplyPulidFlux
-$gcs https://github.com/jamesWalker55/comfyui-various.git  # JWImageResizeByLongerSide
-$gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git
-$gcs https://github.com/Causan/ComfyMath.git
+$gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git        # PulidFlux suite (ModelLoader, EvaClip, InsightFace, ApplyPulidFlux)
+$gcs https://github.com/jamesWalker55/comfyui-various.git      # JW nodes (ex: JWImageResizeByLongerSide)
+$gcs https://github.com/Causan/ComfyMath.git                   # CM_ math and logic nodes (IntToFloat, BoolOps, etc.)
+
 
 # To be removed in future
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
