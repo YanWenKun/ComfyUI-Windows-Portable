@@ -17,7 +17,8 @@ ls -lahF
 # 1️⃣ Python standalone
 # ──────────────────────────────────────────────────────────────
 curl -sSL \
-  https://github.com/astral-sh/python-build-standalone/releases/download/20250814/cpython-3.12.11+20250814-x86_64-pc-windows-msvc-install_only.tar.gz \
+#  https://github.com/astral-sh/python-build-standalone/releases/download/20250814/cpython-3.12.11+20250814-x86_64-pc-windows-msvc-install_only.tar.gz \
+   https://github.com/astral-sh/python-build-standalone/releases/download/20250205/cpython-3.10.15+20250205-x86_64-pc-windows-msvc-install_only.tar.gz
   -o python.tar.gz
 tar -zxf python.tar.gz
 mv python python_standalone
