@@ -182,6 +182,35 @@ cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpac
 "$workdir/ComfyUI_Windows_portable/python_standalone/python.exe" -s -B install.py
 
 # ──────────────────────────────────────────────────────────────────────────────
+# EVA CLIP family models (EVA1 + EVA02 variants)
+# ──────────────────────────────────────────────────────────────────────────────
+eva_dir="$workdir/ComfyUI_Windows_portable/ComfyUI/models/clip"
+mkdir -p "$eva_dir"
+
+declare -A eva_models=(
+  # EVA1 (legacy for PuLID / ReActor)
+  ["eva_clip_vit_l.pth"]="https://huggingface.co/black-forest-labs/eva_clip/resolve/main/eva_clip_vit_l.pth"
+
+  # EVA02 series (used by PuLID-Flux, Florence2, and derivatives)
+  ["EVA02_CLIP_L_336_psz14_s6B.pt"]="https://huggingface.co/kijai/ComfyUI-Florence2/resolve/main/models/EVA02_CLIP_L_336_psz14_s6B.pt"
+  ["EVA02_CLIP_B_336_psz14_s4B.pt"]="https://huggingface.co/kijai/ComfyUI-Florence2/resolve/main/models/EVA02_CLIP_B_336_psz14_s4B.pt"
+  ["EVA02_CLIP_L_14_s6B.pt"]="https://huggingface.co/kijai/ComfyUI-Florence2/resolve/main/models/EVA02_CLIP_L_14_s6B.pt"
+)
+
+for file in "${!eva_models[@]}"; do
+  dest="$eva_dir/$file"
+  url="${eva_models[$file]}"
+  if [ ! -f "$dest" ]; then
+    echo "[EVA CLIP] Téléchargement de $file ..."
+    curl -L --fail --retry 3 --retry-all-errors --connect-timeout 25 -o "$dest" "$url" \
+      && echo "[OK] $file téléchargé." \
+      || echo "[WARN] Échec du téléchargement de $file."
+  else
+    echo "[EVA CLIP] $file déjà présent, skip."
+  fi
+done
+
+# ──────────────────────────────────────────────────────────────────────────────
 # 11️⃣ Test CPU
 # ──────────────────────────────────────────────────────────────────────────────
 cd "$workdir/ComfyUI_Windows_portable"
