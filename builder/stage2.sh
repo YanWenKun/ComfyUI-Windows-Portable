@@ -211,6 +211,29 @@ for file in "${!eva_models[@]}"; do
 done
 
 # ──────────────────────────────────────────────────────────────────────────────
+# AnimateDiff-Evolved: add default motion model (avoid "No motion models found")
+# ──────────────────────────────────────────────────────────────────────────────
+ad_model="mm_sd_v15_v2.ckpt"
+ad_url="https://huggingface.co/guoyww/animatediff/resolve/main/models/motion_module/mm_sd_v15_v2.ckpt"
+
+ad_node_dir="$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models"
+ad_global_dir="$workdir/ComfyUI_Windows_portable/ComfyUI/models/animatediff_models"
+mkdir -p "$ad_node_dir" "$ad_global_dir"
+
+if [ ! -f "$ad_global_dir/$ad_model" ]; then
+  echo "[AnimateDiffEvo] Téléchargement du modèle de motion: $ad_model ..."
+  curl -L --fail --retry 3 --retry-all-errors --connect-timeout 25 \
+       -o "$ad_global_dir/$ad_model" "$ad_url" \
+       && echo "[OK] Motion model $ad_model téléchargé." \
+       || echo "[WARN] Échec du téléchargement du motion model."
+else
+  echo "[AnimateDiffEvo] $ad_model déjà présent, skip."
+fi
+
+# Copie aussi dans le dossier du node pour compatibilité
+cp -f "$ad_global_dir/$ad_model" "$ad_node_dir/" 2>/dev/null || true
+
+# ──────────────────────────────────────────────────────────────────────────────
 # 11️⃣ Test CPU
 # ──────────────────────────────────────────────────────────────────────────────
 cd "$workdir/ComfyUI_Windows_portable"
