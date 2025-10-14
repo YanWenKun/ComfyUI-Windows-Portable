@@ -13,27 +13,42 @@ export PIP_NO_WARN_SCRIPT_LOCATION=0
 
 ls -lahF
 
-# Python standalone
+# ──────────────────────────────────────────────────────────────
+# 1️⃣ Python standalone
+# ──────────────────────────────────────────────────────────────
 curl -sSL \
   https://github.com/astral-sh/python-build-standalone/releases/download/20250814/cpython-3.12.11+20250814-x86_64-pc-windows-msvc-install_only.tar.gz \
   -o python.tar.gz
 tar -zxf python.tar.gz
 mv python python_standalone
 
-# pip de base
+# ──────────────────────────────────────────────────────────────
+# 2️⃣ Mise à jour pip, wheel, setuptools
+# ──────────────────────────────────────────────────────────────
 $pip_exe install --upgrade pip wheel setuptools --prefer-binary
 
-# Installe tes paquets par blocs (pak2 → pak8)
-# --prefer-binary = limite les builds source (plus stable/rapide en CI)
+# ──────────────────────────────────────────────────────────────
+# 3️⃣ Installation par blocs
+# ──────────────────────────────────────────────────────────────
 $pip_exe install -r "$workdir/pak2.txt" --prefer-binary
-$pip_exe install -r "$workdir/pak3.txt" --prefer-binary
+
+# Bloc critique : PyTorch avant Xformers
+echo "[Stage1] Installation de torch + dérivés (GPU) ..."
+$pip_exe install --prefer-binary torch torchvision torchaudio
+
+echo "[Stage1] Installation de xformers (sans dépendances) ..."
+$pip_exe install -r "$workdir/pak3.txt" --prefer-binary --no-deps
+
+# Reste des paquets
 $pip_exe install -r "$workdir/pak4.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak5.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak6.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak7.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak8.txt" --prefer-binary
 
-# Tweak transparent-background (inchangé)
+# ──────────────────────────────────────────────────────────────
+# 4️⃣ Tweaks et dépendances additionnelles
+# ──────────────────────────────────────────────────────────────
 $pip_exe install --upgrade albucore albumentations --prefer-binary
 
 # comfyui-frontend en fonction du tag ComfyUI
@@ -45,6 +60,9 @@ $pip_exe install -r "$workdir/pakZ.txt" --prefer-binary
 
 $pip_exe list
 
+# ──────────────────────────────────────────────────────────────
+# 5️⃣ Outils externes (ninja, aria2, ffmpeg)
+# ──────────────────────────────────────────────────────────────
 # Ninja
 curl -sSL https://github.com/ninja-build/ninja/releases/latest/download/ninja-win.zip -o ninja-win.zip
 unzip -q -o ninja-win.zip -d "$workdir/python_standalone/Scripts"
