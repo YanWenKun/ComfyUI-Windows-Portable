@@ -181,6 +181,8 @@ cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack"
 cd "$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Subpack"
 "$workdir/ComfyUI_Windows_portable/python_standalone/python.exe" -s -B install.py
 
+"$workdir/ComfyUI_Windows_portable/python_standalone/python.exe" -m pip install -q hf_xet
+
 # ──────────────────────────────────────────────────────────────────────────────
 # EVA CLIP family models (EVA1 + EVA02 variants)
 # ──────────────────────────────────────────────────────────────────────────────
