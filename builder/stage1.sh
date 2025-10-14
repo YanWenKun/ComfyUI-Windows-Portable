@@ -32,21 +32,18 @@ $pip_exe install --upgrade pip wheel setuptools --prefer-binary
 # ──────────────────────────────────────────────────────────────
 $pip_exe install -r "$workdir/pak2.txt" --prefer-binary
 
-# Force l’index PyTorch CUDA 12.9 pour ce bloc critique
-export PIP_INDEX_URL="https://download.pytorch.org/whl/cu129"
-export PIP_EXTRA_INDEX_URL="https://pypi.org/simple"
+echo "[Stage1] Installation torch/vision/audio (CUDA 12.9) ..."
+# On installe le trio en lisant pak3 mais on EXCLUT xformers ici
+$pip_exe install --prefer-binary torch==2.8.0+cu129 torchaudio==2.8.0+cu129 torchvision==0.23.0
 
-echo "[Stage1] Installation du bloc pak3 (torch/vision/audio + xformers, wheels uniquement)..."
-$pip_exe install --only-binary :all: --prefer-binary -r "$workdir/pak3.txt"
+echo "[Stage1] Installation xformers (wheel only, no build) ..."
+# Empêche toute tentative de compilation locale
+set -o pipefail
+$pip_exe install --only-binary=:all: xformers==0.0.32.post2 \
+  || $pip_exe install --only-binary=:all: xformers==0.0.31.post0
 
-# petite vérif
-"$workdir/python_standalone/python.exe" - <<'PY'
-import torch, torchvision, torchaudio, xformers
-print("torch      :", torch.__version__)
-print("torchvision:", torchvision.__version__)
-print("torchaudio :", torchaudio.__version__)
-print("xformers   :", xformers.__version__)
-PY
+# (optionnel mais utile) EVA-CLIP et repos Xet + cache HF plus rapides
+$pip_exe install -q hf_xet huggingface-hub
 
 # Reste des paquets
 $pip_exe install -r "$workdir/pak4.txt" --prefer-binary
@@ -54,6 +51,26 @@ $pip_exe install -r "$workdir/pak5.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak6.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak7.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak8.txt" --prefer-binary
+
+# Tweaks additionnels
+$pip_exe install --upgrade albucore albumentations --prefer-binary
+
+# comfyui requirements selon le dernier tag
+latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | sed -n 's/.*"name"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -n1)
+$pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt" --prefer-binary
+
+# Sanity check versions (échoue tôt si pb)
+"$workdir/python_standalone/python.exe" - <<'PY'
+import torch, torchvision, torchaudio, sys
+print("TORCH    :", torch.__version__)
+print("VISION   :", torchvision.__version__)
+print("AUDIO    :", torchaudio.__version__)
+try:
+    import xformers
+    print("XFORMERS :", xformers.__version__)
+except Exception as e:
+    print("XFORMERS : import FAILED ->", e, file=sys.stderr); sys.exit(1)
+PY
 
 # ──────────────────────────────────────────────────────────────
 # 4️⃣ Tweaks et dépendances additionnelles
