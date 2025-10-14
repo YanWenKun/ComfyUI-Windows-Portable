@@ -16,20 +16,12 @@ export PIP_NO_WARN_SCRIPT_LOCATION=0
 ls -lahF
 
 # ──────────────────────────────────────────────
-# 1️⃣ Python standalone (version 3.10.13 stable)
+# 1️⃣ Python standalone (version 3.10.14 stable)
 # ──────────────────────────────────────────────
-
-echo "[Stage1] Téléchargement du Python standalone 3.10.13 stable ..."
-PY_VER="3.10.13"
-PY_TAG="20240715"
-PY_URL="https://github.com/astral-sh/python-build-standalone/releases/download/${PY_TAG}/cpython-${PY_VER}+${PY_TAG}-x86_64-pc-windows-msvc-install_only.tar.gz"
-
-curl -L -o python.tar.gz "$PY_URL"
-if ! tar -tzf python.tar.gz >/dev/null 2>&1; then
-  echo "[ERREUR] Archive Python invalide ou corrompue. Abort."
-  head -n 10 python.tar.gz || true
-  exit 1
-fi
+echo "[Stage1] Téléchargement du Python standalone 3.10.14 stable ..."
+curl -sSL \
+  https://github.com/astral-sh/python-build-standalone/releases/download/20241002/cpython-3.10.14+20241002-x86_64-pc-windows-msvc-shared-install_only.tar.gz \
+  -o python.tar.gz
 
 tar -zxf python.tar.gz
 mv python python_standalone
