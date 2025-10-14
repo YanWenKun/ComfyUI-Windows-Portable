@@ -1,12 +1,8 @@
 --index-url https://download.pytorch.org/whl/cu129
+--extra-index-url https://download.pytorch.org/whl/cu126
 --extra-index-url https://pypi.org/simple
 
-# Pile CUDA 12.9 officielle
-torch==2.8.0+cu129
-torchaudio==2.8.0+cu129
-
-# torchvision 0.23.0 (wheel cu-agnostique côté PyPI)
-torchvision==0.23.0
-
-# xformers wheel correspondante (AUCUN build source)
-xformers==0.0.32.post2
+torch
+torchvision
+torchaudio
+xformers
