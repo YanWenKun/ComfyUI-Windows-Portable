@@ -32,12 +32,21 @@ $pip_exe install --upgrade pip wheel setuptools --prefer-binary
 # ──────────────────────────────────────────────────────────────
 $pip_exe install -r "$workdir/pak2.txt" --prefer-binary
 
-# Bloc critique : PyTorch avant Xformers
-echo "[Stage1] Installation de torch + dérivés (GPU) ..."
-$pip_exe install --prefer-binary torch torchvision torchaudio
+# Force l’index PyTorch CUDA 12.9 pour ce bloc critique
+export PIP_INDEX_URL="https://download.pytorch.org/whl/cu129"
+export PIP_EXTRA_INDEX_URL="https://pypi.org/simple"
 
-echo "[Stage1] Installation de xformers (sans dépendances) ..."
-$pip_exe install -r "$workdir/pak3.txt" --prefer-binary --no-deps
+echo "[Stage1] Installation du bloc pak3 (torch/vision/audio + xformers, wheels uniquement)..."
+$pip_exe install --only-binary :all: --prefer-binary -r "$workdir/pak3.txt"
+
+# petite vérif
+"$workdir/python_standalone/python.exe" - <<'PY'
+import torch, torchvision, torchaudio, xformers
+print("torch      :", torch.__version__)
+print("torchvision:", torchvision.__version__)
+print("torchaudio :", torchaudio.__version__)
+print("xformers   :", xformers.__version__)
+PY
 
 # Reste des paquets
 $pip_exe install -r "$workdir/pak4.txt" --prefer-binary
