@@ -55,3 +55,4 @@ webcolors
 yacs
 yapf
 yarl
+gifski
