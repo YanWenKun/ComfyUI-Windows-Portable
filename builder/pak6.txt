@@ -58,3 +58,4 @@ git+https://github.com/deepseek-ai/Janus.git
 # fairscale # For APISR
 # attrdict # For Janus
 # # cozy-comfyui https://github.com/cozy-comfyui/cozy_comfyui
+git+https://github.com/cozy-comfyui/cozy_comfyui.git#egg=cozy-comfy
