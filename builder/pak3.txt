@@ -1,11 +1,7 @@
 --index-url https://download.pytorch.org/whl/cu129
---extra-index-url https://download.pytorch.org/whl/cu126
 --extra-index-url https://pypi.org/simple
 
-# torch doit être installé avant xformers (sinon erreur de setup.py)
-torch
-torchvision
-torchaudio
-
-# xformers (attention : version testée, ne pas changer sans raison)
-xformers==0.0.28.post3
+torch==2.8.0+cu129
+torchvision==0.19.0+cu129
+torchaudio==2.8.0+cu129
+xformers==0.0.32.post2
