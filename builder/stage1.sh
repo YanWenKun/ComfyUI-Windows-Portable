@@ -16,16 +16,55 @@ export PIP_NO_WARN_SCRIPT_LOCATION=0
 ls -lahF
 
 # ──────────────────────────────────────────────
-# 1️⃣ Python standalone (version 3.10.13 stable, confirmée)
+# 1️⃣ Python standalone 
 # ──────────────────────────────────────────────
-echo "[Stage1] Téléchargement du Python standalone 3.10.13 stable ..."
-curl -L -o python.zip \
-  https://github.com/astral-sh/python-build-standalone/releases/download/20240715/cpython-3.10.13+20240715-x86_64-pc-windows-msvc-install_only.zip
+echo "[Stage1] Téléchargement du Python standalone 3.10.13 …"
+PY_VER=3.10.13
+PY_TAG=20240715
+BASE_URL="https://github.com/astral-sh/python-build-standalone/releases/download/${PY_TAG}"
+CANDIDATES=(
+  "cpython-${PY_VER}+${PY_TAG}-x86_64-pc-windows-msvc-install_only.zip"
+  "cpython-${PY_VER}+${PY_TAG}-x86_64-pc-windows-msvc-shared-install_only.zip"
+  "cpython-${PY_VER}+${PY_TAG}-x86_64-pc-windows-msvc-install_only.tar.zst"
+  "cpython-${PY_VER}+${PY_TAG}-x86_64-pc-windows-msvc-shared-install_only.tar.zst"
+)
 
-echo "[Stage1] Extraction du Python standalone ..."
-unzip -q -o python.zip -d python
+rm -f python.zip python.tar.zst
+ok=""
+for f in "${CANDIDATES[@]}"; do
+  url="${BASE_URL}/${f}"
+  echo "→ try ${f}"
+  if curl -fsSL -o python.pkg "$url"; then
+    case "$f" in
+      *.zip)
+        if unzip -tqq python.pkg; then
+          echo "[OK] archive ZIP valide"
+          rm -rf python && mkdir -p python
+          unzip -q -o python.pkg -d python
+          ok="zip"
+          break
+        fi
+        ;;
+      *.tar.zst)
+        if tar -tf python.pkg --zstd >/dev/null 2>&1 || tar -I zstd -tf python.pkg >/dev/null 2>&1; then
+          echo "[OK] archive TAR.ZST valide"
+          rm -rf python && mkdir -p python
+          (tar --zstd -xf python.pkg -C python 2>/dev/null || tar -I zstd -xf python.pkg -C python)
+          ok="zst"
+          break
+        fi
+        ;;
+    esac
+  fi
+done
+
+if [ -z "$ok" ]; then
+  echo "[ERREUR] Aucune archive Python valide trouvée pour ${PY_VER} (${PY_TAG})."
+  echo "Vérifie manuellement les assets de la release ${PY_TAG}."
+  exit 1
+fi
+
 mv python python_standalone
-rm python.zip
 
 # ──────────────────────────────────────────────────────────────
 # 2️⃣ Mise à jour pip, wheel, setuptools
