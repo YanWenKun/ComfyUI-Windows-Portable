@@ -234,6 +234,17 @@ fi
 cp -f "$ad_global_dir/$ad_model" "$ad_node_dir/" 2>/dev/null || true
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Ensure EVA CLIP models available for PuLID-Flux node (offline compatibility)
+# ──────────────────────────────────────────────────────────────────────────────
+eva_flux_dir="$workdir/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-PuLID-Flux/eva_clip/checkpoints"
+mkdir -p "$eva_flux_dir"
+
+for f in "$eva_dir"/*.pt; do
+  cp -f "$f" "$eva_flux_dir/" 2>/dev/null || true
+done
+echo "[EVA CLIP] Copie des modèles vers PuLID-Flux terminée."
+
+# ──────────────────────────────────────────────────────────────────────────────
 # 11️⃣ Test CPU
 # ──────────────────────────────────────────────────────────────────────────────
 cd "$workdir/ComfyUI_Windows_portable"
