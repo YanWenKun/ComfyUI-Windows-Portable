@@ -63,7 +63,7 @@ cp -r "$workdir/ComfyUI_Windows_portable" "$short_root/"
 port_root="$short_root/ComfyUI_Windows_portable"
 
 # ──────────────────────────────────────────────────────────────────────────────
-# 7️⃣ Custom Nodes
+# 7️⃣ Custom Nodes (clonés dans le workspace court)
 # ──────────────────────────────────────────────────────────────────────────────
 cd "$port_root/ComfyUI/custom_nodes"
 
@@ -120,17 +120,26 @@ $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 $gcs https://github.com/balazik/ComfyUI-PuLID-Flux.git        # PulidFlux suite (ModelLoader, EvaClip, InsightFace, ApplyPulidFlux)
 $gcs https://github.com/jamesWalker55/comfyui-various.git      # JW nodes (ex: JWImageResizeByLongerSide)
-$gcs https://github.com/evanspearman/ComfyMath                  # CM_ math and logic nodes (IntToFloat, BoolOps, etc.)
+$gcs https://github.com/evanspearman/ComfyMath.git             # CM_ math and logic nodes (IntToFloat, BoolOps, etc.)
 
-# Legacy (dépréciés)
+# Legacy (dépréciés) — NE PAS inclure PuLID_ComfyUI (bloque offline EVA-CLIP)
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
 $gcs https://github.com/cubiq/ComfyUI_InstantID.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
-$gcs https://github.com/cubiq/PuLID_ComfyUI.git
+# (SUPPRIMÉ) $gcs https://github.com/cubiq/PuLID_ComfyUI.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 7.1 EVA-CLIP pour PuLID-Flux (offline runtime)
+# ──────────────────────────────────────────────────────────────────────────────
+eva_dir="$port_root/ComfyUI/custom_nodes/ComfyUI-PuLID-Flux/models/eva_clip"
+mkdir -p "$eva_dir"
+curl -L --fail --retry 3 --retry-all-errors --connect-timeout 20 \
+  -o "$eva_dir/EVA02_CLIP_L_336_psz14_s6B.pt" \
+  "https://huggingface.co/QuanSun/EVA-CLIP/resolve/main/EVA02_CLIP_L_336_psz14_s6B.pt" || true
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 8️⃣ Restaure dans le dossier principal
