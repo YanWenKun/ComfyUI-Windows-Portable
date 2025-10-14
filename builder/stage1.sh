@@ -16,11 +16,11 @@ export PIP_NO_WARN_SCRIPT_LOCATION=0
 ls -lahF
 
 # ──────────────────────────────────────────────
-# 1️⃣ Python standalone (version 3.10.14 stable)
+# 1️⃣ Python standalone (version 3.10.14 stable vérifiée)
 # ──────────────────────────────────────────────
 echo "[Stage1] Téléchargement du Python standalone 3.10.14 stable ..."
 curl -sSL \
-  https://github.com/astral-sh/python-build-standalone/releases/download/20241002/cpython-3.10.14+20241002-x86_64-pc-windows-msvc-shared-install_only.tar.gz \
+  https://github.com/astral-sh/python-build-standalone/releases/download/20250315/cpython-3.10.14+20250315-x86_64-pc-windows-msvc-install_only.tar.gz \
   -o python.tar.gz
 
 tar -zxf python.tar.gz
