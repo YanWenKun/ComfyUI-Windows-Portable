@@ -1,3 +1,4 @@
+
 #!/bin/bash
 set -eux
 
@@ -27,7 +28,17 @@ $pip_exe install --upgrade pip wheel setuptools --prefer-binary
 $pip_exe install -r "$workdir/pak2.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak3.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak4.txt" --prefer-binary
-$pip_exe install -r "$workdir/pak5.txt" --prefer-binary
+
+# --- Patch pak5: enlever 'gifski' (n'existe pas sur PyPI) et ajouter 'pygifski' ---
+tmp_pak5="$workdir/pak5.effective.txt"
+# retire la ligne gifski (peu importe la casse / espaces)
+grep -viE '^[[:space:]]*gifski[[:space:]]*$' "$workdir/pak5.txt" > "$tmp_pak5"
+# ajoute pygifski (utile si un node importe la lib Python)
+echo "pygifski" >> "$tmp_pak5"
+
+$pip_exe install -r "$tmp_pak5" --prefer-binary
+
+# suite des blocs inchangée
 $pip_exe install -r "$workdir/pak6.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak7.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak8.txt" --prefer-binary
@@ -58,5 +69,11 @@ curl -sSL https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.
 unzip -q ffmpeg.zip -d "$workdir/ffmpeg"
 mv "$workdir/ffmpeg"/*/bin/ffmpeg.exe "$workdir/python_standalone/Scripts/"
 rm ffmpeg.zip
+
+# (Optionnel) gifski CLI pour ceux qui shell-out sur l’exécutable
+curl -sSL https://github.com/ImageOptim/gifski/releases/download/1.12.0/gifski-1.12.0-win64.zip -o gifski.zip || true
+unzip -q -o gifski.zip -d "$workdir/gifski" || true
+mv "$workdir/gifski"/*/gifski.exe "$workdir/python_standalone/Scripts/" 2>/dev/null || true
+rm -f gifski.zip || true
 
 du -hd1
