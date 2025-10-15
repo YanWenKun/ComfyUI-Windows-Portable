@@ -5,4 +5,4 @@
 torch
 torchvision
 torchaudio
-xformers
+xformers==0.0.32.post2
