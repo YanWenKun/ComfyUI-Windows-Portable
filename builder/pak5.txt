@@ -54,5 +54,7 @@ uv
 webcolors
 yacs
 yapf
+aiohttp>=3.9.5
 yarl==1.9.4
-pygifski
+# gifski
+# pygifski
