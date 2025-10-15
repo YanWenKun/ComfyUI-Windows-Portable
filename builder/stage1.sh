@@ -22,8 +22,7 @@ echo "[Stage1] Téléchargement du Python standalone 3.12.x …"
 PY_URL="https://github.com/astral-sh/python-build-standalone/releases/download/20250814/cpython-3.12.11+20250814-x86_64-pc-windows-msvc-install_only.tar.gz"
 
 curl -fSL -o python.tar.gz "${PY_URL}"
-# Valide l’archive avant extraction (évite le 'not in gzip format')
-tar -tzf python.tar.gz >/dev/null
+tar -tzf python.tar.gz >/dev/null   # valide l’archive
 tar -zxf python.tar.gz
 mv python python_standalone
 
@@ -33,29 +32,21 @@ mv python python_standalone
 $pip_exe install --upgrade pip wheel setuptools --prefer-binary
 
 # ──────────────────────────────────────────────────────────────
-# 3) Installation par blocs (pak2 → pak8)
-#    ⚠️ PAK3: torch/vision/audio d’abord, xformers ensuite (wheel only)
+# 3) Installation par blocs
+#    ⚠️ PAK3: torch/vision/audio d’abord, xformers ensuite (wheel only + no-deps)
 # ──────────────────────────────────────────────────────────────
 $pip_exe install -r "$workdir/pak2.txt" --prefer-binary
 
-# --- Bloc PAK3 : d’abord torch/vision/audio (depuis ton pak3 en gardant les index) ---
+# --- Bloc PAK3 : torch/vision/audio depuis ton pak3, sans xformers ---
+# on garde les index-url éventuels dans pak3
 tmp_pak3="${workdir}/pak3.no_xformers.txt"
-# copie pak3 en retirant uniquement les lignes xformers (on garde les index-url)
 grep -viE '^[[:space:]]*xformers([[:space:]]|$)' "$workdir/pak3.txt" > "$tmp_pak3"
 $pip_exe install -r "$tmp_pak3" --prefer-binary
 
-# --- Puis xformers en wheel uniquement, sans deps (évite toute compilation) ---
-# plage compatible avec torch 2.8/2.9 ; adapte si besoin
-set +e
-$pip_exe install --only-binary=:all: --no-deps "xformers>=0.0.31.post1,<0.0.33"
-rc=$?
-if [ $rc -ne 0 ]; then
-  echo "[WARN] échec plage xformers, tentative fallback à 0.0.32.post1…"
-  $pip_exe install --only-binary=:all: --no-deps xformers==0.0.32.post1
-fi
-set -e
+# --- Puis xformers wheel-only, sans deps (ne touche pas à torch) ---
+$pip_exe install --only-binary=:all: --no-deps xformers==0.0.32.post2
 
-# Reste des paquets (inchangé)
+# Reste des paquets
 $pip_exe install -r "$workdir/pak4.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak5.txt" --prefer-binary
 $pip_exe install -r "$workdir/pak6.txt" --prefer-binary
@@ -72,7 +63,10 @@ latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags \
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt" --prefer-binary
 
 $pip_exe install -r "$workdir/pakY.txt" --prefer-binary
-$pip_exe install -r "$workdir/pakZ.txt" --prefer-binary
+$pip_exe install -r "$workdir/pakZ.txt" --prefer-binary || true
+
+# 🔧 Hotfix numpy : certains fichiers forcent numpy 1.26.x → on rétablit une version compatible OpenCV
+$pip_exe install "numpy>=2,<2.3" --prefer-binary
 
 # Sanity check versions clés
 "$workdir/python_standalone/python.exe" - <<'PY'
@@ -80,10 +74,10 @@ import sys
 def show(mod):
     try:
         m = __import__(mod)
-        print(f"{mod.upper():9s}", getattr(m, "__version__", "?"))
+        print(f"{mod.upper():10s}", getattr(m, "__version__", "?"))
     except Exception as e:
-        print(f"{mod.upper():9s} IMPORT FAIL -> {e}", file=sys.stderr); sys.exit(1)
-for m in ("torch","torchvision","torchaudio","xformers"):
+        print(f"{mod.upper():10s} IMPORT FAIL -> {e}", file=sys.stderr); sys.exit(1)
+for m in ("torch","torchvision","torchaudio","xformers","numpy"):
     show(m)
 PY
 
