@@ -55,5 +55,6 @@ webcolors
 yacs
 yapf
 yarl==1.9.4
-# gifski
-# pygifski
+
+# gifski  (pas de wheels Windows)
+# pygifski (pas de wheels Windows)
