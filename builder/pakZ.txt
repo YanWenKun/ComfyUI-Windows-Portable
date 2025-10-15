@@ -1,2 +1,2 @@
 # Ensure Numpy 1
-numpy==1.26.4
++ numpy>=2,<2.3   # e.g. 2.2.6 works with opencv 4.12.0.* and blendmodes 2025
