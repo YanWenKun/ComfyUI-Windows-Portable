@@ -47,7 +47,6 @@ $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
 
 # General
-$gcs https://github.com/akatz-ai/ComfyUI-AKatz-Nodes.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
