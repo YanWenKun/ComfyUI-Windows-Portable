@@ -22,7 +22,7 @@ mkdir -p "${TORCH_HOME}"
 mv  "$workdir"/python_standalone  "$workdir"/ComfyUI_Windows_portable/python_standalone
 
 # Add MinGit (Portable Git)
-curl -sSL https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/MinGit-2.50.1-64-bit.zip \
+curl -sSL https://github.com/git-for-windows/git/releases/download/v2.51.2.windows.1/MinGit-2.51.2-64-bit.zip \
     -o MinGit.zip
 unzip -q MinGit.zip -d "$workdir"/ComfyUI_Windows_portable/MinGit
 rm MinGit.zip
