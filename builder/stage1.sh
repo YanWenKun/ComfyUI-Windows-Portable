@@ -12,10 +12,10 @@ ls -lahF
 
 # Download Python Standalone
 curl -sSL \
-https://github.com/astral-sh/python-build-standalone/releases/download/20251028/cpython-3.13.9+20251028-x86_64-pc-windows-msvc-freethreaded+pgo-full.tar.zst \
-    -o python.tar.zst
-tar --zstd -xf python.tar.zst
-mv python/install python_standalone
+https://github.com/astral-sh/python-build-standalone/releases/download/20251028/cpython-3.13.9+20251028-x86_64-pc-windows-msvc-install_only.tar.gz \
+    -o python.tar.gz
+tar -zxf python.tar.gz
+mv python python_standalone
 
 # PIP installs
 $pip_exe install --upgrade pip wheel setuptools
