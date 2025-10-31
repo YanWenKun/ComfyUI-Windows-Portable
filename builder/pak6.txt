@@ -1,5 +1,5 @@
-https://github.com/eddiehe99/dlib-whl/releases/download/v20.0.0-alpha/dlib-20.0.0-cp312-cp312-win_amd64.whl
-https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
+https://github.com/eddiehe99/dlib-whl/releases/download/v20.0.0-alpha/dlib-20.0.0-cp313-cp313-win_amd64.whl
+https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp313-cp313-win_amd64.whl
 pixeloe
 scikit-build-core
 git+https://github.com/rodjjo/filterpy.git
