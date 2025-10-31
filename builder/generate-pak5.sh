@@ -33,7 +33,9 @@ sed -i 's/_/-/g' pak5.txt
 
 sort -ufo pak5.txt pak5.txt
 
-# Remove duplicate items, compare to pak4.txt
+# Remove duplicate items, compare to pak3.txt, pak4.txt, pak6.txt
+grep -Fixv -f pak3.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
 grep -Fixv -f pak4.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
+grep -Fixv -f pak6.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
 
 echo "<pak5.txt> generated. Check before use."

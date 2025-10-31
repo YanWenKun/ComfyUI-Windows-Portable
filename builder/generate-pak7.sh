@@ -2,7 +2,6 @@
 set -eu
 
 cat > pak7.txt << EOF
-facexlib
 fvcore
 gpytoolbox
 EOF
@@ -34,8 +33,9 @@ sed -i 's/; platform-system=="Windows"//' pak7.txt
 
 sort -ufo pak7.txt pak7.txt
 
-# Remove duplicate items, compare to pak4.txt and pak5.txt
+# Remove duplicate items, compare to pak4.txt, pak5.txt, pak6.txt
 grep -Fixv -f pak4.txt pak7.txt > temp.txt && mv temp.txt pak7.txt
 grep -Fixv -f pak5.txt pak7.txt > temp.txt && mv temp.txt pak7.txt
+grep -Fixv -f pak6.txt pak7.txt > temp.txt && mv temp.txt pak7.txt
 
 echo "<pak7.txt> generated. Check before use."
