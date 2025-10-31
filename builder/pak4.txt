@@ -9,7 +9,6 @@ matplotlib
 omegaconf
 onnx
 onnxruntime-gpu
-opencv-contrib-python-headless
 pandas
 pilgram
 pillow
@@ -25,6 +24,9 @@ transformers
 
 # Make sure opencv version is compatible with numpy1.
 numpy==1.26.4
+opencv-contrib-python
+opencv-contrib-python-headless
+opencv-python
 opencv-python-headless
 
 # Who needs numpy1: 
