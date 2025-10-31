@@ -30,7 +30,8 @@ $pip_exe install -r "$workdir"/pak4.txt
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
-$pip_exe install -r "$workdir"/pak8.txt
+
+$pip_exe install sageattention --no-build-isolation
 
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
 latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
