@@ -34,8 +34,8 @@ but preloaded with numerous custom nodes and Python packages, with all dependenc
 . Download the package files from the
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
 ** Or you can download them directly:
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu129.7z.001[ComfyUI_Windows_portable_cu129.7z.001]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu129.7z.002[ComfyUI_Windows_portable_cu129.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
 *** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
 
 ** Open the `.7z.001` and extract it to a convenient place. 
@@ -157,18 +157,13 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 [[custom-nodes]]
 === Pre-installed Custom Node List
 
-.Workspace
-[cols=2]
+[cols=3]
 |===
+3+|**Workspace**
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
-|
-|===
-
-.General
-[cols=2]
-|===
+3+|**General**
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
 |link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
@@ -184,11 +179,7 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
 |
-|===
-
-.Control
-[cols=2]
-|===
+3+|**Control**
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
@@ -206,22 +197,15 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |
-|===
-
-.Video
-[cols=2]
-|===
+|
+3+|**Video**
 |link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
 |link:https://github.com/melMass/comfy_mtb[MTB Nodes]
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
 |
-|===
-
-.More
-[cols=2]
-|===
+3+|**More**
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
@@ -235,8 +219,8 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
 |link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
 |
+|
 |===
-
 
 If compatibility issues arise, you can try disabling conflicting nodes in ComfyUI-Manager.
 

@@ -36,8 +36,8 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu129.7z.001[ComfyUI_Windows_portable_cu129.7z.001]
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu129.7z.002[ComfyUI_Windows_portable_cu129.7z.002]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
+** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
 ** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] （模型包，如果是从之前版本升级，不需要下载）
 
 ** 打开 `.7z.001` 并解压（建议不要放在太深的目录）；打开 `.zip.001` 并解压到同一个目录。
@@ -154,18 +154,13 @@ ComfyUI 有五处常见的模型文件保存位置：
 [[custom-nodes]]
 ## 预置自定义节点列表
 
-.工作空间
-[cols=2]
+[cols=3]
 |===
+3+|**工作空间**
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
-|
-|===
-
-.综合
-[cols=2]
-|===
+3+|**综合**
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
 |link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
@@ -181,11 +176,7 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
 |
-|===
-
-.控制
-[cols=2]
-|===
+3+|**控制**
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
 |link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
@@ -203,22 +194,15 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |
-|===
-
-.视频
-[cols=2]
-|===
+|
+3+|**视频**
 |link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
 |link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
 |link:https://github.com/melMass/comfy_mtb[MTB Nodes]
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
 |
-|===
-
-.更多
-[cols=2]
-|===
+3+|**更多**
 |link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
@@ -232,8 +216,8 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
 |link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
 |
+|
 |===
-
 
 如安装新节点后遇到兼容性问题，可在 ComfyUI-Manager 中禁用冲突节点。
 
