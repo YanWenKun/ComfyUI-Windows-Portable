@@ -98,7 +98,7 @@ def main():
                             help='More conservative VRAM usage, reduce speed, recommended only when VRAM is insufficient (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
     launch_tab.add_argument('--use-pytorch-cross-attention', 
-                            metavar='Disable xFormers', 
+                            metavar='Disable xFormers/FlashAttention/SageAttention', 
                             action='store_true',
                             help='This will enable the native PyTorch cross-attention. Not recommended if you plan to generate videos (--use-pytorch-cross-attention)',
                             default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)

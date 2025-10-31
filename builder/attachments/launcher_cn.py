@@ -133,7 +133,7 @@ def main():
                             help='更“节约”地使用显存， 牺牲速度， 仅建议显存不足时开启 (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
     launch_tab.add_argument('--use-pytorch-cross-attention', 
-                            metavar='禁用 xFormers', 
+                            metavar='禁用 xFormers/FlashAttention/SageAttention', 
                             action='store_true',
                             help='禁用后，会启用 PyTorch 原生交叉注意力机制。 如需生成视频， 建议不要勾选 (--use-pytorch-cross-attention)',
                             default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
