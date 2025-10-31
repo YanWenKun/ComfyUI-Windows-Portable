@@ -22,6 +22,10 @@ $pip_exe install --upgrade pip wheel setuptools
 
 $pip_exe install -r "$workdir"/pak2.txt
 $pip_exe install -r "$workdir"/pak3.txt
+
+# temp-fix, TODO: remove after version chaos resolved
+$pip_exe install transformers
+
 $pip_exe install -r "$workdir"/pak4.txt
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
