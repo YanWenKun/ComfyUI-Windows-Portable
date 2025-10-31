@@ -46,6 +46,7 @@ tokenizers
 toml
 torchsde
 tqdm
+transparent-background
 trimesh[easy]
 typer
 typing-extensions

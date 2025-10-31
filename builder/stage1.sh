@@ -28,10 +28,6 @@ $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
 $pip_exe install -r "$workdir"/pak8.txt
 
-# Tweak for transparent-background. TODO: remove if upstream updated.
-# https://github.com/plemeri/transparent-background/blob/f54975ce489af549dcfc4dc0a2d39e8f69a204fd/setup.py#L45
-$pip_exe install --upgrade albucore albumentations
-
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
 latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
