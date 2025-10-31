@@ -10,6 +10,10 @@ nvidia-ml-py
 omegaconf
 onnx
 onnxruntime-gpu
+opencv-contrib-python
+opencv-contrib-python-headless
+opencv-python
+opencv-python-headless
 pandas
 pilgram
 pillow
@@ -22,13 +26,3 @@ scipy
 timm
 torchmetrics
 transformers
-
-opencv-contrib-python
-opencv-contrib-python-headless
-opencv-python
-opencv-python-headless
-
-# Who needs numpy1: 
-# 1. Jovimetrix (and 'cozy-comfyui' and 'blendmodes')
-# 2. ComfyUI-SAM2
-# 3. ComfyUI-ReActor

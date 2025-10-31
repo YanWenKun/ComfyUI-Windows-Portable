@@ -7,12 +7,16 @@ git+https://github.com/openai/CLIP.git
 git+https://github.com/ltdrdata/cstr.git
 git+https://github.com/ltdrdata/ffmpy.git
 git+https://github.com/ltdrdata/img2texture.git
-git+https://github.com/facebookresearch/sam2
 # Janus' real dep list is in its pyproject.toml, not requirements.txt
 git+https://github.com/deepseek-ai/Janus.git
-cupy-cuda13x # For Frame Interpolation
-compel # For smZNodes
-lark # For smZNodes
-torchdiffeq # For DepthFM
-fairscale # For APISR
-attrdict # For Janus
+# For Frame Interpolation
+cupy-cuda13x
+# For smZNodes
+compel
+lark
+# For DepthFM
+torchdiffeq
+# For APISR
+fairscale
+# For Janus
+attrdict

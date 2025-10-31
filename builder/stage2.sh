@@ -48,7 +48,6 @@ $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
 
 # General
 $gcs https://github.com/akatz-ai/ComfyUI-AKatz-Nodes.git
-$gcs https://github.com/Amorano/Jovimetrix.git
 $gcs https://github.com/bash-j/mikey_nodes.git
 $gcs https://github.com/chrisgoringe/cg-use-everywhere.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
@@ -64,7 +63,6 @@ $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 $gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
-$gcs https://github.com/Gourieff/ComfyUI-ReActor.git
 $gcs https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/Jonseed/ComfyUI-Detail-Daemon.git
@@ -87,7 +85,6 @@ $gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/digitaljohn/comfyui-propost.git
 $gcs https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 $gcs https://github.com/kijai/ComfyUI-Florence2.git
-$gcs https://github.com/neverbiasu/ComfyUI-SAM2.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 $gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
@@ -120,23 +117,6 @@ cp taesd/*_decoder.pth \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI/models/vae_approx/
 rm -rf taesd
 
-# Download models for ReActor
-cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/models
-curl -sSL https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth \
-    --create-dirs -o facerestore_models/codeformer-v0.1.0.pth
-curl -sSL https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth \
-    --create-dirs -o facerestore_models/GFPGANv1.4.pth
-curl -sSL https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128_fp16.onnx \
-    --create-dirs -o insightface/inswapper_128_fp16.onnx
-curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/config.json \
-    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/config.json
-curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/confusion_matrix.png \
-    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/confusion_matrix.png
-curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/model.safetensors \
-    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/model.safetensors
-curl -sSL https://huggingface.co/AdamCodd/vit-base-nsfw-detector/resolve/main/preprocessor_config.json \
-    --create-dirs -o nsfw_detector/vit-base-nsfw-detector/preprocessor_config.json
-
 # Download models for Impact-Pack & Impact-Subpack
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
 "$workdir"/ComfyUI_Windows_portable/python_standalone/python.exe -s -B install.py
@@ -160,7 +140,6 @@ cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm -vf ./ComfyUI-Custom-Scripts/pysssss.json
 rm -vf ./ComfyUI-Easy-Use/config.yaml
 rm -vf ./ComfyUI-Impact-Pack/impact-pack.ini
-rm -vf ./Jovimetrix/web/config.json
 rm -vf ./was-node-suite-comfyui/was_suite_config.json
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes/ComfyUI-Manager
