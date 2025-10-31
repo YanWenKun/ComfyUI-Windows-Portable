@@ -23,8 +23,6 @@ timm
 torchmetrics
 transformers
 
-# Make sure opencv version is compatible with numpy1.
-numpy==1.26.4
 opencv-contrib-python
 opencv-contrib-python-headless
 opencv-python

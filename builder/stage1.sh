@@ -37,7 +37,6 @@ latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | 
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
 $pip_exe install -r "$workdir"/pakY.txt
-$pip_exe install -r "$workdir"/pakZ.txt
 
 $pip_exe list
 

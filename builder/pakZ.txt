@@ -1,2 +1,0 @@
-# Ensure Numpy 1
-numpy==1.26.4
