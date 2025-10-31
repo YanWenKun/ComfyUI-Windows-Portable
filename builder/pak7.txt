@@ -6,7 +6,6 @@ gpytoolbox
 loguru
 peft
 protobuf
-pydub
 pymatting
 Requests
 tomli

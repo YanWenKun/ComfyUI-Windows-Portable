@@ -8,7 +8,6 @@ gpytoolbox
 EOF
 
 array=(
-https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes/raw/refs/heads/main/requirements.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/repair_dependency_list.txt
 https://github.com/chflame163/ComfyUI_LayerStyle/raw/refs/heads/main/requirements.txt
