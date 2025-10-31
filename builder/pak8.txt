@@ -1,1 +1,4 @@
+# triton-windows version is paired with PyTorch
+# Ref: https://github.com/woct0rdho/triton-windows
+triton-windows<3.6
 #https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-win_amd64.whl
