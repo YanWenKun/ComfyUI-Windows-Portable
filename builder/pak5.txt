@@ -26,7 +26,6 @@ py-cpuinfo
 pydantic
 pydantic-settings
 PyGithub
-pynvml
 python-dateutil
 pyyaml
 qrcode[pil]
