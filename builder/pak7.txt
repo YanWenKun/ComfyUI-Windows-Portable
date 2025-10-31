@@ -6,6 +6,7 @@ facexlib
 fvcore
 gguf
 git+https://github.com/cozy-comfyui/cozy_comfyui.git
+git+https://github.com/cozy-comfyui/cozy_comfy.git
 gpytoolbox
 hydra-core
 iopath
