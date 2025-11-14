@@ -23,10 +23,15 @@ $pip_exe install --upgrade pip wheel setuptools
 $pip_exe install -r "$workdir"/pak2.txt
 $pip_exe install -r "$workdir"/pak3.txt
 
-# temp-fix, TODO: remove after version chaos resolved
+# tempFix for TF. TODO: remove after version chaos resolved
 $pip_exe install transformers
 
 $pip_exe install -r "$workdir"/pak4.txt
+
+# tempFix for ORT cu13
+$pip_exe install flatbuffers numpy packaging protobuf sympy
+$pip_exe install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
+
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt

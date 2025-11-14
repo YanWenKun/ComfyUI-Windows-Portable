@@ -9,7 +9,7 @@ matplotlib
 nvidia-ml-py
 omegaconf
 onnx
-onnxruntime-gpu
+#onnxruntime-gpu
 opencv-contrib-python
 opencv-contrib-python-headless
 opencv-python
