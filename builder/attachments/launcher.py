@@ -22,6 +22,9 @@ def save_config(args):
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
         "use_pytorch_cross_attention": args.use_pytorch_cross_attention,
+        "use_sage_attention": args.use_sage_attention,
+        "use_flash_attention": args.use_flash_attention,
+        "use_xformers": args.use_xformers,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -97,11 +100,28 @@ def main():
                             action='store_true',
                             help='More conservative VRAM usage, reduce speed, recommended only when VRAM is insufficient (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
-    launch_tab.add_argument('--use-pytorch-cross-attention', 
-                            metavar='Disable xFormers/FlashAttention/SageAttention', 
-                            action='store_true',
-                            help='This will enable the native PyTorch cross-attention. Not recommended if you plan to generate videos (--use-pytorch-cross-attention)',
-                            default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
+    # Mutually exclusive Attention Implementation options
+    attention_group = launch_tab.add_mutually_exclusive_group()
+    attention_group.add_argument('--use-xformers',
+                                 metavar='Use xFormers',
+                                 action='store_true',
+                                 help='Choose xFormers as the attention implementation. Default option',
+                                 default=saved_config.get("use_xformers", True) if saved_config else True)
+    attention_group.add_argument('--use-pytorch-cross-attention', 
+                                 metavar='Use PyTorch native cross-attention', 
+                                 action='store_true',
+                                 help='More stable (not better) image generation (--use-pytorch-cross-attention)',
+                                 default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
+    attention_group.add_argument('--use-sage-attention',
+                                 metavar='Use SageAttention',
+                                 action='store_true',
+                                 help='Better performance but less compatibility (--use-sage-attention)',
+                                 default=saved_config.get("use_sage_attention", False) if saved_config else False)
+    attention_group.add_argument('--use-flash-attention',
+                                 metavar='Use FlashAttention',
+                                 action='store_true',
+                                 help='On par with xFormers (--use-flash-attention)',
+                                 default=saved_config.get("use_flash_attention", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
                             help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
@@ -153,6 +173,10 @@ def main():
         command.append('--lowvram')
     if args.use_pytorch_cross_attention:
         command.append('--use-pytorch-cross-attention')
+    if args.use_sage_attention:
+        command.append('--use-sage-attention')
+    if args.use_flash_attention:
+        command.append('--use-flash-attention')
 
     # Add user-defined extra parameters
     if args.extra_args:
