@@ -163,6 +163,13 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
+3+|**Performance**
+|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
+|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
+|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
+|link:https://github.com/woct0rdho/ComfyUI-RadialAttn[RadialAttention]
+|
+|
 3+|**General**
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
@@ -206,7 +213,6 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
 |
 3+|**More**
-|link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
 |link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
@@ -217,7 +223,6 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
 |link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
 |link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
-|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
 |
 |
 |===
