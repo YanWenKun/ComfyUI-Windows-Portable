@@ -30,7 +30,9 @@ $pip_exe install -r "$workdir"/pak4.txt
 
 # tempFix for ORT cu13
 $pip_exe install flatbuffers numpy packaging protobuf sympy
-$pip_exe install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
+$pip_exe install onnxruntime-gpu
+$pip_exe uninstall --yes onnxruntime-gpu
+$pip_exe install --pre --no-deps --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
