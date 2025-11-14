@@ -1,0 +1,36 @@
+accelerate
+diffusers
+ftfy
+huggingface-hub
+imageio[ffmpeg]
+joblib
+kornia
+matplotlib
+nvidia-ml-py
+omegaconf
+onnx
+onnxruntime-gpu
+pandas
+pilgram
+pillow
+pygit2
+python-ffmpeg
+regex
+scikit-image
+scikit-learn
+scipy
+timm
+torchmetrics
+transformers
+
+# Make sure opencv version is compatible with numpy1.
+numpy==1.26.4
+opencv-contrib-python
+opencv-contrib-python-headless
+opencv-python
+opencv-python-headless
+
+# Who needs numpy1: 
+# 1. Jovimetrix (and 'cozy-comfyui' and 'blendmodes')
+# 2. ComfyUI-SAM2
+# 3. ComfyUI-ReActor

@@ -1,0 +1,41 @@
+name: "Build & Upload CUDA 12.8 Package"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_upload:
+    permissions:
+        contents: "write"
+        packages: "write"
+        pull-requests: "read"
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v5
+
+        - name: Stage 1 Gathering Dependencies
+          shell: bash
+          working-directory: builder-cu128
+          run: bash stage1.sh
+
+        - name: Stage 2 Assembling Repositories
+          shell: bash
+          working-directory: builder-cu128
+          run: bash stage2.sh
+
+        - name: Stage 3 Compressing Package
+          shell: bash
+          working-directory: builder-cu128
+          run: bash stage3.sh
+
+        - name: Upload archive to release
+          uses: xresloader/upload-to-github-release@v1
+          env:
+            # This is an always-on token in GitHub CI environment
+            # You don't need to configure it
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            file: "builder-cu128/*.7z*;builder-cu128/*.zip*"
+            # Always draft before release
+            draft: true
+            overwrite: true

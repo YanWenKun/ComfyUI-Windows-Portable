@@ -1,0 +1,6 @@
+default::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
+recent::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/new
+legacy::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/legacy
+forked::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/forked
+dev::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/dev
+tutorial::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/tutorial

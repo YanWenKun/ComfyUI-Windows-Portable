@@ -1,0 +1,23 @@
+https://github.com/eddiehe99/dlib-whl/releases/download/v20.0.0-alpha/dlib-20.0.0-cp312-cp312-win_amd64.whl
+https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0.7.3-cp312-cp312-win_amd64.whl
+pixeloe
+scikit-build-core
+git+https://github.com/rodjjo/filterpy.git
+git+https://github.com/openai/CLIP.git
+git+https://github.com/ltdrdata/cstr.git
+git+https://github.com/ltdrdata/ffmpy.git
+git+https://github.com/ltdrdata/img2texture.git
+git+https://github.com/facebookresearch/sam2.git
+# Janus' real dep list is in its pyproject.toml, not requirements.txt
+git+https://github.com/deepseek-ai/Janus.git
+# For Frame Interpolation
+cupy-cuda12x
+# For smZNodes
+compel
+lark
+# For DepthFM
+torchdiffeq
+# For APISR
+fairscale
+# For Janus
+attrdict
