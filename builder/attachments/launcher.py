@@ -24,7 +24,6 @@ def save_config(args):
         "use_pytorch_cross_attention": args.use_pytorch_cross_attention,
         "use_sage_attention": args.use_sage_attention,
         "use_flash_attention": args.use_flash_attention,
-        "use_xformers": args.use_xformers,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -48,7 +47,7 @@ def main():
     parser = GooeyParser(description="Customize settings before launching ComfyUI")
     
     # Environment Variable Configuration Tab
-    env_tab = parser.add_argument_group('Environment Variable Configuration', 
+    env_tab = parser.add_argument_group('Environment Variables', 
                                        'Configure the environment variables for ComfyUI',
                                        gooey_options={'show_border': True})
     env_tab.add_argument('--http_proxy', 
@@ -77,7 +76,7 @@ def main():
                          default=saved_config.get("hf_endpoint", "") if saved_config else '')
     
     # Launch Parameter Configuration Tab
-    launch_tab = parser.add_argument_group('Launch Parameter Configuration', 
+    launch_tab = parser.add_argument_group('Launch Parameters', 
                                            'Configure the launch parameters for ComfyUI',
                                            gooey_options={'show_border': True})
     launch_tab.add_argument('--disable_auto_launch', 
@@ -100,32 +99,30 @@ def main():
                             action='store_true',
                             help='More conservative VRAM usage, reduce speed, recommended only when VRAM is insufficient (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
-    # Mutually exclusive Attention Implementation options
-    attention_group = launch_tab.add_mutually_exclusive_group()
-    attention_group.add_argument('--use-xformers',
-                                 metavar='Use xFormers',
-                                 action='store_true',
-                                 help='Choose xFormers as the attention implementation. Default option',
-                                 default=saved_config.get("use_xformers", True) if saved_config else True)
-    attention_group.add_argument('--use-pytorch-cross-attention', 
-                                 metavar='Use PyTorch native cross-attention', 
-                                 action='store_true',
-                                 help='More stable (not better) image generation (--use-pytorch-cross-attention)',
-                                 default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
-    attention_group.add_argument('--use-sage-attention',
-                                 metavar='Use SageAttention',
-                                 action='store_true',
-                                 help='Better performance but less compatibility (--use-sage-attention)',
-                                 default=saved_config.get("use_sage_attention", False) if saved_config else False)
-    attention_group.add_argument('--use-flash-attention',
-                                 metavar='Use FlashAttention',
-                                 action='store_true',
-                                 help='On par with xFormers (--use-flash-attention)',
-                                 default=saved_config.get("use_flash_attention", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
                             help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
                             default=saved_config.get("extra_args", "") if saved_config else '')
+    
+    # Attention Implementation Configuration Tab
+    attn_tab = parser.add_argument_group('Attention Implementation', 
+                                           'Options are mutually exclusive. If nothing is selected, xFormers will be used by default',
+                                           gooey_options={'show_border': True})
+    attn_tab.add_argument('--use-pytorch-cross-attention', 
+                                 metavar='Disable xFormers/FlashAttention/SageAttention', 
+                                 action='store_true',
+                                 help='Use native PyTorch cross-attention. More stable (not better) image generation. Not recommended for videos (--use-pytorch-cross-attention)',
+                                 default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
+    attn_tab.add_argument('--use-sage-attention',
+                                 metavar='Use SageAttention',
+                                 action='store_true',
+                                 help='Better performance but less compatibility (--use-sage-attention)',
+                                 default=saved_config.get("use_sage_attention", False) if saved_config else False)
+    attn_tab.add_argument('--use-flash-attention',
+                                 metavar='Use FlashAttention',
+                                 action='store_true',
+                                 help='On par with xFormers (--use-flash-attention)',
+                                 default=saved_config.get("use_flash_attention", False) if saved_config else False)
     
     args = parser.parse_args()
 

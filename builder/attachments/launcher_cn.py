@@ -22,6 +22,8 @@ def save_config(args):
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
         "use_pytorch_cross_attention": args.use_pytorch_cross_attention,
+        "use_sage_attention": args.use_sage_attention,
+        "use_flash_attention": args.use_flash_attention,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -132,15 +134,30 @@ def main():
                             action='store_true',
                             help='更“节约”地使用显存， 牺牲速度， 仅建议显存不足时开启 (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
-    launch_tab.add_argument('--use-pytorch-cross-attention', 
-                            metavar='禁用 xFormers/FlashAttention/SageAttention', 
-                            action='store_true',
-                            help='禁用后，会启用 PyTorch 原生交叉注意力机制。 如需生成视频， 建议不要勾选 (--use-pytorch-cross-attention)',
-                            default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='额外启动参数', 
                             help='参数列表在 ComfyUI 的 cli_args.py， 注意添加空格 （例如 " --cpu" 启用仅 CPU 模式）',
                             default=saved_config.get("extra_args", "") if saved_config else '')
+    
+    # 注意力实现配置 Tab
+    attn_tab = parser.add_argument_group('注意力实现配置 ', 
+                                           '各选项互斥，请勿多选，不选则默认使用 xFormers',
+                                           gooey_options={'show_border': True})
+    attn_tab.add_argument('--use-pytorch-cross-attention', 
+                            metavar='禁用 xFormers/FlashAttention/SageAttention', 
+                            action='store_true',
+                            help='使用 PyTorch 原生交叉注意力实现， 图像生成更稳定（不是更好）。 不适合视频生成 (--use-pytorch-cross-attention)',
+                            default=saved_config.get("use_pytorch_cross_attention", False) if saved_config else False)
+    attn_tab.add_argument('--use-sage-attention',
+                            metavar='使用 SageAttention',
+                            action='store_true',
+                            help='性能更佳， 但可能有兼容性问题 (--use-sage-attention)',
+                            default=saved_config.get("use_sage_attention", False) if saved_config else False)
+    attn_tab.add_argument('--use-flash-attention',
+                            metavar='使用 FlashAttention',
+                            action='store_true',
+                            help='理论上与 xFormers 相当 (--use-flash-attention)',
+                            default=saved_config.get("use_flash_attention", False) if saved_config else False)
     
     args = parser.parse_args()
 
@@ -192,6 +209,10 @@ def main():
         command.append('--lowvram')
     if args.use_pytorch_cross_attention:
         command.append('--use-pytorch-cross-attention')
+    if args.use_sage_attention:
+        command.append('--use-sage-attention')
+    if args.use_flash_attention:
+        command.append('--use-flash-attention')
 
     # 添加用户自定义的额外参数
     if args.extra_args:
