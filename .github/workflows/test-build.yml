@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-        - uses: actions/checkout@v5
+        - uses: actions/checkout@v6
 
         - name: Stage 1 Gathering Dependencies
           shell: bash
