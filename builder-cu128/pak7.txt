@@ -17,5 +17,8 @@ fvcore
 hydra-core
 iopath
 pydub
+decord
+pycocotools
+shapely
 git+https://github.com/cozy-comfyui/cozy_comfyui.git
 git+https://github.com/cozy-comfyui/cozy_comfy.git

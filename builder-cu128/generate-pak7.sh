@@ -23,6 +23,7 @@ https://github.com/welltop-cn/ComfyUI-TeaCache/raw/refs/heads/main/requirements.
 https://github.com/Amorano/Jovimetrix/raw/refs/heads/main/requirements.txt
 https://github.com/neverbiasu/ComfyUI-SAM2/raw/refs/heads/main/requirements.txt
 https://github.com/akatz-ai/ComfyUI-AKatz-Nodes/raw/refs/heads/main/requirements.txt
+https://github.com/Ltamann/ComfyUI-TBG-SAM3/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";

@@ -30,6 +30,10 @@ $pip_exe install -r "$workdir"/pak4.txt
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
+
+# temp-fix: Prevent SAM-3 from installing its older dependencies
+$pip_exe install --no-deps https://github.com/facebookresearch/sam3.git
+
 $pip_exe install -r "$workdir"/pak8.txt
 
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
