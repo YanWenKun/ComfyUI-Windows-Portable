@@ -1,5 +1,5 @@
 --index-url https://download.pytorch.org/whl/cu128
-xformers==0.0.33.post1
+xformers==0.0.33.post2
 torch
 torchvision
 torchaudio
