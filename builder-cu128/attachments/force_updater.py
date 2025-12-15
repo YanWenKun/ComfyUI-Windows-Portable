@@ -57,7 +57,7 @@ def main():
 
     # Update main repository
     try:
-        git_pull(args.comfyui_dir)
+        git_checkout_pull(args.comfyui_dir)
         update_progress()
     except Exception as e:
         print(f"Error: {e}")
@@ -78,6 +78,24 @@ def main():
             except Exception as e:
                 print(f"Error: {e}")
                 sys.exit(1)  # Terminate the program
+
+def git_checkout_pull(repo_path):
+    try:
+        repo = git.Repo(repo_path)
+        git_remote_url = repo.remotes.origin.url
+
+        if re.match(r'^https:\/\/github\.com\/.*\.git$', git_remote_url):
+            print(f"Updating: {repo_path}")
+            try:
+                repo.git.checkout('master')
+            except git.exc.GitCommandError:
+                repo.git.checkout('main')
+            repo.git.reset('--hard')
+            repo.remotes.origin.pull()
+            print(f"Done Updating: {repo_path}")
+    except Exception as e:
+        print(f"Error processing {repo_path}: {e}")
+        raise  # Re-raise the exception to be caught by the caller
 
 def git_pull(repo_path):
     try:
