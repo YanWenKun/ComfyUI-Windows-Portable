@@ -135,7 +135,7 @@ cd "$workdir"/ComfyUI_Windows_portable
 #rm -rf "$workdir"/ComfyUI_Windows_portable/python_standalone/Lib/site-packages/pymatting
 rm -vf "$workdir"/ComfyUI_Windows_portable/*.log
 rm -vf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/*.log
-rm -vrf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/default/ComfyUI-Manager
+rm -vrf "$workdir"/ComfyUI_Windows_portable/ComfyUI/user/__manager
 
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 rm -vf ./ComfyUI-Custom-Scripts/pysssss.json
