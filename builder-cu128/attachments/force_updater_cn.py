@@ -28,7 +28,7 @@ def main():
     parser.add_argument(
         'mirror_url',  # 参数名称
         metavar='镜像站点',  # 参数显示名称
-        help='用于访问 GitHub 的镜像／代理站点（例如：https://ghfast.top 或 https://gh-proxy.com）',  # 帮助信息
+        help='用于访问 GitHub 的镜像／代理站点（例如：https://ghfast.top 或 https://gh-proxy.org）',  # 帮助信息
         default='https://ghfast.top',  # 设置默认值
     )
 
