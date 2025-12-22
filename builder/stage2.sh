@@ -83,6 +83,7 @@ $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
 $gcs https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 $gcs https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 $gcs https://github.com/melMass/comfy_mtb.git
+$gcs https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler.git
 
 # More
 $gcs https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git

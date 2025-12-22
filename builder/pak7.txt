@@ -10,4 +10,5 @@ peft
 protobuf
 pymatting
 Requests
+rotary-embedding-torch
 tomli
