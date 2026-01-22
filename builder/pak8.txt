@@ -1,15 +1,17 @@
 # triton-windows version is paired with PyTorch
 # Ref: https://github.com/woct0rdho/triton-windows
-triton-windows<3.6
+triton-windows<3.7
 
 # Nunchaku, paired with PyTorch
-https://github.com/nunchaku-tech/nunchaku/releases/download/v1.0.2/nunchaku-1.0.2+torch2.9-cp313-cp313-win_amd64.whl
+# TODO: Fit the pt210 version in the future
+https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.0/nunchaku-1.2.0+torch2.9-cp313-cp313-win_amd64.whl
 
 # SageAttention
 https://github.com/woct0rdho/SageAttention/releases/download/v2.2.0-windows.post4/sageattention-2.2.0+cu130torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
 
 # SpargeAttention
-https://github.com/woct0rdho/SpargeAttn/releases/download/v0.1.0-windows.post3/spas_sage_attn-0.1.0+cu130torch2.9.0.post3-cp39-abi3-win_amd64.whl
+https://github.com/woct0rdho/SpargeAttn/releases/download/v0.1.0-windows.post4/spas_sage_attn-0.1.0+cu130torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
 
 # FlashAttention
-https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.4.19/flash_attn-2.8.3+cu130torch2.9-cp313-cp313-win_amd64.whl
+# TODO: Fit the cu130 version in the future
+https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.12/flash_attn-2.8.3+cu126torch2.10-cp313-cp313-win_amd64.whl
