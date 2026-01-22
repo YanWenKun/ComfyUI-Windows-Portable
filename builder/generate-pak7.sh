@@ -24,7 +24,7 @@ https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler/raw/refs/heads/main/requir
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" -sSL "${line}" >> pak7.txt
+    do curl -Lw "\n" -sSL "${line}" >> pak7.txt
 done
 
 sed -i '/^#/d' pak7.txt

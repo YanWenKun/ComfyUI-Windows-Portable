@@ -44,5 +44,5 @@ https://github.com/nunchaku-tech/ComfyUI-nunchaku/raw/refs/heads/main/requiremen
 
 for line in "${array[@]}"; do
     printf '\n# %s\n' "${line}" >> debug-list.txt
-    curl -w "\n" -sSL "${line}" >> debug-list.txt
+    curl -Lw "\n" -sSL "${line}" >> debug-list.txt
 done

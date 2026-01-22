@@ -27,7 +27,7 @@ https://github.com/cubiq/PuLID_ComfyUI/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" -sSL "${line}" >> pak5.txt
+    do curl -Lw "\n" -sSL "${line}" >> pak5.txt
 done
 
 sed -i '/^#/d' pak5.txt

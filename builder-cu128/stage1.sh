@@ -37,7 +37,7 @@ $pip_exe install --no-deps 'git+https://github.com/facebookresearch/sam3.git'
 $pip_exe install -r "$workdir"/pak8.txt
 
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
-latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
+latest_tag=$(curl -sL https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
 $pip_exe install -r "$workdir"/pakY.txt

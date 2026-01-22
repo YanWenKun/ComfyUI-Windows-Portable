@@ -23,7 +23,7 @@ https://github.com/ltdrdata/was-node-suite-comfyui/raw/refs/heads/main/requireme
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" -sSL "${line}" >> pak5.txt
+    do curl -Lw "\n" -sSL "${line}" >> pak5.txt
 done
 
 sed -i '/^#/d' pak5.txt
