@@ -1,7 +1,5 @@
 # Install the actual PyTorch we would use
---upgrade
---upgrade-strategy=only-if-needed
 --index-url https://download.pytorch.org/whl/cu130
-torch
+torch==2.10.0
 torchvision
 torchaudio
