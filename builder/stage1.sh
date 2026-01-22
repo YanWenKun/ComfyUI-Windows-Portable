@@ -39,7 +39,7 @@ $pip_exe install -r "$workdir"/pak5.txt
 
 # Temp-fix for clip-interrogator (incompatible with PyTorch 2.10)
 $pip_exe install open-clip-torch
-$pip_exe --no-deps clip-interrogator
+$pip_exe install --no-deps clip-interrogator
 
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
