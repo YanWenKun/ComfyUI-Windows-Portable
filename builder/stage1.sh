@@ -35,7 +35,8 @@ $pip_exe install onnxruntime-gpu
 $pip_exe uninstall --yes onnxruntime-gpu
 $pip_exe install --pre --no-deps --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 
-$pip_exe install -r "$workdir"/pak5.txt
+# Temp-fix for PyTorch 2.10 compatibility
+$pip_exe install --upgrade-strategy=only-if-needed -r "$workdir"/pak5.txt
 
 # Temp-fix for clip-interrogator (incompatible with PyTorch 2.10)
 $pip_exe install open-clip-torch
