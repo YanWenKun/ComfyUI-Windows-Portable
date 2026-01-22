@@ -6,7 +6,8 @@ alembic
 av
 cachetools
 chardet
-clip-interrogator
+# Incompatible with PyTorch 2.10
+#clip-interrogator
 color-matcher
 colour-science
 deepdiff
