@@ -1,12 +1,14 @@
 # triton-windows version is paired with PyTorch
 # Ref: https://github.com/woct0rdho/triton-windows
-triton-windows<3.6
+triton-windows<3.7
 
 # Nunchaku, paired with PyTorch
+# Note the new versions (1.1.0, 1.2.0) are built against cu130, so we use the old version here.
+# https://github.com/nunchaku-ai/nunchaku/blob/v1.2.0/.github/workflows/release-build.yaml#L64
 https://github.com/nunchaku-tech/nunchaku/releases/download/v1.0.2/nunchaku-1.0.2+torch2.9-cp312-cp312-win_amd64.whl
 
 # SageAttention
 https://github.com/woct0rdho/SageAttention/releases/download/v2.2.0-windows.post4/sageattention-2.2.0+cu128torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
 
 # SpargeAttention
-https://github.com/woct0rdho/SpargeAttn/releases/download/v0.1.0-windows.post3/spas_sage_attn-0.1.0+cu128torch2.9.0.post3-cp39-abi3-win_amd64.whl
+https://github.com/woct0rdho/SpargeAttn/releases/download/v0.1.0-windows.post4/spas_sage_attn-0.1.0+cu128torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
