@@ -6,7 +6,7 @@ image::docs/screenshot.zh.webp["界面截图"]
 中文 | *link:README.adoc[English]*
 
 类似 ComfyUI 官方的
-https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
+https://github.com/Comfy-Org/ComfyUI/releases[Standalone Portable]
 整合包，但是更大。
 
 
@@ -246,7 +246,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/actions/workflows/build.ym
 ## 开发理念
 
 代码原本是抄的 ComfyUI 的 
-https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[GitHub workflow]
+https://github.com/Comfy-Org/ComfyUI/tree/master/.github/workflows[GitHub workflow]
 ，后来发现实在是难调试，就重写了一遍脚本。
 但打包理念都差不多，都是自带一个免安装的 Python Embedded，半绿色，可移植，依赖项完备，解压即可运行。
 
@@ -256,7 +256,7 @@ https://www.python.org/downloads/windows/[Python Embedded]
 https://github.com/astral-sh/python-build-standalone[Python Standalone]
 ）
 
-不同之处在于，我没有像 comfyanonymous 一样先下载 wheel，再批量安装。因为依赖关系太棘手，我是直接走的 `pip install`，以便 PIP 解析。
+不同之处在于，我没有像 Comfy 一样先下载 wheel，再批量安装。因为依赖关系太棘手，我是直接走的 `pip install`，以便 PIP 解析。
 
 当然，这类预装包的 Python Standalone 都有个通病：`Scripts` 目录下的 exe 大多无法正常执行。因这些 exe 多为 Python 命令套壳，并通过绝对路径执行 `python.exe`，一旦目录变动（移植）自然无法执行。所幸对本项目无甚影响。
 
@@ -267,5 +267,5 @@ https://github.com/astral-sh/python-build-standalone[Python Standalone]
 ## 感谢
 
 感谢
-https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow]
+https://github.com/Comfy-Org/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow]
 ，我的灵感来源于此，一开始的代码也是抄的这个。

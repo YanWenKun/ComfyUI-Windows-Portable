@@ -6,7 +6,7 @@ English | *link:README.zh.adoc[中文说明]*
 image::docs/screenshot.webp["Screenshot"]
 
 Similar to the 
-https://github.com/comfyanonymous/ComfyUI/releases[ComfyUI official standalone portable],
+https://github.com/Comfy-Org/ComfyUI/releases[ComfyUI official standalone portable],
 but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
 
 
@@ -266,5 +266,5 @@ As a note, a common issue with Python Embedded in such pre-installed packages is
 
 == Thanks
 
-Thanks to the link:https://github.com/comfyanonymous/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow], from which I drew inspiration.
+Thanks to the link:https://github.com/Comfy-Org/ComfyUI/tree/master/.github/workflows[ComfyUI GitHub workflow], from which I drew inspiration.
 

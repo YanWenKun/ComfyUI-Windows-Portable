@@ -29,7 +29,7 @@ rm MinGit.zip
 
 ################################################################################
 # ComfyUI main app
-git clone https://github.com/comfyanonymous/ComfyUI.git \
+git clone https://github.com/Comfy-Org/ComfyUI.git \
     "$workdir"/ComfyUI_Windows_portable/ComfyUI
 # Use latest stable version (has a release tag)
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI
