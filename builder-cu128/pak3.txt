@@ -1,5 +1,8 @@
---index-url https://download.pytorch.org/whl/cu128
-xformers==0.0.34
-torch==2.10.0
+# (workaround) Install a dummy PyTorch 2.9.1 first,
+# to avoid other packages downgrading PyTorch from 2.10 to 2.9.
+
+--index-url https://download.pytorch.org/whl/cpu
+
+torch==2.9.1
 torchvision
 torchaudio
