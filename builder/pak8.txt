@@ -3,8 +3,7 @@
 triton-windows<3.7
 
 # Nunchaku, paired with PyTorch
-# TODO: Fit the pt210 version in the future
-https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.0/nunchaku-1.2.0+torch2.9-cp313-cp313-win_amd64.whl
+https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.1/nunchaku-1.2.1+cu13.0torch2.10-cp313-cp313-win_amd64.whl
 
 # SageAttention
 https://github.com/woct0rdho/SageAttention/releases/download/v2.2.0-windows.post4/sageattention-2.2.0+cu130torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
