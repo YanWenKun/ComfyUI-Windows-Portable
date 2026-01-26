@@ -43,7 +43,6 @@ $pip_exe install -r "$workdir"/pak8.txt
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
 latest_tag=$(curl -sL https://api.github.com/repos/Comfy-Org/ComfyUI/tags | jq -r '.[0].name')
 $pip_exe install -r "https://github.com/Comfy-Org/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
-$pip_exe install -r "https://github.com/Comfy-Org/ComfyUI/raw/refs/tags/${latest_tag}/manager_requirements.txt"
 
 $pip_exe install -r "$workdir"/pakX.txt
 $pip_exe install -r "$workdir"/pakY.txt
