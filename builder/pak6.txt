@@ -3,7 +3,6 @@ https://github.com/Gourieff/Assets/raw/refs/heads/main/Insightface/insightface-0
 pixeloe
 scikit-build-core
 git+https://github.com/rodjjo/filterpy.git
-git+https://github.com/openai/CLIP.git
 git+https://github.com/ltdrdata/cstr.git
 git+https://github.com/ltdrdata/ffmpy.git
 git+https://github.com/ltdrdata/img2texture.git
