@@ -12,5 +12,4 @@ https://github.com/woct0rdho/SageAttention/releases/download/v2.2.0-windows.post
 https://github.com/woct0rdho/SpargeAttn/releases/download/v0.1.0-windows.post4/spas_sage_attn-0.1.0+cu130torch2.9.0andhigher.post4-cp39-abi3-win_amd64.whl
 
 # FlashAttention
-# TODO: Fit the cu130 version in the future
-https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.12/flash_attn-2.8.3+cu126torch2.10-cp313-cp313-win_amd64.whl
+https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.13/flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl

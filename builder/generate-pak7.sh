@@ -21,6 +21,7 @@ https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirem
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
 https://github.com/welltop-cn/ComfyUI-TeaCache/raw/refs/heads/main/requirements.txt
 https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler/raw/refs/heads/main/requirements.txt
+https://github.com/Ltamann/ComfyUI-TBG-SAM3/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
