@@ -39,12 +39,12 @@ def load_config():
 def create_channels_list():
     """让 ComfyUI-Manager 从国内镜像检查更新列表"""
     channels_list_path = os.path.join("ComfyUI", "user", "default", "ComfyUI-Manager", "channels.list")
-    channels_list_content = """default::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
-recent::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/new
-legacy::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/legacy
-forked::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/forked
-dev::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/dev
-tutorial::https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/tutorial
+    channels_list_content = """default::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
+recent::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/new
+legacy::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/legacy
+forked::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/forked
+dev::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/dev
+tutorial::https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/node_db/tutorial
 """
 
     # 如果文件不存在，则创建并写入内容
@@ -60,7 +60,7 @@ def create_config_ini():
     """让 ComfyUI-Manager 从国内镜像检查更新列表"""
     config_ini_path = os.path.join("ComfyUI", "user", "default", "ComfyUI-Manager", "config.ini")
     config_ini_content = """[default]
-channel_url = https://ghfast.top/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
+channel_url = https://gh-proxy.org/https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
 """
 
     # 如果文件不存在，则创建并写入内容

@@ -15,14 +15,14 @@ function set_url_and_pull () {
     elif [[ $git_remote_url =~ ^(https:\/\/github\.com\/)(.*)(\.git)$ ]]; then
         echo "正在修改URL并更新: $1" ;
         git -C "$1" reset --hard ;
-        git -C "$1" remote set-url origin "https://ghfast.top/$git_remote_url" ;
+        git -C "$1" remote set-url origin "https://gh-proxy.org/$git_remote_url" ;
         git -C "$1" pull --ff-only ;
         echo "更新完成: $1" ;
     elif [[ $git_remote_url =~ ^(https:\/\/ghp\.ci\/)((https:\/\/github\.com\/)(.*)(\.git))$ ]]; then
         echo "正在修改URL并更新: $1" ;
         echo "提取URL: ${BASH_REMATCH[2]}" ;
         git -C "$1" reset --hard ;
-        git -C "$1" remote set-url origin "https://ghfast.top/${BASH_REMATCH[2]}" ;
+        git -C "$1" remote set-url origin "https://gh-proxy.org/${BASH_REMATCH[2]}" ;
         git -C "$1" pull --ff-only ;
         echo "更新完成: $1" ;
     fi ;
