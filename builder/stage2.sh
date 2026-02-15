@@ -96,7 +96,6 @@ $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 # To be removed in future
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
 $gcs https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
-$gcs https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro.git
 $gcs https://github.com/FizzleDorf/ComfyUI_FizzNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 
