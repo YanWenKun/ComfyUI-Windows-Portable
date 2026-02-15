@@ -24,7 +24,9 @@ VOL_SIZE="-v${_SIZE_PREFIX}${_RAND_SUFFIX}b"
 "C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 "$VOL_SIZE" ComfyUI_Windows_portable_cu130.7z ComfyUI_Windows_portable
 
 cd m_folder
-"C:\Program Files\7-Zip\7z.exe" a -tzip "$VOL_SIZE" models.zip ComfyUI_Windows_portable
+# No longer use volumes for models.zip since it never exceeds 2GB
+#"C:\Program Files\7-Zip\7z.exe" a -tzip "$VOL_SIZE" models.zip ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -tzip models.zip ComfyUI_Windows_portable
 mv ./*.zip* ../
 cd ..
 
