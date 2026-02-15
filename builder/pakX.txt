@@ -1,5 +1,6 @@
 # Install the actual PyTorch we would use
 --index-url https://download.pytorch.org/whl/cu130
+xformers==0.0.34
 torch==2.10.0
 torchvision
 torchaudio
