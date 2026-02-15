@@ -39,6 +39,11 @@ $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
 
+# Temp-fix for compel
+# compel is used by smZNodes
+$pip_exe install notebook pyparsing
+$pip_exe install --no-deps compel
+
 # Temp-fix: Prevent SAM-3 from installing its older dependencies
 $pip_exe install --no-deps 'git+https://github.com/facebookresearch/sam3.git'
 

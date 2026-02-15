@@ -11,7 +11,6 @@ git+https://github.com/facebookresearch/sam2.git
 # For Frame Interpolation
 cupy-cuda13x
 # For smZNodes
-compel
 lark
 # For DepthFM
 torchdiffeq
