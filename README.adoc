@@ -7,47 +7,47 @@ image::docs/screenshot.webp["Screenshot"]
 
 Similar to the 
 https://github.com/Comfy-Org/ComfyUI/releases[ComfyUI official standalone portable],
-but preloaded with numerous custom nodes and Python packages, with all dependencies resolved.
+but preloaded with numerous custom nodes and Python packages, with all dependencies resolved and ready to use.
 
 
 == Features
 
-* Pre-installed with 40+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
+* Pre-installed 40+ commonly-used custom nodes. <<custom-nodes, [Full List]>>
 
 ** With all the model files that need to be downloaded on the first run (which may cause freezing for users with a poor Internet connection).
 
-* Includes 200+ mutually compatible Python packages, including: 
+* Pre-installed 300+ mutually compatible Python packages, including: 
 
-** `insightface`, `dlib`, etc., which require compilation during installation.
+** Performance optimization libraries such as SageAttention, FlashAttention, xFormers and Nunchaku.
 
-** xFormers, which is not included in the ComfyUI official package for an understandable reason. It may not be significant for text-to-image, but could be useful for video workflows.
+** Packages that require native compilation during installation (e.g., insightface, dlib, etc.), already built and ready to use.
 
-* Only a few functional models are pre-installed; users please prepare SD models of your favorite.
+* Only a few functional models are pre-installed; users please prepare model files of your favorite.
 
-* This repo uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork the repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own All-In-One Package>>.
+* This repository uses the GitHub pipeline for packaging, making it easy for DIY. No need to configure CI/CD, simply fork this repository on GitHub to run the packaging script. See <<build-your-own, Creating Your Own All-In-One Package>>.
 
 
 == How to Use
 
-. Only NVIDIA GPUs are supported, preferably with the latest driver installed.
+. Only NVIDIA GPUs (2018 or newer) are supported. Installing the latest driver is strongly recommended.
 
 . Download the package files from the
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[release page].
+
 ** Or you can download them directly:
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
-*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] (If you are upgrading from a previous release, you don't need this file.)
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu130.7z.001[ComfyUI_Windows_portable_cu130.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu130.7z.002[ComfyUI_Windows_portable_cu130.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip[models.zip] (If you are upgrading from a previous release, you don't need this file.)
 
-** Open the `.7z.001` and extract it to a convenient place. 
-Open the `.zip.001` and extract it to the same place. 
-If you can't open 7z files, install
-https://www.7-zip.org/[7-zip]
-or
-https://peazip.github.io/peazip-64bit.html[PeaZip]
-first.
+. After downloading the files, place them in the same directory, then open and extract the `001` file.
+** Extract to a shallow directory path, such as `C:\AI\`, to avoid errors caused by long paths (exceeding the MAX_PATH limit of 260 characters).
 
-. Place SD models in `ComfyUI\models\checkpoints`.
-** Subdirectories can be created for better organization.
+** You do not need to open the `002` file. The extraction software will automatically handle it when decompressing the `001` file. They are two parts of a single large archive created using "split compression".
+** You can use https://www.7-zip.org/[7-Zip] for extraction.
+
+. Open the `models.zip` and extract it to the same place. 
+
+. Place your model files under `ComfyUI\models\`.
 
 . Run `RUN_Launcher.bat` to start.
 
@@ -58,18 +58,86 @@ image::docs/screenshot-launcher.webp["Launcher Screenshot"]
 * Close the window to exit the program.
 
 
-== Tips and Tricks
+== Tips
+
+. Take full advantage of ComfyUI-Manager (the *Manager* button in the top-right of the ComfyUI page) to manage Custom Nodes: install, update, disable, and uninstall.
+** You can click the "Update ComfyUI" button daily to get the latest workflow templates and related updates. This feature does not affect your installed Custom Nodes.
+** Be cautious when using "Update All"; there's no need to update unused nodes to avoid Python package conflicts.
+
+
+[[custom-nodes]]
+== Pre-installed Custom Node List
+
+[cols=3]
+|===
+3+|**Workspace**
+|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
+|link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
+|link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
+3+|**Performance**
+|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
+|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
+|link:https://github.com/woct0rdho/ComfyUI-RadialAttn[RadialAttention]
+3+|**General**
+|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
+|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
+|link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
+|link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
+|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
+|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
+|link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
+|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
+|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
+|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
+|link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
+|link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
+3+|**Control**
+|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
+|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
+|link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
+|link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
+|link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
+|link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
+|link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
+|link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
+|link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
+|link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
+|link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
+|
+|
+3+|**Video**
+|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
+|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
+|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
+|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
+|link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
+|
+3+|**More**
+|link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
+|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
+|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
+|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
+|link:https://github.com/digitaljohn/comfyui-propost[ProPost]
+|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
+|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
+|
+|
+|===
+
+If compatibility issues arise, you can try disabling conflicting nodes in ComfyUI-Manager.
+
+
+== Advanced Information
 
 . The `ExtraScripts` folder contains command-line launch scripts, which are equivalent to the launcher. 
-
-. Take full advantage of ComfyUI-Manager (the *Manager* button in the top-right corner of the ComfyUI page) to manage custom nodes: install, update, disable, and uninstall.
-** Be cautious when using "Update All"; there's no need to update unused nodes to avoid Python package conflicts.
 
 . For power users, consider using https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] to limit cache files while isolating the environment.
 ** For better I/O performance when using Sandboxie, it is recommended to configure the program's main directory (`ComfyUI_Windows_portable`) as "Open Access" in "Sandbox Options" -> "Resource Access".
 
 
-=== 4. External Model Directory
+=== 3. External Model Directory
 
 If you place model files on different partitions or share a set of model files across multiple ComfyUI instances,
 you can configure ComfyUI to load external model directories:
@@ -123,7 +191,7 @@ comfyui:
 ====
 
 
-=== 5. More External Model Directories
+=== 4. More External Model Directories
 
 ComfyUI has five common locations for saving model files:
 
@@ -139,95 +207,6 @@ Among these:
 * PyTorch defaults to downloading files to `C:\Users\UserName\.cache\torch\hub`.
 
 This package modifies the launch script to redirect these to the program's root directory, under `HuggingFaceHub` and `TorchHome` folders, respectively, for easier management. If needed, you can edit the launch script to change these paths.
-
-
-=== 6. How to Perform a "Refresh" Major Update
-
-This method does not use ComfyUI-Manager for updates but directly replaces the package with a new version.
-If the process goes smoothly, it avoids installing or upgrading Python packages, thus preventing dependency conflicts.
-
-. Extract the new package.
-. Delete the `ComfyUI`, `HuggingFaceHub`, and `TorchHome` folders in the new package.
-. Copy (or move) these three folders from the old package to the new one.
-. Run `RUN_Force_Updater.bat` in the new package's root directory.
-. If any nodes fail to load, use ComfyUI-Manager to "try fix."
-
-== Details
-
-[[custom-nodes]]
-=== Pre-installed Custom Node List
-
-[cols=3]
-|===
-3+|**Workspace**
-|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
-|link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
-|link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
-3+|**Performance**
-|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
-|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
-|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
-|link:https://github.com/woct0rdho/ComfyUI-RadialAttn[RadialAttention]
-|
-|
-3+|**General**
-|link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
-|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
-|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
-|link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
-|link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
-|link:https://github.com/Amorano/Jovimetrix[Jovimetrix]
-|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
-|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
-|link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
-|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
-|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
-|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
-|link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
-|link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
-|
-3+|**Control**
-|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
-|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
-|link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
-|link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
-|link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
-|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
-|link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
-|link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
-|link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
-|link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
-|link:https://github.com/cubiq/PuLID_ComfyUI[PuLID by cubiq]
-|link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
-|link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
-|link:https://github.com/Gourieff/ComfyUI-ReActor[ReActor Node]
-|link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
-|link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
-|
-|
-3+|**Video**
-|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
-|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
-|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
-|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
-|link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
-|
-3+|**More**
-|link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
-|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
-|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
-|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
-|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
-|link:https://github.com/digitaljohn/comfyui-propost[ProPost]
-|link:https://github.com/neverbiasu/ComfyUI-SAM2[Segment Anything 2 by neverbiasu]
-|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
-|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
-|link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
-|
-|
-|===
-
-If compatibility issues arise, you can try disabling conflicting nodes in ComfyUI-Manager.
 
 
 [[build-your-own]]

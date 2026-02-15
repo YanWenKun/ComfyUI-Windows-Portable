@@ -14,15 +14,13 @@ https://github.com/Comfy-Org/ComfyUI/releases[Standalone Portable]
 
 * 预装了 40+ 常用自定义节点 <<custom-nodes, 【查看详细列表】>>
 
-** 预先下载了部分模型文件，包括
-https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
-与
+** 预装了部分模型文件，包括
 https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
-会在初次启动时下载的模型文件等，避免国内用户启动时卡下载。
+会在初次启动时下载的模型文件等，避免启动时卡下载（访问 GitHub/HuggingFace 不畅）。
 
-* 包含 200+ 互相兼容的 Python 包，包括：
+* 包含 300+ 互相兼容的 Python 包，包括：
+** 性能库： SageAttention、FlashAttention、xFormers、Nunchaku 等
 ** 需要编译安装的 `insightface`、`dlib` 等
-** ComfyUI 官方包里没装的 xFormers（对文生图影响不大，对视频类有用）
 
 * 仅预置了少量功能性模型，绘图模型还请用户自行下载
 
@@ -30,19 +28,23 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
 
 ## 如何使用
 
-. 仅支持 NVIDIA 显卡，建议先装好最新驱动
+. 仅支持 NVIDIA 显卡（20 系及以后），建议先装好最新驱动
 
 . 在
 https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.001[ComfyUI_Windows_portable_cu128.7z.001]
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu128.7z.002[ComfyUI_Windows_portable_cu128.7z.002]
-** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip.001[models.zip.001] （模型包，如果是从之前版本升级，不需要下载）
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu130.7z.001[ComfyUI_Windows_portable_cu130.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/ComfyUI_Windows_portable_cu130.7z.002[ComfyUI_Windows_portable_cu130.7z.002]
+*** https://github.com/YanWenKun/ComfyUI-Windows-Portable/releases/latest/download/models.zip[models.zip] （模型包，如果是从之前版本升级，不需要下载）
 
-** 打开 `.7z.001` 并解压（建议不要放在太深的目录）；打开 `.zip.001` 并解压到同一个目录。
+** 打开 `.7z.001` 并解压（建议放在较浅的目录，比如 `C:\AI\` ，避免路径超长）
 
-. 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
+** 打开 `.zip` 并解压到同一个目录
+
+** 无需再打开 `.7z.002` 文件，它已随 `001` 一同解压
+
+. 将 SD 模型放到 `ComfyUI\models\checkpoints` 或 `ComfyUI\models\diffusion_models` 下
 
 ** 可随意建立子目录，便于分类
 
@@ -57,15 +59,83 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
 ## 使用技巧
 
-. `备用脚本` 文件夹下包含了命令行启动脚本，其内容与启动器等价。
-
-. 善加利用 ComfyUI-Manager （ComfyUI 页面右上角 *Manager* 按钮），用它来管理自定义节点：安装、更新、禁用、卸载。
+. 善加利用 ComfyUI-Manager （ComfyUI 页面右上角 *Manager* 按钮），用它来管理自定义节点（插件）：安装、更新、禁用、卸载。
+** “更新 ComfyUI（Update ComfyUI）”可以获取最新的工作流模板等，该功能不影响自定义节点，可放心更新。
 ** “更新全部”需谨慎，用不到的节点没必要更新，避免 Python 包混乱。
+
+
+[[custom-nodes]]
+## 预置自定义节点列表
+
+[cols=3]
+|===
+3+|**工作空间**
+|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
+|link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
+|link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
+3+|**性能**
+|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
+|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
+|link:https://github.com/woct0rdho/ComfyUI-RadialAttn[RadialAttention]
+3+|**综合**
+|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
+|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
+|link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
+|link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
+|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
+|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
+|link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
+|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
+|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
+|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
+|link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
+|link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
+3+|**控制**
+|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
+|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
+|link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
+|link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
+|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
+|link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
+|link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
+|link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
+|link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
+|link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
+|link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
+|link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
+|
+|
+3+|**视频**
+|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
+|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
+|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
+|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
+|link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
+|
+3+|**更多**
+|link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
+|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
+|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
+|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
+|link:https://github.com/digitaljohn/comfyui-propost[ProPost]
+|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
+|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
+|
+|
+|===
+
+如安装新节点后遇到兼容性问题，可在 ComfyUI-Manager 中禁用冲突节点。
+
+
+## 进阶技巧
+
+. `备用脚本` 文件夹下包含了命令行启动脚本，其内容与启动器等价。
 
 . 如果你讨厌程序产生的临时文件、下载缓存等，可以考虑使用 https://github.com/sandboxie-plus/Sandboxie/releases[Sandboxie] 沙盒来约束它们，同时隔离环境。
 ** 在使用沙盒时，为了 I/O 性能，建议在“沙盒选项”-“资源访问”中，将程序主目录（`ComfyUI_Windows_portable`）配置为“开放”。
 
-### 4. 外部模型目录
+### 3. 外部模型目录
 
 如果你将模型文件放在不同的分区，或者多个 ComfyUI 实例共用一套模型文件，
 可以配置 ComfyUI 加载外部模型目录：
@@ -119,7 +189,7 @@ comfyui:
 ====
 
 
-### 5. 更多外部模型目录
+### 4. 更多外部模型目录
 
 ComfyUI 有五处常见的模型文件保存位置：
 
@@ -137,94 +207,6 @@ ComfyUI 有五处常见的模型文件保存位置：
 ** 本整合包修改到了 `程序目录\TorchHome`
 
 如需修改，可在启动脚本中编辑。
-
-
-### 6. 如何“翻新式”大更新
-
-该方法不通过 ComfyUI-Manager 更新，而是直接替换为新版整合包。
-如果流程顺利，可以避免安装升级 Python 包，进而避免依赖项版本混乱。
-
-. 解压新版整合包
-. 删除新版中的 `ComfyUI` 、 `HuggingFaceHub` 与 `TorchHome` 文件夹
-. 将旧版中的这三个文件夹复制（移动）过来
-. 在新版主目录下，运行 `强制更新.bat`
-. 如有节点加载失败，需在 ComfyUI-Manager 中“try fix”。
-
-
-[[custom-nodes]]
-## 预置自定义节点列表
-
-[cols=3]
-|===
-3+|**工作空间**
-|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
-|link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
-|link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
-3+|**性能**
-|link:https://github.com/nunchaku-tech/ComfyUI-nunchaku[Nunchaku]
-|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
-|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
-|link:https://github.com/woct0rdho/ComfyUI-RadialAttn[RadialAttention]
-|
-|
-3+|**综合**
-|link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
-|link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
-|link:https://github.com/cubiq/ComfyUI_essentials[ComfyUI Essentials by cubiq]
-|link:https://github.com/pythongosssss/ComfyUI-Custom-Scripts[Custom Scripts by pythongosssss]
-|link:https://github.com/jags111/efficiency-nodes-comfyui[Efficiency Nodes by jags111]
-|link:https://github.com/Amorano/Jovimetrix[Jovimetrix]
-|link:https://github.com/kijai/ComfyUI-KJNodes[KJNodes]
-|link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
-|link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
-|link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
-|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
-|link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
-|link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
-|link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
-|
-3+|**控制**
-|link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
-|link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
-|link:https://github.com/Jonseed/ComfyUI-Detail-Daemon[Detail Daemon]
-|link:https://github.com/huchenlei/ComfyUI-IC-Light-Native[IC-Light Native]
-|link:https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack]
-|link:https://github.com/ltdrdata/ComfyUI-Impact-Subpack[Impact Subpack]
-|link:https://github.com/ltdrdata/ComfyUI-Inspire-Pack[Inspire Pack]
-|link:https://github.com/cubiq/ComfyUI_InstantID[InstantID by cubiq]
-|link:https://github.com/cubiq/ComfyUI_IPAdapter_plus[IPAdapter plus]
-|link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
-|link:https://github.com/cubiq/PuLID_ComfyUI[PuLID by cubiq]
-|link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
-|link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
-|link:https://github.com/Gourieff/ComfyUI-ReActor[ReActor Node]
-|link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
-|link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
-|
-|
-3+|**视频**
-|link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
-|link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
-|link:https://github.com/Fannovel16/ComfyUI-Frame-Interpolation[Frame Interpolation (VFI)]
-|link:https://github.com/melMass/comfy_mtb[MTB Nodes]
-|link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
-|
-3+|**更多**
-|link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
-|link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
-|link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
-|link:https://github.com/kijai/ComfyUI-Florence2[Florence-2 by kijai]
-|link:https://github.com/SLAPaper/ComfyUI-Image-Selector[Image Selector]
-|link:https://github.com/digitaljohn/comfyui-propost[ProPost]
-|link:https://github.com/neverbiasu/ComfyUI-SAM2[Segment Anything 2 by neverbiasu]
-|link:https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git[Ultimate SD Upscale]
-|link:https://github.com/pythongosssss/ComfyUI-WD14-Tagger[WD 1.4 Tagger]
-|link:https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro[Janus-Pro]
-|
-|
-|===
-
-如安装新节点后遇到兼容性问题，可在 ComfyUI-Manager 中禁用冲突节点。
 
 
 [[build-your-own]]
