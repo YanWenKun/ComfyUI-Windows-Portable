@@ -46,7 +46,6 @@ $gcs https://github.com/Comfy-Org/ComfyUI-Manager.git
 $gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/nunchaku-tech/ComfyUI-nunchaku.git
 $gcs https://github.com/woct0rdho/ComfyUI-RadialAttn.git
-$gcs https://github.com/welltop-cn/ComfyUI-TeaCache.git
 
 # Workspace
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
