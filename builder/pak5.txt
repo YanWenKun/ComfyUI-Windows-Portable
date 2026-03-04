@@ -14,6 +14,7 @@ dill
 einops
 filelock
 GitPython
+glfw
 imageio-ffmpeg
 importlib-metadata
 matrix-nio
@@ -26,6 +27,7 @@ py-cpuinfo
 pydantic
 pydantic-settings
 PyGithub
+PyOpenGL
 python-dateutil
 pyyaml
 qrcode[pil]
