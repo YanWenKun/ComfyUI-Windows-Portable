@@ -23,8 +23,7 @@ $pip_exe install --upgrade pip wheel setuptools
 $pip_exe install -r "$workdir"/pak2.txt
 $pip_exe install -r "$workdir"/pak3.txt
 
-# Temp-fix for Transformers.
-# TODO: remove after version chaos resolved
+# Temp-fix for version chaos of Transformers
 $pip_exe install transformers
 
 $pip_exe install -r "$workdir"/pak4.txt
@@ -48,8 +47,6 @@ $pip_exe install --no-deps compel
 $pip_exe install --no-deps 'git+https://github.com/facebookresearch/sam3.git'
 
 $pip_exe install -r "$workdir"/pak8.txt
-
-$pip_exe install -r "$workdir"/pakX.txt
 
 $pip_exe install comfy-kitchen[cublas]
 

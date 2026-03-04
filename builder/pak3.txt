@@ -1,9 +1,5 @@
-# (ugly fix) Install a dummy PyTorch first,
-# to avoid other packages downgrading PyTorch from 2.10 to 2.9.
-
---index-url https://download.pytorch.org/whl/cpu
-#--extra-index-url https://pypi.org/simple
-
-torch==2.9.1
+--index-url https://download.pytorch.org/whl/cu130
+xformers
+torch==2.10.0
 torchvision
 torchaudio
