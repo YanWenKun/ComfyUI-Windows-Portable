@@ -43,6 +43,10 @@ https://github.com/nunchaku-tech/ComfyUI-nunchaku/raw/refs/heads/main/requiremen
 https://github.com/pydn/ComfyUI-to-Python-Extension/raw/refs/heads/main/requirements.txt
 https://github.com/welltop-cn/ComfyUI-TeaCache/raw/refs/heads/main/requirements.txt
 https://github.com/yolain/ComfyUI-Easy-Use/raw/refs/heads/main/requirements.txt
+https://github.com/willmiao/ComfyUI-Lora-Manager/raw/refs/heads/main/requirements.txt
+https://github.com/alexopus/ComfyUI-Image-Saver/raw/refs/heads/master/requirements.txt
+https://github.com/KohakuBlueleaf/z-tipo-extension/raw/refs/heads/main/requirements.txt
+https://github.com/1038lab/ComfyUI-QwenVL/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}"; do

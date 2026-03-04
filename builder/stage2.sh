@@ -50,32 +50,37 @@ $gcs https://github.com/woct0rdho/ComfyUI-RadialAttn.git
 # Workspace
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
+$gcs https://github.com/chrisgoringe/cg-use-everywhere.git
+$gcs https://github.com/willmiao/ComfyUI-Lora-Manager.git
+$gcs https://github.com/alexopus/ComfyUI-Image-Saver.git
+$gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 
 # General
-$gcs https://github.com/bash-j/mikey_nodes.git
-$gcs https://github.com/chrisgoringe/cg-use-everywhere.git
-$gcs https://github.com/jags111/efficiency-nodes-comfyui.git
+$gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
 $gcs https://github.com/kijai/ComfyUI-KJNodes.git
+$gcs https://github.com/bash-j/mikey_nodes.git
+$gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/mirabarukaso/ComfyUI_Mira.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
-$gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
-$gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
+$gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
+$gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git
+$gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/Fannovel16/comfyui_controlnet_aux.git
+$gcs https://github.com/chflame163/ComfyUI_LayerStyle.git
 $gcs https://github.com/florestefano1975/comfyui-portrait-master.git
 $gcs https://github.com/huchenlei/ComfyUI-IC-Light-Native.git
 $gcs https://github.com/huchenlei/ComfyUI-layerdiffuse.git
 $gcs https://github.com/Jonseed/ComfyUI-Detail-Daemon.git
 $gcs https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git
-$gcs https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
-$gcs https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git
-$gcs https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
 $gcs https://github.com/mcmonkeyprojects/sd-dynamic-thresholding.git
 $gcs https://github.com/twri/sdxl_prompt_styler.git
+$gcs https://github.com/pamparamm/ComfyUI-ppm.git
+$gcs https://github.com/KohakuBlueleaf/z-tipo-extension.git
 
 # Video
 $gcs https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
@@ -90,8 +95,8 @@ $gcs https://github.com/digitaljohn/comfyui-propost.git
 $gcs https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 $gcs https://github.com/kijai/ComfyUI-Florence2.git
 $gcs https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
-$gcs https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 $gcs https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+$gcs https://github.com/1038lab/ComfyUI-QwenVL.git
 
 # To be removed in future
 $gcs https://github.com/cubiq/ComfyUI_essentials.git
